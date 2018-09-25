@@ -7,6 +7,10 @@
             <param-name>ScAccueil</param-name>
             <param-value>sousControllers.ScAccueil</param-value>
         </init-param>
+        <init-param>
+            <param-name>ScMenu</param-name>
+            <param-value>sousControllers.ScMenu</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -15,6 +19,12 @@
     </session-config>
     <ejb-local-ref>
         <ejb-ref-name>CreationJeuEssai</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>ejb.CreationJeuEssaiLocal</local>
+        <ejb-link>BorneMcDo-ejb.jar#CreationJeuEssai</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>CreationJeuEssai1</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>ejb.CreationJeuEssaiLocal</local>
         <ejb-link>BorneMcDo-ejb.jar#CreationJeuEssai</ejb-link>

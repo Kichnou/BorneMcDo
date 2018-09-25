@@ -4,6 +4,7 @@
 }
 
 .btn-plein{
+    width: 400px;
     border: solid 3px;
     border-radius: 5px;
     border-color: #004812;
@@ -21,6 +22,7 @@
 }
 
 .btn-evide{
+    width: 400px;
     border: solid 3px;
     border-radius: 5px;
     border-color: #004812;
@@ -31,6 +33,27 @@
 }
 
 .btn-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc;
+}
+
+.btn-choix-evide{
+    width: 400px;
+    height: 400px;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812;
+    font-family: 'museo';
+    font-size: 10em;
+    text-transform: uppercase;
+    color : #004812;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
     color : #cccccc;
