@@ -2,6 +2,7 @@ package entites;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,11 +15,19 @@ public class Ingredient implements Serializable {
     @Column(length = 80)
     private String nom;
     
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Article> lesArticles;
     @ManyToMany(mappedBy = "lesIngredients")
     private Collection<Choix> lesChoix;
 
+    public Ingredient() {
+    }
+
+    public Ingredient(String nom) {
+        this.nom = nom;
+    }
+
+    
     
 
     public String getNom() {

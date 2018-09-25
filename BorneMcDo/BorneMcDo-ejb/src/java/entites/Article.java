@@ -19,7 +19,7 @@ public class Article implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 80, nullable = false, unique = true)
+    @Column(length = 80, nullable = false)
     private String nom;
     @Column(length = 400)
     private String titre;
