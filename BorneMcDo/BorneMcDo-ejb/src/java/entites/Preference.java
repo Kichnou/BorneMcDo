@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Option implements Serializable {
+public class Preference implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -23,13 +23,13 @@ public class Option implements Serializable {
     private Collection<Article> lesArticles;
     @ManyToMany
     private Collection<Choix> lesChoix;
-    @OneToMany(mappedBy = "uneOption")
+    @OneToMany(mappedBy = "unePreference")
     private Collection<Commande> lesCommandes;
 
-    public Option() {
+    public Preference() {
     }
 
-    public Option(String libele) {
+    public Preference(String libele) {
         this.libele = libele;
     }
     
@@ -87,10 +87,10 @@ public class Option implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Option)) {
+        if (!(object instanceof Preference)) {
             return false;
         }
-        Option other = (Option) object;
+        Preference other = (Preference) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

@@ -31,7 +31,7 @@ public class Choix implements Serializable {
     private Date livraison;
     
     @ManyToMany(mappedBy = "lesChoix")
-    private Collection<Option> lesOptions;
+    private Collection<Preference> lesPreferences;
     @OneToMany(mappedBy = "leChoix")
     private Collection<Choix> sousChoix;
     @ManyToOne
@@ -93,13 +93,15 @@ public class Choix implements Serializable {
         this.livraison = livraison;
     }
 
-    public Collection<Option> getLesOptions() {
-        return lesOptions;
+    public Collection<Preference> getLesPreferences() {
+        return lesPreferences;
     }
 
-    public void setLesOptions(Collection<Option> lesOptions) {
-        this.lesOptions = lesOptions;
+    public void setLesPreferences(Collection<Preference> lesPreferences) {
+        this.lesPreferences = lesPreferences;
     }
+
+
 
     public Collection<Choix> getSousChoix() {
         return sousChoix;

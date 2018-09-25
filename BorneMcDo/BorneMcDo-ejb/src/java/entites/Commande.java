@@ -26,7 +26,7 @@ public class Commande implements Serializable {
     private String identifiantCourt;
     
     @ManyToOne
-    private Option uneOption;
+    private Preference unePreference;
     @OneToMany(mappedBy = "uneCommande")
     private Collection<Choix> lesChoix;
     @ManyToOne
@@ -70,13 +70,15 @@ public class Commande implements Serializable {
         this.identifiantCourt = identifiantCourt;
     }
 
-    public Option getUneOption() {
-        return uneOption;
+    public Preference getUnePreference() {
+        return unePreference;
     }
 
-    public void setUneOption(Option uneOption) {
-        this.uneOption = uneOption;
+    public void setUnePreference(Preference unePreference) {
+        this.unePreference = unePreference;
     }
+
+
 
     public Collection<Choix> getLesChoix() {
         return lesChoix;

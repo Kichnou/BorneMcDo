@@ -31,7 +31,7 @@ public class Article implements Serializable {
     @OneToMany(mappedBy = "unArticle")
     private Collection<InfoArticle> lesInfos;
     @ManyToMany(mappedBy = "lesArticles")
-    private Collection<Option> lesOptions;
+    private Collection<Preference> lesPreferences;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementAutre> lesSuppAut;
     @ManyToMany(mappedBy = "lesArticles")
@@ -60,6 +60,10 @@ public class Article implements Serializable {
         this.description = description;
         this.image = image;
         this.prix = prix;
+    }
+
+    public Article(String nom) {
+        this.nom = nom;
     }
            
     
@@ -120,13 +124,15 @@ public class Article implements Serializable {
         this.lesInfos = lesInfos;
     }
 
-    public Collection<Option> getLesOptions() {
-        return lesOptions;
+    public Collection<Preference> getLesPreferences() {
+        return lesPreferences;
     }
 
-    public void setLesOptions(Collection<Option> lesOptions) {
-        this.lesOptions = lesOptions;
+    public void setLesPreferences(Collection<Preference> lesPreferences) {
+        this.lesPreferences = lesPreferences;
     }
+
+
 
     public Collection<SupplementAutre> getLesSuppAut() {
         return lesSuppAut;
