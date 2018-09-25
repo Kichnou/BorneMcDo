@@ -39,13 +39,14 @@
 }
 
 .btn-choix-evide{
-    width: 400px;
-    height: 400px;
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
     border: solid 3px;
     border-radius: 5px;
     border-color: #004812;
     font-family: 'museo';
-    font-size: 10em;
+    font-size: 4em;
     text-transform: uppercase;
     color : #004812;
     display: flex;
@@ -57,4 +58,11 @@
     font-family: 'museo';
     text-transform: uppercase;
     color : #cccccc;
+}
+
+h1{
+    margin-top: 100px;
+    font-family: 'museo';
+    font-size: 2em;
+    color : #004812;
 }

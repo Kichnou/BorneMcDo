@@ -7,8 +7,8 @@
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <c:url value="Controller?section=ScAccueil" var="url02" />
-            <a class="nav-link" href="${url02}">creer les données</a>
+            <c:url value="Controller?section=ScAccueil" var="accueil" />
+            <a class="nav-link" href="${accueil}">créer les données</a>
         </li>
     </ul>
 </nav>
