@@ -1,4 +1,4 @@
-package controllers.sousControllers;
+package sousControllers;
 
 import ejb.CreationJeuEssaiLocal;
 import java.util.logging.Level;

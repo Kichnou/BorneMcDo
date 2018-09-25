@@ -1,6 +1,6 @@
 package controllers;
 
-import controllers.sousControllers.SousController;
+import sousControllers.SousController;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;

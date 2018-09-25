@@ -5,7 +5,7 @@
         <servlet-class>controllers.Controller</servlet-class>
         <init-param>
             <param-name>ScAccueil</param-name>
-            <param-value>controllers.sousControllers.ScAccueil</param-value>
+            <param-value>sousControllers.ScAccueil</param-value>
         </init-param>
     </servlet>
     <session-config>

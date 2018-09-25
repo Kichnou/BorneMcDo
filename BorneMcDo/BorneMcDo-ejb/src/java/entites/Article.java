@@ -19,11 +19,11 @@ public class Article implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(length = 80, nullable = false, unique = true)
     private String nom;
-    @Column(length = 200)
+    @Column(length = 400)
     private String titre;
-    @Column(length = 500)
+    @Column(length = 800)
     private String description;
     private String image;
     private float prix;
@@ -62,9 +62,12 @@ public class Article implements Serializable {
         this.prix = prix;
     }
 
-    public Article(String nom) {
+    public Article(String nom, String titre) {
         this.nom = nom;
+        this.titre = titre;
     }
+
+    
            
     
     
