@@ -1,2 +1,37 @@
+@font-face{
+    font-family: 'museo';
+    src: url('../font/museo_slab_500.otf') format('opentype');
+}
 
+.btn-plein{
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812;
+    background-color: #004812;
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #ffffff;
+}
 
+.btn-plein:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc;
+}
+
+.btn-evide{
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812;
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #004812;
+}
+
+.btn-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc;
+}
