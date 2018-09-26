@@ -250,6 +250,22 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Ingredient pane = new Ingredient("specialité panée au poulet");
         Ingredient bacon = new Ingredient("bacon");
         Ingredient fromageBc = new Ingredient("fromage fondu goût bacon au poivre");
+        Ingredient siropAbricot = new Ingredient("Sirop de confiture d'abricot");
+        Ingredient siropFramboise = new Ingredient("Sirop de confiture de framboise");
+        Ingredient siropOrange = new Ingredient("Sirop de confiture d'orange");
+        Ingredient miel = new Ingredient("miel");
+        Ingredient Nutella = new Ingredient("NUTELLA ®");
+        Ingredient Beurre = new Ingredient("beurre");
+        
+        cbo.getLesIngredients().add(painsp);
+        cbo.getLesIngredients().add(pane);
+        cbo.getLesIngredients().add(bacon);
+        cbo.getLesIngredients().add(fromageBc);
+        cbo.getLesIngredients().add(oignon);
+        cbo.getLesIngredients().add(salad);
+        cbo.getLesIngredients().add(sauce);
+        
+        
 
         em.persist(cheeseBurger);
         em.persist(bigMac);
@@ -290,9 +306,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(cadeauGarcon);
         em.persist(livre);
         
-
-//        Article a = new Article("Coca","le titre");
-//        em.persist(a);
     }
 
 }

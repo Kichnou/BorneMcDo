@@ -1,7 +1,9 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -18,6 +20,12 @@ public class Categorie implements Serializable {
     @ManyToMany(mappedBy = "lesCategories")
     private Collection<Menu> lesMenus;
 
+    public Categorie() {
+        lesArticles = new ArrayList();
+        lesMenus = new ArrayList();
+    }
+
+    
     
     public String getNom() {
         return nom;
