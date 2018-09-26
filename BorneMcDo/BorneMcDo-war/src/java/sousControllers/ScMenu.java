@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package sousControllers;
 
 import ejb.CreationJeuEssaiLocal;
@@ -9,16 +14,14 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ScAccueil implements SousController {
-    CreationJeuEssaiLocal creationJeuEssai = lookupCreationJeuEssaiLocal();
 
+public class ScMenu implements SousController{
+
+CreationJeuEssaiLocal creationJeuEssai = lookupCreationJeuEssaiLocal();
+    
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String url = "/WEB-INF/Accueil.jsp";
-
-        CreationJeuEssaiLocal jeuEssai = lookupCreationJeuEssaiLocal();
-        jeuEssai.creerDonnees();
-        request.setAttribute("message", "donnée OK");
+        String url = "/WEB-INF/Menu.jsp";
         return url;
     }
 
@@ -31,6 +34,7 @@ public class ScAccueil implements SousController {
             throw new RuntimeException(ne);
         }
     }
-    
+
+
     
 }
