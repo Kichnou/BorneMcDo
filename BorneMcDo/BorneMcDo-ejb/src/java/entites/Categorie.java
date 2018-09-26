@@ -3,7 +3,6 @@ package entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -23,6 +22,11 @@ public class Categorie implements Serializable {
     public Categorie() {
         lesArticles = new ArrayList();
         lesMenus = new ArrayList();
+    }
+
+    public Categorie(String nom) {
+        this();
+        this.nom = nom;
     }
 
     

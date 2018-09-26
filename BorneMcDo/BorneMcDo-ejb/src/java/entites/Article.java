@@ -42,7 +42,7 @@ public class Article implements Serializable {
     private Collection<SupplementArticle>lesSupArt;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Promotion>lesPromo;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Categorie laCategorie;
     @ManyToOne
     private Tva laTva;
