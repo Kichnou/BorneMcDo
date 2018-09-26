@@ -17,9 +17,12 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="btn btn-choix-evide mx-auto" href='#'>oui</div>
+                    <h4 class="text-center">Je m'identifie</h4>
+                    <p class="text-center">Mon prénom sera affiché sur<br>les écrans suivants</p>
                 </div>
                 <div class="col">
                     <div class="btn btn-choix-evide mx-auto" href='#'>non</div>
+                    <h4 class="text-center">Je ne m'identifie pas</h4>
                 </div>
             </div>
 

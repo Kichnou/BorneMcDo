@@ -66,3 +66,18 @@ h1{
     font-size: 2em;
     color : #004812;
 }
+
+h4{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #004812;
+}
+
+p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'museo';
+    color : #004812; 
+}
