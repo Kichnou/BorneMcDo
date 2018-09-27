@@ -30,7 +30,7 @@ public class Article implements Serializable {
     private String image;
     private float prix;
     
-    @OneToMany(mappedBy = "unArticle")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfoArticle> lesInfos;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Preference> lesPreferences;

@@ -1,12 +1,15 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -16,17 +19,31 @@ public class InfoArticle implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 500)
+    @Column(length = 800)
     private String description;
+    @Column(length = 100)
+    private String sousTitre;
+    @Column(length = 100)
+    private String titre;
+    private String image;
     
-    @ManyToOne
-    private Article unArticle;
+    @ManyToMany(mappedBy = "lesInfos")
+    private Collection<Article> lesArticle;
 
     public InfoArticle() {
+        lesArticle = new ArrayList();
     }
 
-    public InfoArticle(String description) {
+    public InfoArticle(String image) {
+        this();
+        this.image = image;
+    }
+
+    public InfoArticle(String description, String sousTitre, String titre) {
+        this();
         this.description = description;
+        this.sousTitre = sousTitre;
+        this.titre = titre;
     }
     
     
@@ -47,12 +64,36 @@ public class InfoArticle implements Serializable {
         this.description = description;
     }
 
-    public Article getUnArticle() {
-        return unArticle;
+    public String getSousTitre() {
+        return sousTitre;
     }
 
-    public void setUnArticle(Article unArticle) {
-        this.unArticle = unArticle;
+    public void setSousTitre(String sousTitre) {
+        this.sousTitre = sousTitre;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Collection<Article> getLesArticle() {
+        return lesArticle;
+    }
+
+    public void setLesArticle(Collection<Article> lesArticle) {
+        this.lesArticle = lesArticle;
     }
     
     
