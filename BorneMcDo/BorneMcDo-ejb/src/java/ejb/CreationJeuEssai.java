@@ -224,22 +224,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "Tout simplement irrésistible !",
                 "./images/McFlurryOreo.png",
                 2.67f);
-<<<<<<< HEAD
-        Article SundaeChoco = new Article("LE SUNDAE",
-                "",
-                "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.",
-                "images/SundaeChocolat.png",
-                1.92f);
-        Article SundaeCaramel = new Article("LE SUNDAE",
-                "",
-                "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.",
-                "images/SundaeCaramel.png",
-                1.92f);
-        Article cadeauFille = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "images/cadeauFille.png", 0.6f);
-        Article cadeauGarcon = new Article("LE PETIT CADEAU", "TRANSFORMERS", "", "images/cadeauGarcon.png", 0.6f);
-        Article livre = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "images/livre.png", 0.6f);
-
-=======
         Article SundaeChoco = new Article("LE SUNDAE", 
                 "", 
                 "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.", 
@@ -253,8 +237,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Article cadeauFille = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
         Article cadeauGarcon = new Article("LE PETIT CADEAU", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
         Article livre = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
-        
->>>>>>> 4993513b4b80a9f058ab9ad1da9bdba3b024dbea
+
         //Ingredients
         Ingredient pain = new Ingredient("pain spécial");
         Ingredient steak = new Ingredient("steak haché");
@@ -277,21 +260,30 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Ingredient Beurre = new Ingredient("beurre");
 
         //Catégories
-<<<<<<< HEAD
-        Categorie burger = new Categorie("burger");
-        Categorie petitAccomp = new Categorie("petit accompagnement");
-        Categorie moyenAccomp = new Categorie("moyen accompagnement");
-        Categorie grandAccomp = new Categorie("grand accompagnement");
-        Categorie breakfast = new Categorie("petit déjeuner");
-        Categorie petitBoisson = new Categorie("petite boisson");
-        Categorie moyenBoisson = new Categorie("moyenne boisson");
-        Categorie grandeBoisson = new Categorie("grande boisson");
-        Categorie boissonChaude = new Categorie("boisson chaude");
-        Categorie platAutre = new Categorie("autres plats");
-        Categorie cadeau = new Categorie("cadeau");
-        Categorie sauceCat = new Categorie("sauce");
-        Categorie saladCat = new Categorie("salade");
-        Categorie dessert = new Categorie("dessert");
+
+//        Categorie burger = new Categorie("burger");
+//        Categorie petitAccomp = new Categorie("petit accompagnement");
+//        Categorie moyenAccomp = new Categorie("moyen accompagnement");
+//        Categorie grandAccomp = new Categorie("grand accompagnement");
+//        Categorie breakfast = new Categorie("petit déjeuner");
+//        Categorie petitBoisson = new Categorie("petite boisson");
+//        Categorie moyenBoisson = new Categorie("moyenne boisson");
+//        Categorie grandeBoisson = new Categorie("grande boisson");
+//        Categorie boissonChaude = new Categorie("boisson chaude");
+//        Categorie platAutre = new Categorie("autres plats");
+//        Categorie cadeau = new Categorie("cadeau");
+//        Categorie sauceCat = new Categorie("sauce");
+//        Categorie saladCat = new Categorie("salade");
+//        Categorie dessert = new Categorie("dessert");
+        
+        Categorie nosMenus = new Categorie("nos menus", "./images/nos_menus.png");
+        Categorie nosBurgers = new Categorie("nos burgers", "./images/nos_burgers.png");
+        Categorie petiteFaim = new Categorie("petite faim","./images/petite_faim.png");
+        Categorie nosSalades = new Categorie("nos salades","./images/nos_salades.png");
+        Categorie nosBoissons = new Categorie("nos boissons","./images/nos_boissons.png");
+        Categorie nosDesserts = new Categorie("nos desserts","./images/nos_desserts.png");
+        Categorie nosFritesSauces = new Categorie("nos frites & sauces", "./images/nos_frites&sauces.png");
+        Categorie happyMeal = new Categorie("happy meal", "./images/happy_meal.png");
 
         //Information articles
         InfoArticle infoSteak = new InfoArticle("Petite mise au point sur la viande bovine :\n"
@@ -344,32 +336,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         InfoArticle infoAllergMuffin = new InfoArticle("images/infoAllergMuffin.png");
         InfoArticle infoNutriSundae = new InfoArticle("images/infoNutriSundae.png");
         InfoArticle infoAllergSundae = new InfoArticle("images/infoAllergSundae.png");
-=======
-//        Categorie burger = new Categorie("burger");
-//        Categorie petitAccomp = new Categorie("petit accompagnement");
-//        Categorie moyenAccomp = new Categorie("moyen accompagnement");
-//        Categorie grandAccomp = new Categorie("grand accompagnement");
-//        Categorie breakfast = new Categorie("petit déjeuner");
-//        Categorie petitBoisson = new Categorie("petite boisson");
-//        Categorie moyenBoisson = new Categorie("moyenne boisson");
-//        Categorie grandeBoisson = new Categorie("grande boisson");
-//        Categorie boissonChaude = new Categorie("boisson chaude");
-//        Categorie platAutre = new Categorie("autres plats");
-//        Categorie cadeau = new Categorie("cadeau");
-//        Categorie sauceCat = new Categorie("sauce");
-//        Categorie saladCat = new Categorie("salade");
-//        Categorie dessert = new Categorie("dessert");
-        
-        Categorie nosMenus = new Categorie("nos menus", "./images/nos_menus.png");
-        Categorie nosBurgers = new Categorie("nos burgers", "./images/nos_burgers.png");
-        Categorie petiteFaim = new Categorie("petite faim","./images/petite_faim.png");
-        Categorie nosSalades = new Categorie("nos salades","./images/nos_salades.png");
-        Categorie nosBoissons = new Categorie("nos boissons","./images/nos_boissons.png");
-        Categorie nosDesserts = new Categorie("nos desserts","./images/nos_desserts.png");
-        Categorie nosFritesSauces = new Categorie("nos frites & sauces", "./images/nos_frites&sauces.png");
-        Categorie happyMeal = new Categorie("happy meal", "./images/happy_meal.png");
->>>>>>> 4993513b4b80a9f058ab9ad1da9bdba3b024dbea
-        
         
 
         cbo.getLesIngredients().add(painsp);
@@ -403,56 +369,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         panCakes.getLesIngredients().add(Nutella);
         panCakes.getLesIngredients().add(Beurre);
         
-<<<<<<< HEAD
-        cheeseBurger.setLaCategorie(burger);
-        bigMac.setLaCategorie(burger);
-        cbo.setLaCategorie(burger);
-        panCakes.setLaCategorie(breakfast);
-        petitCoca.setLaCategorie(petitBoisson);
-        moyenCoca.setLaCategorie(moyenBoisson);
-        grandCoca.setLaCategorie(grandeBoisson);
-        petitFanta.setLaCategorie(petitBoisson);
-        moyenFanta.setLaCategorie(moyenBoisson);
-        grandFanta.setLaCategorie(grandeBoisson);
-        petitSprite.setLaCategorie(petitBoisson);
-        moyenSprite.setLaCategorie(moyenBoisson);
-        grandSprite.setLaCategorie(grandeBoisson);
-        expresso.setLaCategorie(boissonChaude);
-        cappuccino.setLaCategorie(boissonChaude);
-        nuggets4.setLaCategorie(platAutre);
-        nuggets6.setLaCategorie(platAutre);
-        nuggets9.setLaCategorie(platAutre);
-        nuggets20.setLaCategorie(platAutre);
-        petiteFrite.setLaCategorie(petitAccomp);
-        moyenneFrite.setLaCategorie(moyenAccomp);
-        grandeFrite.setLaCategorie(grandAccomp);
-        moyennePotatoes.setLaCategorie(moyenAccomp);
-        grandePotatoes.setLaCategorie(grandAccomp);
-        sauceFrite.setLaCategorie(sauceCat);
-        ketchup.setLaCategorie(sauceCat);
-        moutarde.setLaCategorie(sauceCat);
-        sauceBbq.setLaCategorie(sauceCat);
-        sauceCurry.setLaCategorie(sauceCat);
-        salade.setLaCategorie(saladCat);
-        muffin.setLaCategorie(dessert);
-        mcFlurryKK.setLaCategorie(dessert);
-        mcFlurryOreo.setLaCategorie(dessert);
-        SundaeCaramel.setLaCategorie(dessert);
-        SundaeChoco.setLaCategorie(dessert);
-        cadeauFille.setLaCategorie(cadeau);
-        cadeauGarcon.setLaCategorie(cadeau);
-        livre.setLaCategorie(cadeau);
-        
-        cbo.getLesInfos().add(infoNutriCbo);
-        cbo.getLesInfos().add(infoAllerCbo);
-        cbo.getLesInfos().add(infoFiliere);
-        bigMac.getLesInfos().add(infoSteak);
-        bigMac.getLesInfos().add(infoNutriBigMac);
-        bigMac.getLesInfos().add(infoAllergBigMac);
-        
-        
-        
-=======
 //      cheeseBurger.setLaCategorie(burger);
         cheeseBurger.setLaCategorie(nosBurgers);
 //      bigMac.setLaCategorie(burger);
@@ -529,8 +445,58 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         cadeauGarcon.setLaCategorie(happyMeal);
 //      livre.setLaCategorie(cadeau);
         livre.setLaCategorie(happyMeal);
-
->>>>>>> 4993513b4b80a9f058ab9ad1da9bdba3b024dbea
+        
+        cbo.getLesInfos().add(infoNutriCbo);
+        cbo.getLesInfos().add(infoAllerCbo);
+        cbo.getLesInfos().add(infoFiliere);
+        bigMac.getLesInfos().add(infoSteak);
+        bigMac.getLesInfos().add(infoNutriBigMac);
+        bigMac.getLesInfos().add(infoAllergBigMac);
+        cheeseBurger.getLesInfos().add(infoPainRond);
+        cheeseBurger.getLesInfos().add(infoNutriCheese);
+        cheeseBurger.getLesInfos().add(infoallergCheese);
+        panCakes.getLesInfos().add(infoFiliere);
+        petitCoca.getLesInfos().add(infoNutriCoca);
+        moyenCoca.getLesInfos().add(infoNutriCoca);
+        grandCoca.getLesInfos().add(infoNutriCoca);
+        petitCoca.getLesInfos().add(infoallergVide);
+        moyenCoca.getLesInfos().add(infoallergVide);
+        grandCoca.getLesInfos().add(infoallergVide);
+        petitSprite.getLesInfos().add(infoNutriSprite);
+        moyenSprite.getLesInfos().add(infoNutriSprite);
+        grandSprite.getLesInfos().add(infoNutriSprite);
+        petitFanta.getLesInfos().add(infoNutriFanta);
+        moyenFanta.getLesInfos().add(infoNutriFanta);
+        grandFanta.getLesInfos().add(infoNutriFanta);
+        petitFanta.getLesInfos().add(infoallergVide);
+        moyenFanta.getLesInfos().add(infoallergVide);
+        grandFanta.getLesInfos().add(infoallergVide);
+        expresso.getLesInfos().add(infoNutriSprite);
+        expresso.getLesInfos().add(infoallergVide);
+        cappuccino.getLesInfos().add(infoNutriCappu);
+        cappuccino.getLesInfos().add(infoallergCappu);
+        nuggets4.getLesInfos().add(infoNuggets);
+        nuggets4.getLesInfos().add(infoNutriNuggets);
+        nuggets4.getLesInfos().add(infoAllergNuggets);
+        nuggets6.getLesInfos().add(infoNuggets);
+        nuggets6.getLesInfos().add(infoNutriNuggets);
+        nuggets6.getLesInfos().add(infoAllergNuggets);
+        nuggets9.getLesInfos().add(infoNuggets);
+        nuggets9.getLesInfos().add(infoNutriNuggets);
+        nuggets9.getLesInfos().add(infoAllergNuggets);
+        nuggets20.getLesInfos().add(infoNuggets);
+        nuggets20.getLesInfos().add(infoNutriNuggets);
+        nuggets20.getLesInfos().add(infoAllergNuggets);
+        petiteFrite.getLesInfos().add(infoFrites);
+        petiteFrite.getLesInfos().add(infoNutriFrites);
+        petiteFrite.getLesInfos().add(infoAllergFrites);
+        moyenneFrite.getLesInfos().add(infoFrites);
+        moyenneFrite.getLesInfos().add(infoNutriFrites);
+        moyenneFrite.getLesInfos().add(infoAllergFrites);
+        grandeFrite.getLesInfos().add(infoFrites);
+        grandeFrite.getLesInfos().add(infoNutriFrites);
+        grandeFrite.getLesInfos().add(infoAllergFrites);
+        
         em.persist(cheeseBurger);
         em.persist(bigMac);
         em.persist(cbo);
