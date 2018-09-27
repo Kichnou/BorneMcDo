@@ -10,5 +10,9 @@
             <c:url value="Controller?section=ScAccueil" var="accueil" />
             <a class="nav-link" href="${accueil}">créer les données</a>
         </li>
+        <li class="nav-item">
+            <c:url value="Controller?section=ScCatalogue" var="catalogue" />
+            <a class="nav-link" href="${catalogue}">catalogue</a>
+        </li>
     </ul>
 </nav>
