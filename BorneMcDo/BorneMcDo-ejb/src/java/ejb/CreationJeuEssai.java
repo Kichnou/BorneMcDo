@@ -1,6 +1,7 @@
 package ejb;
 
 import entites.Article;
+import entites.Categorie;
 import entites.Ingredient;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
@@ -250,6 +251,99 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Ingredient pane = new Ingredient("specialité panée au poulet");
         Ingredient bacon = new Ingredient("bacon");
         Ingredient fromageBc = new Ingredient("fromage fondu goût bacon au poivre");
+        Ingredient siropAbricot = new Ingredient("Sirop de confiture d'abricot");
+        Ingredient siropFramboise = new Ingredient("Sirop de confiture de framboise");
+        Ingredient siropOrange = new Ingredient("Sirop de confiture d'orange");
+        Ingredient miel = new Ingredient("miel");
+        Ingredient Nutella = new Ingredient("NUTELLA ®");
+        Ingredient Beurre = new Ingredient("beurre");
+        
+        //Catégories
+        Categorie burger = new Categorie("burger");
+        Categorie petitAccomp = new Categorie("petit accompagnement");
+        Categorie moyenAccomp = new Categorie("moyen accompagnement");
+        Categorie grandAccomp = new Categorie("grand accompagnement");
+        Categorie breakfast = new Categorie("petit déjeuner");
+        Categorie petitBoisson = new Categorie("petite boisson");
+        Categorie moyenBoisson = new Categorie("moyenne boisson");
+        Categorie grandeBoisson = new Categorie("grande boisson");
+        Categorie boissonChaude = new Categorie("boisson chaude");
+        Categorie platAutre = new Categorie("autres plats");
+        Categorie cadeau = new Categorie("cadeau");
+        Categorie sauceCat = new Categorie("sauce");
+        Categorie saladCat = new Categorie("salade");
+        Categorie dessert = new Categorie("dessert");
+        
+        
+        cbo.getLesIngredients().add(painsp);
+        cbo.getLesIngredients().add(pane);
+        cbo.getLesIngredients().add(bacon);
+        cbo.getLesIngredients().add(fromageBc);
+        cbo.getLesIngredients().add(oignon);
+        cbo.getLesIngredients().add(salad);
+        cbo.getLesIngredients().add(sauce);
+        
+        bigMac.getLesIngredients().add(pain);
+        bigMac.getLesIngredients().add(steak);
+        bigMac.getLesIngredients().add(salad);
+        bigMac.getLesIngredients().add(oignon);
+        bigMac.getLesIngredients().add(cornichon);
+        bigMac.getLesIngredients().add(fromage);
+        bigMac.getLesIngredients().add(sauce);
+        
+        cheeseBurger.getLesIngredients().add(pain);
+        cheeseBurger.getLesIngredients().add(steak);
+        cheeseBurger.getLesIngredients().add(fromage);
+        cheeseBurger.getLesIngredients().add(oignon);
+        cheeseBurger.getLesIngredients().add(cornichon);
+        cheeseBurger.getLesIngredients().add(moutardeI);
+        cheeseBurger.getLesIngredients().add(ketchupI);
+        
+        panCakes.getLesIngredients().add(siropAbricot);
+        panCakes.getLesIngredients().add(siropFramboise);
+        panCakes.getLesIngredients().add(siropOrange);
+        panCakes.getLesIngredients().add(miel);
+        panCakes.getLesIngredients().add(Nutella);
+        panCakes.getLesIngredients().add(Beurre);
+        
+      cheeseBurger.setLaCategorie(burger);
+      bigMac.setLaCategorie(burger);
+      cbo.setLaCategorie(burger);
+      panCakes.setLaCategorie(breakfast);
+      petitCoca.setLaCategorie(petitBoisson);
+      moyenCoca.setLaCategorie(moyenBoisson);
+      grandCoca.setLaCategorie(grandeBoisson);
+      petitFanta.setLaCategorie(petitBoisson);
+      moyenFanta.setLaCategorie(moyenBoisson);
+      grandFanta.setLaCategorie(grandeBoisson);
+      petitSprite.setLaCategorie(petitBoisson);
+      moyenSprite.setLaCategorie(moyenBoisson);
+      grandSprite.setLaCategorie(grandeBoisson);
+      expresso.setLaCategorie(boissonChaude);
+      cappuccino.setLaCategorie(boissonChaude);
+      nuggets4.setLaCategorie(platAutre);
+      nuggets6.setLaCategorie(platAutre);
+      nuggets9.setLaCategorie(platAutre);
+      nuggets20.setLaCategorie(platAutre);
+      petiteFrite.setLaCategorie(petitAccomp);
+      moyenneFrite.setLaCategorie(moyenAccomp);
+      grandeFrite.setLaCategorie(grandAccomp);
+      moyennePotatoes.setLaCategorie(moyenAccomp);
+      grandePotatoes.setLaCategorie(grandAccomp);
+      sauceFrite.setLaCategorie(sauceCat);
+      ketchup.setLaCategorie(sauceCat);
+      moutarde.setLaCategorie(sauceCat);
+      sauceBbq.setLaCategorie(sauceCat);
+      sauceCurry.setLaCategorie(sauceCat);
+      salade.setLaCategorie(saladCat);
+      muffin.setLaCategorie(dessert);
+      mcFlurryKK.setLaCategorie(dessert);
+      mcFlurryOreo.setLaCategorie(dessert);
+      SundaeCaramel.setLaCategorie(dessert);
+      SundaeChoco.setLaCategorie(dessert);
+      cadeauFille.setLaCategorie(cadeau);
+      cadeauGarcon.setLaCategorie(cadeau);
+      livre.setLaCategorie(cadeau);
 
         em.persist(cheeseBurger);
         em.persist(bigMac);
@@ -290,9 +384,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(cadeauGarcon);
         em.persist(livre);
         
-
-//        Article a = new Article("Coca","le titre");
-//        em.persist(a);
     }
 
 }

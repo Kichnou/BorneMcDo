@@ -1,7 +1,9 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,13 +36,13 @@ public class Article implements Serializable {
     private Collection<Preference> lesPreferences;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementAutre> lesSuppAut;
-    @ManyToMany(mappedBy = "lesArticles")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient>lesIngredients;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementArticle>lesSupArt;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Promotion>lesPromo;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Categorie laCategorie;
     @ManyToOne
     private Tva laTva;
@@ -52,9 +54,16 @@ public class Article implements Serializable {
     
     
     public Article() {
+        lesInfos = new ArrayList();
+        lesPreferences = new ArrayList();
+        lesSuppAut = new ArrayList();
+        lesSupArt = new ArrayList();
+        lesIngredients = new ArrayList();
+        lesPromo = new ArrayList();
     }
 
     public Article(String nom,String titre, String description, String image, float prix) {
+        this();
         this.nom = nom;
         this.titre = titre;
         this.description = description;
@@ -63,6 +72,7 @@ public class Article implements Serializable {
     }
 
     public Article(String nom, String titre) {
+        this();
         this.nom = nom;
         this.titre = titre;
     }
