@@ -12,6 +12,7 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_import_url_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,10 +22,12 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_url_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_import_url_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_url_var_value_nobody.release();
+    _jspx_tagPool_c_import_url_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -57,20 +60,42 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"./css/style.css\" />\r\n");
       out.write("        <title>Accueil</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        <h1>Hello World!</h1>\r\n");
-      out.write("            ");
+      out.write("        ");
       if (_jspx_meth_c_url_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("            <a class=\"nav-link\" href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url02}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">creer les données</a>\r\n");
-      out.write("        <p>message : ");
+      out.write("        ");
+      if (_jspx_meth_c_import_0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("        ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${message}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</p>\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("            <h1 class=\"text-center\">Souhaitez-vous accéder à vos avantanges avec votre carte client ?</h1>\r\n");
+      out.write("            <div class=\"row justify-content-center\">\r\n");
+      out.write("                <div class=\"col\">\r\n");
+      out.write("                    <div class=\"btn btn-choix-evide mx-auto\" href='#'>oui</div>\r\n");
+      out.write("                    <h4 class=\"text-center\">Je m'identifie</h4>\r\n");
+      out.write("                    <p class=\"text-center\">Mon prénom sera affiché sur<br>les écrans suivants</p>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"col\">\r\n");
+      out.write("                    <div class=\"btn btn-choix-evide mx-auto\" href='#'>non</div>\r\n");
+      out.write("                    <h4 class=\"text-center\">Je ne m'identifie pas</h4>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
@@ -94,14 +119,40 @@ public final class Accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_url_0.setPageContext(_jspx_page_context);
     _jspx_th_c_url_0.setParent(null);
-    _jspx_th_c_url_0.setValue("Controller?section=ScAccueil");
-    _jspx_th_c_url_0.setVar("url02");
+    _jspx_th_c_url_0.setValue("Controller?section=ScMenu");
+    _jspx_th_c_url_0.setVar("menu");
     int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
     if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_url_var_value_nobody.reuse(_jspx_th_c_url_0);
       return true;
     }
     _jspx_tagPool_c_url_var_value_nobody.reuse(_jspx_th_c_url_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_import_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:import
+    org.apache.taglibs.standard.tag.rt.core.ImportTag _jspx_th_c_import_0 = (org.apache.taglibs.standard.tag.rt.core.ImportTag) _jspx_tagPool_c_import_url_nobody.get(org.apache.taglibs.standard.tag.rt.core.ImportTag.class);
+    _jspx_th_c_import_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_import_0.setParent(null);
+    _jspx_th_c_import_0.setUrl((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${menu}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_c_import_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_import_0 = _jspx_th_c_import_0.doStartTag();
+      if (_jspx_th_c_import_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_import_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_import_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_import_0.doFinally();
+      _jspx_tagPool_c_import_url_nobody.reuse(_jspx_th_c_import_0);
+    }
     return false;
   }
 }
