@@ -6,10 +6,15 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.Categorie.selectAllCategorie", query ="select c from Categorie c")
+})
 public class Categorie implements Serializable {
     @Id
     private String nom;
