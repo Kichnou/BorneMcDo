@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 public class Categorie implements Serializable {
     @Id
     private String nom;
+    private String image;
     
     @OneToMany(mappedBy = "laCategorie")
     private Collection<Article> lesArticles;
@@ -34,8 +35,21 @@ public class Categorie implements Serializable {
         this.nom = nom;
     }
 
+    public Categorie(String nom, String image) {
+        this();
+        this.nom = nom;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     
-    
+       
     public String getNom() {
         return nom;
     }
