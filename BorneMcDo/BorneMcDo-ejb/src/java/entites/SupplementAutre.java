@@ -22,7 +22,7 @@ public class SupplementAutre implements Serializable {
     private String nom;
     private float prix;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "lesSuppAut")
     private Collection<Article> lesArticles;
     @OneToMany(mappedBy = "unSuppAut")
     private Collection<Choix> lesChoix;

@@ -30,22 +30,24 @@ public class Promotion implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
     private String codePromo;
+    private String image;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "lesPromo")
     private Collection<Article> lesArticles;
     @ManyToMany
-    private Collection<Menu> lesMenux;
+    private Collection<Menu> lesMenus;
 
     public Promotion() {
     }
 
-    public Promotion(String nom, String description, float remise, Date dateDebut, Date dateFin, String codePromo) {
+    public Promotion(String nom, String description, float remise, Date dateDebut, Date dateFin, String codePromo, String image) {
         this.nom = nom;
         this.description = description;
         this.remise = remise;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.codePromo = codePromo;
+        this.image = image;
     }
     
     
@@ -106,6 +108,14 @@ public class Promotion implements Serializable {
         this.codePromo = codePromo;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    
     public Collection<Article> getLesArticles() {
         return lesArticles;
     }
@@ -115,11 +125,11 @@ public class Promotion implements Serializable {
     }
 
     public Collection<Menu> getLesMenux() {
-        return lesMenux;
+        return lesMenus;
     }
 
     public void setLesMenux(Collection<Menu> lesMenux) {
-        this.lesMenux = lesMenux;
+        this.lesMenus = lesMenux;
     }
     
     

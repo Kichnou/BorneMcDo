@@ -1,7 +1,9 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,23 +33,33 @@ public class Menu implements Serializable {
     @Column(nullable = false)
     private float prix;
     private String image;
+    private String titre;
     
     @OneToMany(mappedBy = "unMenu")
     private Collection<Choix> lesChoix;
-    @ManyToMany(mappedBy = "lesMenux")
+    
+    @ManyToMany(mappedBy = "lesMenus")
     private Collection<Promotion> lesPromos;
-    @ManyToMany
-    private Collection<Categorie> lesCategories;
+    
+    @ManyToMany(mappedBy = "lesMenus")
+    private Collection<SousCategorie> lesSousCategories;
+    
     @ManyToOne
     private Tva uneTva;
+    
     @ManyToOne
     private Disponibilite uneDispo;
 
     public Menu() {
+        lesSousCategories = new ArrayList();
+        lesChoix = new ArrayList();
+        lesPromos = new ArrayList();
     }
 
-    public Menu(String nom, String description, float prix, String image) {
+    public Menu(String nom,String titre, String description, float prix, String image) {
+        this();
         this.nom = nom;
+        this.titre = titre;
         this.description = description;
         this.prix = prix;
         this.image = image;
@@ -62,7 +74,7 @@ public class Menu implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
     public String getNom() {
         return nom;
     }
@@ -71,6 +83,14 @@ public class Menu implements Serializable {
         this.nom = nom;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -111,12 +131,12 @@ public class Menu implements Serializable {
         this.lesPromos = lesPromos;
     }
 
-    public Collection<Categorie> getLesCategories() {
-        return lesCategories;
+    public Collection<SousCategorie> getLesSousCategories() {
+        return lesSousCategories;
     }
 
-    public void setLesCategories(Collection<Categorie> lesCategories) {
-        this.lesCategories = lesCategories;
+    public void setLesSousCategories(Collection<SousCategorie> lesSousCategories) {
+        this.lesSousCategories = lesSousCategories;
     }
 
     public Tva getUneTva() {

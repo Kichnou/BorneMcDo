@@ -34,17 +34,17 @@ public class Article implements Serializable {
     private Collection<InfoArticle> lesInfos;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Preference> lesPreferences;
-    @ManyToMany(mappedBy = "lesArticles")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<SupplementAutre> lesSuppAut;
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient>lesIngredients;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementArticle>lesSupArt;
-    @ManyToMany(mappedBy = "lesArticles")
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
-    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
-    private Categorie laCategorie;
-    @ManyToOne
+    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    private Collection<Categorie> lesCategorie;
+    @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Tva laTva;
     @ManyToOne
     private Disponibilite laDispo;
@@ -60,6 +60,8 @@ public class Article implements Serializable {
         lesSupArt = new ArrayList();
         lesIngredients = new ArrayList();
         lesPromo = new ArrayList();
+        lesCategorie = new ArrayList();
+        lesChoix= new ArrayList();
     }
 
     public Article(String nom,String titre, String description, String image, float prix) {
@@ -76,8 +78,6 @@ public class Article implements Serializable {
         this.nom = nom;
         this.titre = titre;
     }
-
-    
            
     
     
@@ -145,8 +145,6 @@ public class Article implements Serializable {
         this.lesPreferences = lesPreferences;
     }
 
-
-
     public Collection<SupplementAutre> getLesSuppAut() {
         return lesSuppAut;
     }
@@ -179,12 +177,12 @@ public class Article implements Serializable {
         this.lesPromo = lesPromo;
     }
 
-    public Categorie getLaCategorie() {
-        return laCategorie;
+    public Collection<Categorie> getLesCategorie() {
+        return lesCategorie;
     }
 
-    public void setLaCategorie(Categorie laCategorie) {
-        this.laCategorie = laCategorie;
+    public void setLesCategorie(Collection<Categorie> lesCategorie) {
+        this.lesCategorie = lesCategorie;
     }
 
     public Tva getLaTva() {
