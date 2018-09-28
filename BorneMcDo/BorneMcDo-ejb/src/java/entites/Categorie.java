@@ -6,13 +6,19 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.Categorie.selectAllCategorie", query ="select c from Categorie c")
+})
 public class Categorie implements Serializable {
     @Id
     private String nom;
+    private String image;
     
     @OneToMany(mappedBy = "laCategorie")
     private Collection<Article> lesArticles;
@@ -29,8 +35,21 @@ public class Categorie implements Serializable {
         this.nom = nom;
     }
 
+    public Categorie(String nom, String image) {
+        this();
+        this.nom = nom;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     
-    
+       
     public String getNom() {
         return nom;
     }
