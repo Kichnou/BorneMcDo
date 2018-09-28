@@ -23,10 +23,10 @@ public class Choix implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private float tauxTva;
+    private Tva tauxTva;
     @Column(nullable = false)
     private float prix;
-    @Column(nullable = false)
+    @Column(nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date livraison;
     
@@ -53,7 +53,7 @@ public class Choix implements Serializable {
     public Choix() {
     }
 
-    public Choix(float tauxTva, float prix, Date livraison) {
+    public Choix(Tva tauxTva, float prix, Date livraison) {
         this.tauxTva = tauxTva;
         this.prix = prix;
         this.livraison = livraison;
@@ -69,11 +69,11 @@ public class Choix implements Serializable {
         this.id = id;
     }
 
-    public float getTauxTva() {
+    public Tva getTauxTva() {
         return tauxTva;
     }
 
-    public void setTauxTva(float tauxTva) {
+    public void setTauxTva(Tva tauxTva) {
         this.tauxTva = tauxTva;
     }
 
