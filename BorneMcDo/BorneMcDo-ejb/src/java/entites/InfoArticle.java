@@ -3,7 +3,6 @@ package entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,9 +28,13 @@ public class InfoArticle implements Serializable {
     
     @ManyToMany(mappedBy = "lesInfos")
     private Collection<Article> lesArticle;
+    
+    @ManyToMany(mappedBy = "lesInfos")
+    private Collection<Menu> lesMenus;
 
     public InfoArticle() {
         lesArticle = new ArrayList();
+        lesMenus = new ArrayList();
     }
 
     public InfoArticle(String image) {
@@ -94,6 +97,14 @@ public class InfoArticle implements Serializable {
 
     public void setLesArticle(Collection<Article> lesArticle) {
         this.lesArticle = lesArticle;
+    }
+
+    public Collection<Menu> getLesMenus() {
+        return lesMenus;
+    }
+
+    public void setLesMenus(Collection<Menu> lesMenus) {
+        this.lesMenus = lesMenus;
     }
     
     

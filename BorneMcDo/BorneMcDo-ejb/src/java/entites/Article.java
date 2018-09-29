@@ -32,22 +32,31 @@ public class Article implements Serializable {
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfoArticle> lesInfos;
+    
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Preference> lesPreferences;
+    
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<SupplementAutre> lesSuppAut;
+    
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient>lesIngredients;
+    
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementArticle>lesSupArt;
+    
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
-    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
-    private Collection<Categorie> lesCategorie;
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    private SousCategorie laSousCategorie;
+    
     @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Tva laTva;
+    
     @ManyToOne
     private Disponibilite laDispo;
+    
     @OneToMany(mappedBy = "unArticle")
     private Collection<Choix>lesChoix;
 
@@ -60,7 +69,6 @@ public class Article implements Serializable {
         lesSupArt = new ArrayList();
         lesIngredients = new ArrayList();
         lesPromo = new ArrayList();
-        lesCategorie = new ArrayList();
         lesChoix= new ArrayList();
     }
 
@@ -177,14 +185,14 @@ public class Article implements Serializable {
         this.lesPromo = lesPromo;
     }
 
-    public Collection<Categorie> getLesCategorie() {
-        return lesCategorie;
+    public SousCategorie getLaSousCategorie() {
+        return laSousCategorie;
     }
 
-    public void setLesCategorie(Collection<Categorie> lesCategorie) {
-        this.lesCategorie = lesCategorie;
+    public void setLaSousCategorie(SousCategorie laSousCategorie) {
+        this.laSousCategorie = laSousCategorie;
     }
-
+    
     public Tva getLaTva() {
         return laTva;
     }

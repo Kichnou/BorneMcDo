@@ -26,7 +26,7 @@ public class Menu implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, length = 50, unique = true)
+    @Column(nullable = false, length = 50)
     private String nom;
     @Column(length = 500)
     private String description;
@@ -49,11 +49,15 @@ public class Menu implements Serializable {
     
     @ManyToOne
     private Disponibilite uneDispo;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<InfoArticle> lesInfos;
 
     public Menu() {
         lesSousCategories = new ArrayList();
         lesChoix = new ArrayList();
         lesPromos = new ArrayList();
+        lesInfos = new ArrayList();
     }
 
     public Menu(String nom,String titre, String description, float prix, String image) {
@@ -154,6 +158,16 @@ public class Menu implements Serializable {
     public void setUneDispo(Disponibilite uneDispo) {
         this.uneDispo = uneDispo;
     }
+
+    public Collection<InfoArticle> getLesinfos() {
+        return lesInfos;
+    }
+
+    public void setLesinfos(Collection<InfoArticle> lesinfos) {
+        this.lesInfos = lesinfos;
+    }
+    
+    
     
     
 

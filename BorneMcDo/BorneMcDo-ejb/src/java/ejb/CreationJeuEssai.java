@@ -117,6 +117,22 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/grandSprite.png",
                 2.55f);
 
+        Article moyenJusOrange = new Article("MINUTE MAID® ORANGE",
+                "MINUTE MAID® ORANGE",
+                " A tout moment de la journée, Minute Maid vous apporte une délicieuse dose de vitalité avec son jus d'orange à base de concentré avec pulpe.\n"
+                + "\n"
+                + "Faites-vous plaisir et comblez votre envie de fruits grâce à Minute Maid Orange. Ce jus à base de concentré est 100% teneur en fruits, sans sucres ajoutés, sans colorant et sans conservateur (conformément à la réglementation, contient naturellement le sucre des fruits).\n"
+                + "\n"
+                + "Le saviez-vous ? Boire un verre de Minute Maid Orange vous apporte l'équivalent d'une des 5 portions de fruits et légumes recommandées par jour. Minute Maid Orange est un jus à base de concentré.\n"
+                + "\n"
+                + "Minute Maid est une marque déposée de The Coca-Cola Company.\n"
+                + "\n"
+                + "Valeurs nutritionnelles pour une boisson de 20cl\n"
+                + "\n"
+                + "Jus d'orange à base de jus d'orange concentré",
+                "./images/minute.png",
+                1.91f);
+
         Article expresso = new Article("L'EXPRESSO",
                 "Pour se réveiller, rien de tel qu'un EXPRESSO.",
                 "Une jolie mousse. Un goût intense. Profitez de sa richesse et de ses arômes dès les premières lueurs de la journée. Notre café Segafredo, à l'exception de notre café décaféiné, est 100% Arabica, fraîchement moulu et issu de fermes vérifiées Rainforest Alliance.",
@@ -241,6 +257,22 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.",
                 "./images/SundaeCaramel.png",
                 1.92f);
+        Article ptitePomme = new Article("LA P'TITE POMME",
+                "Une touche fruitée à croquer",
+                " Apportez une note fruitée à votre repas. Craquez pour les savoureux quartiers de pommes* croquants. \n"
+                + "\n"
+                + "    *Petits quartiers de pomme\n"
+                + "    Ingrédients : Pomme, antioxydants : ascorbate de calcium, acide citrique.\n"
+                + "    A conserver entre +1°C et +4°C\n"
+                + "\n"
+                + "Poids net : 80g\n"
+                + "\n"
+                + "    Florette Food Services SAS\n"
+                + "    Route de Sainte Marie\n"
+                + "    66440 Toreilles\n"
+                + "    France",
+                "./images/ptitePomme.png",
+                1.23f);
         Article cadeauFille = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
         Article cadeauGarcon = new Article("LE PETIT CADEAU", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
         Article livre = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
@@ -268,6 +300,8 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
 
         //SousCatégories
         SousCategorie burger = new SousCategorie("burger");
+        SousCategorie petitBurger = new SousCategorie("petit burger");
+        SousCategorie burgerPromo = new SousCategorie("burger en edition limitée");
         SousCategorie petitAccomp = new SousCategorie("petit accompagnement");
         SousCategorie moyenAccomp = new SousCategorie("moyen accompagnement");
         SousCategorie grandAccomp = new SousCategorie("grand accompagnement");
@@ -276,13 +310,15 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         SousCategorie moyenBoisson = new SousCategorie("moyenne boisson");
         SousCategorie grandeBoisson = new SousCategorie("grande boisson");
         SousCategorie boissonChaude = new SousCategorie("boisson chaude");
-        SousCategorie platAutre = new SousCategorie("autres plats");
-        SousCategorie grandsPlatAutre = new SousCategorie("autres plats");
-
+        SousCategorie boissonJus = new SousCategorie("jus de fruit");
+        SousCategorie petitPlatAutre = new SousCategorie("autre petit plat");
+        SousCategorie platAutre = new SousCategorie("autre plat");
+        SousCategorie grandsPlatAutre = new SousCategorie("autre grand plat");
         SousCategorie cadeau = new SousCategorie("cadeau");
         SousCategorie sauceCat = new SousCategorie("sauce");
         SousCategorie saladCat = new SousCategorie("salade");
         SousCategorie dessert = new SousCategorie("dessert");
+        SousCategorie ptitDessert = new SousCategorie("p'tit Dessert");
 
         //Categories
         Categorie nosMenus = new Categorie("nos menus", "./images/nos_menus.png");
@@ -345,6 +381,16 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         InfoArticle infoAllergMuffin = new InfoArticle("images/infoAllergMuffin.png");
         InfoArticle infoNutriSundae = new InfoArticle("images/infoNutriSundae.png");
         InfoArticle infoAllergSundae = new InfoArticle("images/infoAllergSundae.png");
+        InfoArticle infoNutriMinute = new InfoArticle("./images/infoNutriMinute.png");
+        InfoArticle infoPommes = new InfoArticle("Depuis 2014, les sachets de P'tite Pomme sont composés de pommes 100% françaises. Selon les saisons, nous avons sélectionné des vergers situés dans le Sud-Est, le Sud-Ouest ou le Val de Loire. ",
+                "NOS POMMES",
+                "LES FILIÈRES QUALITÉ");
+        InfoArticle infoNutriPomme = new InfoArticle("./images/infoNutriPomme.png");
+        InfoArticle infoSalade = new InfoArticle("- Nos salades sont cultivées essentiellement en pleine terre et conduites à maturité entre 25 et 135 jours en fonction de la variété.\n"
+                + "  - A partir de la récolte, tout s'accélère pour livrer des salades au plus vite aux restaurants . Il ne s’écoule en moyenne pas plus de 92h entre la récolte et la livraison en restaurant.\n"
+                + "  - Pour garantir leur qualité, les salades sont conservées entre +1°C et +4°C et aucun conservateur n'est utilisé, conformément à la réglementation en vigueur. ",
+                "NOS SALADES",
+                "LES FILIÈRES QUALITÉ");
 
         //SupplementAutre
         SupplementAutre napChoco = new SupplementAutre("nappage chocolat", 0.18f);
@@ -361,7 +407,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Tva tva20 = new Tva(20f);
 
         //menus
-        Menu bestofBurger = new Menu("LE MENU BEST OF",
+        Menu bestOfBurger = new Menu("LE MENU BEST OF",
                 "Le Menu best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 portion moyenne de frites, ou moyenne de Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -370,7 +416,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "*Le sandwich peut varier selon la gamme présente en restaurant.",
                 5.91f,
                 "./images/menuBestOf.png");
-        Menu bestofautre = new Menu("LE MENU BEST OF",
+        Menu bestOfAutre = new Menu("LE MENU BEST OF",
                 "Le Menu best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 portion moyenne de frites, ou moyenne de Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -379,7 +425,16 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "*Le sandwich peut varier selon la gamme présente en restaurant.",
                 6.36f,
                 "./images/menuBestOf.png");
-        Menu maxiBestofBurger = new Menu("LE MENU MAXI BEST OF",
+        Menu bestofGrandAutre = new Menu("LE MENU BEST OF",
+                "Le Menu best Of c'est...",
+                " - 1 sandwich au choix*\n"
+                + "- 1 portion moyenne de frites, ou moyenne de Deluxe Potatoes, ou 1 P'tite Salade\n"
+                + "- 1 bouteille d'Evian 33cl, ou 1 bouteille de Badoit 33cl, ou 1 Minute Maid orange 30cl, ou 1 soda 40cl.\n"
+                + "\n"
+                + "*Le sandwich peut varier selon la gamme présente en restaurant.",
+                6.82f,
+                "./images/menuBestOf.png");
+        Menu maxiBestOfBurger = new Menu("LE MENU MAXI BEST OF",
                 "Le Menu Maxi best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 grande portion de frites, ou de grande Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -388,7 +443,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "*Le sandwich peut varier selon la gamme présente en restaurant.",
                 6.36f,
                 "./images/menuMaxiBestOf.png");
-        Menu maxiBestofautre = new Menu("LE MENU MAXI BEST OF",
+        Menu maxiBestOfAutre = new Menu("LE MENU MAXI BEST OF",
                 "Le Menu Maxi best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 grande portion de frites, ou de grande Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -397,19 +452,61 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "*Le sandwich peut varier selon la gamme présente en restaurant.",
                 6.82f,
                 "./images/menuMaxiBestOf.png");
+        Menu maxiBestOfGrandAutre = new Menu("LE MENU MAXI BEST OF",
+                "Le Menu Maxi best Of c'est...",
+                " - 1 sandwich au choix*\n"
+                + "- 1 grande portion de frites, ou de grande Deluxe Potatoes, ou 1 P'tite Salade\n"
+                + "- 1 bouteille d'Evian 50cl, ou 1 bouteille de Badoit 50cl, ou 1 Minute Maid orange 47cl, ou 1 soda 50cl\n"
+                + "\n"
+                + "*Le sandwich peut varier selon la gamme présente en restaurant.",
+                7.27f,
+                "./images/menuMaxiBestOf.png");
+        Menu menuHappyMeal = new Menu("LE MENU HAPPY MEAL™",
+                "Le menu Happy Meal™, c'est...",
+                " - un plat au choix (McFish, Croque McDo, Hamburger, Cheeseburger, Chicken McNuggets)\n"
+                + "\n"
+                + "- un accompagnement au choix (Petite Frite, Moyenne Deluxe Potatoes, P'tites Tomates)\n"
+                + "\n"
+                + "- une boisson gazeuse 25cl, ou un jus de fruits Bio ou un Minute Maid Orange 20cl, ou un Lipton Ice Tea 25cl, Evian 33cl\n"
+                + "\n"
+                + "- un dessert au choix (Mon Bio à boire, Berlingo Fruits, un sachet de P'tite Pomme et un sachet de fruit du moment qui évolue tout au long de l'année) et aussi un super jouet ou un livre !",
+                3.64f,
+                "./images/menuHappyMeal.png");
+        Menu menuSalade = new Menu("LE MENU SALADE C'EST...",
+                "Choisissez entre nos deux salades gourmandes…",
+                " - une salade au choix*\n"
+                + "\n"
+                + "- 1 bouteille d'Evian 33cl, ou 1 bouteille de Badoit 33cl, ou 1 Minute Maid orange 30cl, ou 1 soda 40cl.\n"
+                + "\n"
+                + "*la salade peut varier selon la gamme présente en restaurant.",
+                6.64f,
+                "./images/menuSalade.png");
 
-        burger.getLesMenus().add(bestofBurger);
-        moyenBoisson.getLesMenus().add(bestofBurger);
-        moyenAccomp.getLesMenus().add(bestofBurger);
-        platAutre.getLesMenus().add(bestofautre);
-        moyenBoisson.getLesMenus().add(bestofautre);
-        moyenAccomp.getLesMenus().add(bestofautre);
-        burger.getLesMenus().add(maxiBestofBurger);
-        grandeBoisson.getLesMenus().add(maxiBestofBurger);
-        grandAccomp.getLesMenus().add(maxiBestofBurger);
-        platAutre.getLesMenus().add(maxiBestofautre);
-        grandeBoisson.getLesMenus().add(maxiBestofautre);
-        grandAccomp.getLesMenus().add(maxiBestofautre);
+        burger.getLesMenus().add(bestOfBurger);
+        moyenAccomp.getLesMenus().add(bestOfBurger);
+        moyenBoisson.getLesMenus().add(bestOfBurger);
+        platAutre.getLesMenus().add(bestOfAutre);
+        moyenAccomp.getLesMenus().add(bestOfAutre);
+        moyenBoisson.getLesMenus().add(bestOfAutre);
+        grandsPlatAutre.getLesMenus().add(bestofGrandAutre);
+        moyenAccomp.getLesMenus().add(bestofGrandAutre);
+        moyenBoisson.getLesMenus().add(bestofGrandAutre);
+        burger.getLesMenus().add(maxiBestOfBurger);
+        grandAccomp.getLesMenus().add(maxiBestOfBurger);
+        grandeBoisson.getLesMenus().add(maxiBestOfBurger);
+        platAutre.getLesMenus().add(maxiBestOfAutre);
+        grandAccomp.getLesMenus().add(maxiBestOfAutre);
+        grandeBoisson.getLesMenus().add(maxiBestOfAutre);
+        grandsPlatAutre.getLesMenus().add(maxiBestOfGrandAutre);
+        grandAccomp.getLesMenus().add(maxiBestOfGrandAutre);
+        grandeBoisson.getLesMenus().add(maxiBestOfGrandAutre);
+        petitBurger.getLesMenus().add(menuHappyMeal);
+        petitPlatAutre.getLesMenus().add(menuHappyMeal);
+        petitAccomp.getLesMenus().add(menuHappyMeal);
+        boissonJus.getLesMenus().add(menuHappyMeal);
+        ptitDessert.getLesMenus().add(menuHappyMeal);
+        boissonJus.getLesMenus().add(menuSalade);
+        saladCat.getLesMenus().add(menuSalade);
 
         cbo.getLesIngredients().add(painsp);
         cbo.getLesIngredients().add(pane);
@@ -442,70 +539,69 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         panCakes.getLesIngredients().add(Nutella);
         panCakes.getLesIngredients().add(Beurre);
 
-        nosBurgers.getLesSousCategories().add(burger);
-        nosBurgers.getLesSousCategories().add(platAutre);
-        petiteFaim.getLesSousCategories().add(petitAccomp);
-        petiteFaim.getLesSousCategories().add(moyenAccomp);
-        petiteFaim.getLesSousCategories().add(grandAccomp);
-        nosFritesSauces.getLesSousCategories().add(petitAccomp);
-        nosFritesSauces.getLesSousCategories().add(moyenAccomp);
-        nosFritesSauces.getLesSousCategories().add(grandAccomp);
-        nosFritesSauces.getLesSousCategories().add(sauceCat);
-        nosSalades.getLesSousCategories().add(saladCat);
-        nosDesserts.getLesSousCategories().add(breakfast);
-        nosDesserts.getLesSousCategories().add(dessert);
-        nosBoissons.getLesSousCategories().add(petitBoisson);
-        nosBoissons.getLesSousCategories().add(moyenBoisson);
-        nosBoissons.getLesSousCategories().add(grandeBoisson);
-        nosBoissons.getLesSousCategories().add(boissonChaude);
-        happyMeal.getLesSousCategories().add(cadeau);
+        burger.getLesCategories().add(nosBurgers);
+        petitBurger.getLesCategories().add(nosBurgers);
+        burgerPromo.getLesCategories().add(nosBurgers);
+        platAutre.getLesCategories().add(nosBurgers);
+        grandsPlatAutre.getLesCategories().add(nosBurgers);
+        petitAccomp.getLesCategories().add(petiteFaim);
+        moyenAccomp.getLesCategories().add(petiteFaim);
+        grandAccomp.getLesCategories().add(petiteFaim);
+        petitAccomp.getLesCategories().add(nosFritesSauces);
+        moyenAccomp.getLesCategories().add(nosFritesSauces);
+        grandAccomp.getLesCategories().add(nosFritesSauces);
+        sauceCat.getLesCategories().add(nosFritesSauces);
+        saladCat.getLesCategories().add(nosSalades);
+        breakfast.getLesCategories().add(nosDesserts);
+        dessert.getLesCategories().add(nosDesserts);
+        petitBoisson.getLesCategories().add(nosBoissons);
+        moyenBoisson.getLesCategories().add(nosBoissons);
+        grandeBoisson.getLesCategories().add(nosBoissons);
+        boissonChaude.getLesCategories().add(nosBoissons);
+        cadeau.getLesCategories().add(happyMeal);
+        boissonJus.getLesCategories().add(nosBoissons);
+        ptitDessert.getLesCategories().add(nosDesserts);
 
-        bigMac.getLesCategorie().add(nosBurgers);
-        cheeseBurger.getLesCategorie().add(nosBurgers);
-        cheeseBurger.getLesCategorie().add(petiteFaim);
-        cheeseBurger.getLesCategorie().add(happyMeal);
-        cbo.getLesCategorie().add(nosBurgers);
-        panCakes.getLesCategorie().add(nosDesserts);
-        petitCoca.getLesCategorie().add(nosBoissons);
-        moyenCoca.getLesCategorie().add(nosBoissons);
-        grandCoca.getLesCategorie().add(nosBoissons);
-        petitFanta.getLesCategorie().add(nosBoissons);
-        moyenFanta.getLesCategorie().add(nosBoissons);
-        grandFanta.getLesCategorie().add(nosBoissons);
-        petitSprite.getLesCategorie().add(nosBoissons);
-        moyenSprite.getLesCategorie().add(nosBoissons);
-        grandSprite.getLesCategorie().add(nosBoissons);
-        expresso.getLesCategorie().add(nosBoissons);
-        cappuccino.getLesCategorie().add(nosBoissons);
-        nuggets4.getLesCategorie().add(petiteFaim);
-        nuggets6.getLesCategorie().add(petiteFaim);
-        nuggets9.getLesCategorie().add(petiteFaim);
-        nuggets20.getLesCategorie().add(petiteFaim);
-        petiteFrite.getLesCategorie().add(petiteFaim);
-        moyenneFrite.getLesCategorie().add(petiteFaim);
-        grandeFrite.getLesCategorie().add(petiteFaim);
-        moyennePotatoes.getLesCategorie().add(petiteFaim);
-        grandePotatoes.getLesCategorie().add(petiteFaim);
-        petiteFrite.getLesCategorie().add(nosFritesSauces);
-        moyenneFrite.getLesCategorie().add(nosFritesSauces);
-        grandeFrite.getLesCategorie().add(nosFritesSauces);
-        moyennePotatoes.getLesCategorie().add(nosFritesSauces);
-        grandePotatoes.getLesCategorie().add(nosFritesSauces);
-        sauceFrite.getLesCategorie().add(nosFritesSauces);
-        ketchup.getLesCategorie().add(nosFritesSauces);
-        moutarde.getLesCategorie().add(nosFritesSauces);
-        sauceBbq.getLesCategorie().add(nosFritesSauces);
-        sauceCurry.getLesCategorie().add(nosFritesSauces);
-        salade.getLesCategorie().add(nosSalades);
-        muffin.getLesCategorie().add(nosDesserts);
-        muffin.getLesCategorie().add(petiteFaim);
-        mcFlurryKK.getLesCategorie().add(nosDesserts);
-        mcFlurryOreo.getLesCategorie().add(nosDesserts);
-        SundaeCaramel.getLesCategorie().add(nosDesserts);
-        SundaeChoco.getLesCategorie().add(nosDesserts);
-        cadeauFille.getLesCategorie().add(happyMeal);
-        cadeauGarcon.getLesCategorie().add(happyMeal);
-        livre.getLesCategorie().add(happyMeal);
+        bigMac.setLaSousCategorie(burger);
+        cheeseBurger.setLaSousCategorie(petitBurger);
+        cbo.setLaSousCategorie(burgerPromo);
+        panCakes.setLaSousCategorie(breakfast);
+        petitCoca.setLaSousCategorie(petitBoisson);
+        moyenCoca.setLaSousCategorie(moyenBoisson);
+        grandCoca.setLaSousCategorie(grandeBoisson);
+        petitFanta.setLaSousCategorie(petitBoisson);
+        moyenFanta.setLaSousCategorie(moyenBoisson);
+        grandFanta.setLaSousCategorie(grandeBoisson);
+        petitSprite.setLaSousCategorie(petitBoisson);
+        moyenSprite.setLaSousCategorie(moyenBoisson);
+        grandSprite.setLaSousCategorie(grandeBoisson);
+        moyenJusOrange.setLaSousCategorie(boissonJus);
+        expresso.setLaSousCategorie(boissonChaude);
+        cappuccino.setLaSousCategorie(boissonChaude);
+        nuggets4.setLaSousCategorie(petitPlatAutre);
+        nuggets6.setLaSousCategorie(platAutre);
+        nuggets9.setLaSousCategorie(grandsPlatAutre);
+        nuggets20.setLaSousCategorie(grandsPlatAutre);
+        petiteFrite.setLaSousCategorie(petitAccomp);
+        moyenneFrite.setLaSousCategorie(moyenAccomp);
+        grandeFrite.setLaSousCategorie(grandAccomp);
+        moyennePotatoes.setLaSousCategorie(moyenAccomp);
+        grandePotatoes.setLaSousCategorie(grandAccomp);
+        sauceFrite.setLaSousCategorie(sauceCat);
+        ketchup.setLaSousCategorie(sauceCat);
+        moutarde.setLaSousCategorie(sauceCat);
+        sauceBbq.setLaSousCategorie(sauceCat);
+        sauceCurry.setLaSousCategorie(sauceCat);
+        salade.setLaSousCategorie(saladCat);
+        muffin.setLaSousCategorie(dessert);
+        mcFlurryKK.setLaSousCategorie(dessert);
+        mcFlurryOreo.setLaSousCategorie(dessert);
+        SundaeCaramel.setLaSousCategorie(dessert);
+        SundaeChoco.setLaSousCategorie(dessert);
+        cadeauFille.setLaSousCategorie(cadeau);
+        cadeauGarcon.setLaSousCategorie(cadeau);
+        livre.setLaSousCategorie(cadeau);
+        ptitePomme.setLaSousCategorie(ptitDessert);
 
         cbo.getLesInfos().add(infoNutriCbo);
         cbo.getLesInfos().add(infoAllerCbo);
@@ -532,6 +628,8 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         petitFanta.getLesInfos().add(infoallergVide);
         moyenFanta.getLesInfos().add(infoallergVide);
         grandFanta.getLesInfos().add(infoallergVide);
+        moyenJusOrange.getLesInfos().add(infoNutriMinute);
+        moyenJusOrange.getLesInfos().add(infoallergVide);
         expresso.getLesInfos().add(infoNutriSprite);
         expresso.getLesInfos().add(infoallergVide);
         cappuccino.getLesInfos().add(infoNutriCappu);
@@ -586,6 +684,17 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         mcFlurryOreo.getLesInfos().add(infoFiliere);
         salade.getLesInfos().add(infoAllergSalad);
         salade.getLesInfos().add(infoNutriSalad);
+        ptitePomme.getLesInfos().add(infoPommes);
+        ptitePomme.getLesInfos().add(infoallergVide);
+        ptitePomme.getLesInfos().add(infoNutriPomme);
+        menuSalade.getLesinfos().add(infoSalade);
+        bestOfAutre.getLesinfos().add(infoSteak);
+        bestOfBurger.getLesinfos().add(infoSteak);
+        bestofGrandAutre.getLesinfos().add(infoSteak);
+        maxiBestOfAutre.getLesinfos().add(infoSteak);
+        maxiBestOfBurger.getLesinfos().add(infoSteak);
+        maxiBestOfGrandAutre.getLesinfos().add(infoSteak);
+        menuHappyMeal.getLesinfos().add(infoSteak);
 
         mcFlurryKK.getLesSuppAut().add(napChoco);
         mcFlurryKK.getLesSuppAut().add(napCaramel);
@@ -634,6 +743,8 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         cadeauFille.setLaTva(tva20);
         cadeauGarcon.setLaTva(tva20);
         livre.setLaTva(tva20);
+        ptitePomme.setLaTva(tva5);
+        moyenJusOrange.setLaTva(tva10);
 
         em.persist(cheeseBurger);
         em.persist(bigMac);

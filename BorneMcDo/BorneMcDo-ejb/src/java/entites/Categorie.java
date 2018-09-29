@@ -20,13 +20,11 @@ public class Categorie implements Serializable {
     private String nom;
     private String image;
     
-    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @ManyToMany(mappedBy = "lesCategories")
     private Collection<SousCategorie> lesSousCategories;
-    @ManyToMany(mappedBy = "lesCategorie")
-    private Collection<Article> lesArticles;
+    
 
     public Categorie() {
-        lesArticles = new ArrayList();
         lesSousCategories = new ArrayList();
     }
 
@@ -64,14 +62,6 @@ public class Categorie implements Serializable {
 
     public void setLesSousCategories(Collection<SousCategorie> lesSousCategories) {
         this.lesSousCategories = lesSousCategories;
-    }
-
-    public Collection<Article> getLesArticles() {
-        return lesArticles;
-    }
-
-    public void setLesArticles(Collection<Article> lesArticles) {
-        this.lesArticles = lesArticles;
     }
 
     
