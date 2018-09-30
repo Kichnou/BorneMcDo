@@ -1,12 +1,15 @@
 package ejb;
 
+import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import entites.Article;
 import entites.Categorie;
 import entites.InfoArticle;
 import entites.Ingredient;
 import entites.Menu;
+import entites.Preference;
 import entites.Promotion;
 import entites.SousCategorie;
+import entites.Status;
 import entites.SupplementAutre;
 import entites.Tva;
 import java.util.Date;
@@ -481,6 +484,17 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "*la salade peut varier selon la gamme présente en restaurant.",
                 6.64f,
                 "./images/menuSalade.png");
+        
+        //Preference
+        Preference emporter = new Preference("à emporter");
+        Preference surPlace = new Preference("sur place");
+        
+        //statut
+        Status enCuisine = new Status("commande en préparation en cuisine");
+        Status delivree = new Status("commande délivrée au client");
+        
+        //choix
+        
 
         burger.getLesMenus().add(bestOfBurger);
         moyenAccomp.getLesMenus().add(bestOfBurger);

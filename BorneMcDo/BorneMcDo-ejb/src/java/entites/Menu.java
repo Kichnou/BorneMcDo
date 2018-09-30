@@ -44,7 +44,7 @@ public class Menu implements Serializable {
     @ManyToMany(mappedBy = "lesMenus")
     private Collection<SousCategorie> lesSousCategories;
     
-    @ManyToOne
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Tva uneTva;
     
     @ManyToOne
