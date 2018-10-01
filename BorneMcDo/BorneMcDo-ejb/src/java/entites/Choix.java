@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -24,7 +25,7 @@ public class Choix implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private Tva tauxTva;
+    private float tauxTva;
     @Column(nullable = false)
     private float prix;
     @Column(nullable = true)
@@ -54,7 +55,7 @@ public class Choix implements Serializable {
     public Choix() {
     }
 
-    public Choix(Tva tauxTva, float prix, Date livraison) {
+    public Choix(float tauxTva, float prix, Date livraison) {
         this.tauxTva = tauxTva;
         this.prix = prix;
         this.livraison = livraison;
@@ -70,11 +71,11 @@ public class Choix implements Serializable {
         this.id = id;
     }
 
-    public Tva getTauxTva() {
+    public float getTauxTva() {
         return tauxTva;
     }
 
-    public void setTauxTva(Tva tauxTva) {
+    public void setTauxTva(float tauxTva) {
         this.tauxTva = tauxTva;
     }
 

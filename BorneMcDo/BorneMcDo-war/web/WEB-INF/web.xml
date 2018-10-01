@@ -15,6 +15,10 @@
             <param-name>ScCatalogue</param-name>
             <param-value>sousControllers.ScCatalogue</param-value>
         </init-param>
+        <init-param>
+            <param-name>ScTestAjoutArticle</param-name>
+            <param-value>sousControllers.ScTestAjoutArticle</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
