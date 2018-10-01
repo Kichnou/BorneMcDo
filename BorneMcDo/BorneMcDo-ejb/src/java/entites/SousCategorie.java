@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -18,8 +19,8 @@ public class SousCategorie implements Serializable {
     private String nom;
     private String image;
     
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Collection<Categorie> lesCategories;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Categorie laCategorie;
     
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Menu> lesMenus;
@@ -28,7 +29,6 @@ public class SousCategorie implements Serializable {
     private Collection<Article> lesArticles;
 
     public SousCategorie() {
-        lesCategories = new ArrayList();
         lesMenus = new ArrayList();
         lesArticles = new ArrayList();
     }
@@ -62,14 +62,13 @@ public class SousCategorie implements Serializable {
         this.image = image;
     }
 
-    public Collection<Categorie> getLesCategories() {
-        return lesCategories;
+    public Categorie getLaCategorie() {
+        return laCategorie;
     }
 
-    public void setLesCategories(Collection<Categorie> lesCategories) {
-        this.lesCategories = lesCategories;
+    public void setLaCategorie(Categorie laCategorie) {
+        this.laCategorie = laCategorie;
     }
-    
 
     public Collection<Menu> getLesMenus() {
         return lesMenus;

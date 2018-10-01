@@ -48,7 +48,7 @@ public class Article implements Serializable {
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private SousCategorie laSousCategorie;
     
     @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})

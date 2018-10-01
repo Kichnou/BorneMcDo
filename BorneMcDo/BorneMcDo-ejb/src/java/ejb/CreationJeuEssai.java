@@ -322,6 +322,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         SousCategorie saladCat = new SousCategorie("salade");
         SousCategorie dessert = new SousCategorie("dessert");
         SousCategorie ptitDessert = new SousCategorie("p'tit Dessert");
+        SousCategorie menu = new SousCategorie("menu");
 
         //Categories
         Categorie nosMenus = new Categorie("nos menus", "./images/nos_menus.png");
@@ -486,8 +487,11 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/menuSalade.png");
         
         //Preference
-        Preference emporter = new Preference("à emporter");
+        Preference emporter = new Preference("a emporter");
         Preference surPlace = new Preference("sur place");
+        Preference maintenant = new Preference("maintenant");
+        Preference plusTard = new Preference("plus tard");
+        Preference retardable = new Preference("retardable");
         
         //statut
         Status enCuisine = new Status("commande en préparation en cuisine");
@@ -553,29 +557,64 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         panCakes.getLesIngredients().add(Nutella);
         panCakes.getLesIngredients().add(Beurre);
 
-        burger.getLesCategories().add(nosBurgers);
-        petitBurger.getLesCategories().add(nosBurgers);
-        burgerPromo.getLesCategories().add(nosBurgers);
-        platAutre.getLesCategories().add(nosBurgers);
-        grandsPlatAutre.getLesCategories().add(nosBurgers);
-        petitAccomp.getLesCategories().add(petiteFaim);
-        moyenAccomp.getLesCategories().add(petiteFaim);
-        grandAccomp.getLesCategories().add(petiteFaim);
-        petitAccomp.getLesCategories().add(nosFritesSauces);
-        moyenAccomp.getLesCategories().add(nosFritesSauces);
-        grandAccomp.getLesCategories().add(nosFritesSauces);
-        sauceCat.getLesCategories().add(nosFritesSauces);
-        saladCat.getLesCategories().add(nosSalades);
-        breakfast.getLesCategories().add(nosDesserts);
-        dessert.getLesCategories().add(nosDesserts);
-        petitBoisson.getLesCategories().add(nosBoissons);
-        moyenBoisson.getLesCategories().add(nosBoissons);
-        grandeBoisson.getLesCategories().add(nosBoissons);
-        boissonChaude.getLesCategories().add(nosBoissons);
-        cadeau.getLesCategories().add(happyMeal);
-        boissonJus.getLesCategories().add(nosBoissons);
-        ptitDessert.getLesCategories().add(nosDesserts);
+        burger.setLaCategorie(nosBurgers);
+        petitBurger.setLaCategorie(nosBurgers);
+        burgerPromo.setLaCategorie(nosBurgers);
+        platAutre.setLaCategorie(nosBurgers);
+        grandsPlatAutre.setLaCategorie(nosBurgers);
+        petitPlatAutre.setLaCategorie(petiteFaim);
+        petitAccomp.setLaCategorie(petiteFaim);
+        moyenAccomp.setLaCategorie(petiteFaim);
+        grandAccomp.setLaCategorie(petiteFaim);
+        petitAccomp.setLaCategorie(nosFritesSauces);
+        moyenAccomp.setLaCategorie(nosFritesSauces);
+        grandAccomp.setLaCategorie(nosFritesSauces);
+        sauceCat.setLaCategorie(nosFritesSauces);
+        saladCat.setLaCategorie(nosSalades);
+        breakfast.setLaCategorie(nosDesserts);
+        dessert.setLaCategorie(nosDesserts);
+        petitBoisson.setLaCategorie(nosBoissons);
+        moyenBoisson.setLaCategorie(nosBoissons);
+        grandeBoisson.setLaCategorie(nosBoissons);
+        boissonChaude.setLaCategorie(nosBoissons);
+        cadeau.setLaCategorie(happyMeal);
+        boissonJus.setLaCategorie(nosBoissons);
+        ptitDessert.setLaCategorie(nosDesserts);
+        menu.setLaCategorie(nosMenus);
 
+        bestOfAutre.getLesSousCategories().add(menu);
+        bestOfAutre.getLesSousCategories().add(moyenAccomp);
+        bestOfAutre.getLesSousCategories().add(moyenBoisson);
+        bestOfAutre.getLesSousCategories().add(platAutre);
+        bestOfBurger.getLesSousCategories().add(menu);
+        bestOfBurger.getLesSousCategories().add(moyenAccomp);
+        bestOfBurger.getLesSousCategories().add(moyenBoisson);
+        bestOfBurger.getLesSousCategories().add(burger);
+        bestofGrandAutre.getLesSousCategories().add(menu);
+        bestofGrandAutre.getLesSousCategories().add(moyenAccomp);
+        bestofGrandAutre.getLesSousCategories().add(moyenBoisson);
+        bestofGrandAutre.getLesSousCategories().add(grandsPlatAutre);
+        maxiBestOfAutre.getLesSousCategories().add(menu);
+        maxiBestOfAutre.getLesSousCategories().add(grandAccomp);
+        maxiBestOfAutre.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfAutre.getLesSousCategories().add(platAutre);
+        maxiBestOfBurger.getLesSousCategories().add(menu);
+        maxiBestOfBurger.getLesSousCategories().add(grandAccomp);
+        maxiBestOfBurger.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfBurger.getLesSousCategories().add(burger);
+        maxiBestOfGrandAutre.getLesSousCategories().add(menu);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandAccomp);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandsPlatAutre);
+        menuHappyMeal.getLesSousCategories().add(menu);
+        menuHappyMeal.getLesSousCategories().add(petitBoisson);
+        menuHappyMeal.getLesSousCategories().add(petitBurger);
+        menuHappyMeal.getLesSousCategories().add(petitAccomp);
+        menuHappyMeal.getLesSousCategories().add(petitPlatAutre);
+        menuSalade.getLesSousCategories().add(menu);
+        menuSalade.getLesSousCategories().add(boissonJus);
+        menuSalade.getLesSousCategories().add(saladCat);
+        
         bigMac.setLaSousCategorie(burger);
         cheeseBurger.setLaSousCategorie(petitBurger);
         cbo.setLaSousCategorie(burgerPromo);
@@ -798,6 +837,9 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(cadeauFille);
         em.persist(cadeauGarcon);
         em.persist(livre);
+        em.persist(moyenJusOrange);
+        em.persist(ptitePomme);
+        em.persist(menu);
 
     }
 

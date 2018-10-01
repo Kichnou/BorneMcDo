@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="BorneMcDo-ejb/build/generated-sources/ap-source-output"/>
+	<classpathentry kind="src" path="BorneMcDo-ejb/src/java"/>
+	<classpathentry kind="src" path="BorneMcDo-war/src/java"/>
+	<classpathentry kind="lib" path="BorneMcDo-ejb/dist/BorneMcDo-ejb.jar"/>
+	<classpathentry kind="lib" path="BorneMcDo-war/build/lib/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="build/BorneMcDo-ejb.jar"/>
+	<classpathentry kind="lib" path="build/lib/sqljdbc42.jar"/>
+	<classpathentry kind="output" path="BorneMcDo-war/build/web/WEB-INF/classes"/>
+</classpath>
