@@ -3,12 +3,12 @@ package entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 
 @Entity
@@ -20,14 +20,12 @@ public class Categorie implements Serializable {
     private String nom;
     private String image;
     
-    @OneToMany(mappedBy = "laCategorie")
-    private Collection<Article> lesArticles;
     @ManyToMany(mappedBy = "lesCategories")
-    private Collection<Menu> lesMenus;
+    private Collection<SousCategorie> lesSousCategories;
+    
 
     public Categorie() {
-        lesArticles = new ArrayList();
-        lesMenus = new ArrayList();
+        lesSousCategories = new ArrayList();
     }
 
     public Categorie(String nom) {
@@ -58,21 +56,15 @@ public class Categorie implements Serializable {
         this.nom = id;
     }
 
-    public Collection<Article> getLesArticles() {
-        return lesArticles;
+    public Collection<SousCategorie> getLesSousCategories() {
+        return lesSousCategories;
     }
 
-    public void setLesArticles(Collection<Article> lesArticles) {
-        this.lesArticles = lesArticles;
+    public void setLesSousCategories(Collection<SousCategorie> lesSousCategories) {
+        this.lesSousCategories = lesSousCategories;
     }
 
-    public Collection<Menu> getLesMenus() {
-        return lesMenus;
-    }
-
-    public void setLesMenus(Collection<Menu> lesMenus) {
-        this.lesMenus = lesMenus;
-    }
+    
     
     
 

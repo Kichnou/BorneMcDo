@@ -1,7 +1,9 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,30 +26,44 @@ public class Menu implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, length = 50, unique = true)
+    @Column(nullable = false, length = 50)
     private String nom;
     @Column(length = 500)
     private String description;
     @Column(nullable = false)
     private float prix;
     private String image;
+    private String titre;
     
     @OneToMany(mappedBy = "unMenu")
     private Collection<Choix> lesChoix;
-    @ManyToMany(mappedBy = "lesMenux")
+    
+    @ManyToMany(mappedBy = "lesMenus")
     private Collection<Promotion> lesPromos;
-    @ManyToMany
-    private Collection<Categorie> lesCategories;
-    @ManyToOne
+    
+    @ManyToMany(mappedBy = "lesMenus")
+    private Collection<SousCategorie> lesSousCategories;
+    
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Tva uneTva;
+    
     @ManyToOne
     private Disponibilite uneDispo;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<InfoArticle> lesInfos;
 
     public Menu() {
+        lesSousCategories = new ArrayList();
+        lesChoix = new ArrayList();
+        lesPromos = new ArrayList();
+        lesInfos = new ArrayList();
     }
 
-    public Menu(String nom, String description, float prix, String image) {
+    public Menu(String nom,String titre, String description, float prix, String image) {
+        this();
         this.nom = nom;
+        this.titre = titre;
         this.description = description;
         this.prix = prix;
         this.image = image;
@@ -62,7 +78,7 @@ public class Menu implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
     public String getNom() {
         return nom;
     }
@@ -71,6 +87,14 @@ public class Menu implements Serializable {
         this.nom = nom;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -111,12 +135,12 @@ public class Menu implements Serializable {
         this.lesPromos = lesPromos;
     }
 
-    public Collection<Categorie> getLesCategories() {
-        return lesCategories;
+    public Collection<SousCategorie> getLesSousCategories() {
+        return lesSousCategories;
     }
 
-    public void setLesCategories(Collection<Categorie> lesCategories) {
-        this.lesCategories = lesCategories;
+    public void setLesSousCategories(Collection<SousCategorie> lesSousCategories) {
+        this.lesSousCategories = lesSousCategories;
     }
 
     public Tva getUneTva() {
@@ -134,6 +158,16 @@ public class Menu implements Serializable {
     public void setUneDispo(Disponibilite uneDispo) {
         this.uneDispo = uneDispo;
     }
+
+    public Collection<InfoArticle> getLesinfos() {
+        return lesInfos;
+    }
+
+    public void setLesinfos(Collection<InfoArticle> lesinfos) {
+        this.lesInfos = lesinfos;
+    }
+    
+    
     
     
 

@@ -32,22 +32,31 @@ public class Article implements Serializable {
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfoArticle> lesInfos;
+    
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<Preference> lesPreferences;
-    @ManyToMany(mappedBy = "lesArticles")
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<SupplementAutre> lesSuppAut;
+    
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient>lesIngredients;
+    
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementArticle>lesSupArt;
-    @ManyToMany(mappedBy = "lesArticles")
+    
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
+    
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
-    private Categorie laCategorie;
-    @ManyToOne
+    private SousCategorie laSousCategorie;
+    
+    @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Tva laTva;
+    
     @ManyToOne
     private Disponibilite laDispo;
+    
     @OneToMany(mappedBy = "unArticle")
     private Collection<Choix>lesChoix;
 
@@ -60,6 +69,7 @@ public class Article implements Serializable {
         lesSupArt = new ArrayList();
         lesIngredients = new ArrayList();
         lesPromo = new ArrayList();
+        lesChoix= new ArrayList();
     }
 
     public Article(String nom,String titre, String description, String image, float prix) {
@@ -76,8 +86,6 @@ public class Article implements Serializable {
         this.nom = nom;
         this.titre = titre;
     }
-
-    
            
     
     
@@ -145,8 +153,6 @@ public class Article implements Serializable {
         this.lesPreferences = lesPreferences;
     }
 
-
-
     public Collection<SupplementAutre> getLesSuppAut() {
         return lesSuppAut;
     }
@@ -179,14 +185,14 @@ public class Article implements Serializable {
         this.lesPromo = lesPromo;
     }
 
-    public Categorie getLaCategorie() {
-        return laCategorie;
+    public SousCategorie getLaSousCategorie() {
+        return laSousCategorie;
     }
 
-    public void setLaCategorie(Categorie laCategorie) {
-        this.laCategorie = laCategorie;
+    public void setLaSousCategorie(SousCategorie laSousCategorie) {
+        this.laSousCategorie = laSousCategorie;
     }
-
+    
     public Tva getLaTva() {
         return laTva;
     }
