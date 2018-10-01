@@ -3,6 +3,7 @@ package ejb;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import entites.Article;
 import entites.Categorie;
+import entites.Choix;
 import entites.InfoArticle;
 import entites.Ingredient;
 import entites.Menu;
@@ -12,6 +13,7 @@ import entites.SousCategorie;
 import entites.Status;
 import entites.SupplementAutre;
 import entites.Tva;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.ejb.Singleton;
@@ -498,7 +500,23 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Status delivree = new Status("commande délivrée au client");
         
         //choix
+        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
+        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
+        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
+        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
+        Choix c1Des = new Choix(c1, null, ptitePomme, null);
+        Choix c1Jeu = new Choix(c1, null, livre, null);
+        ArrayList<Choix> c1SsChoix = new ArrayList();
+        c1SsChoix.add(c1Plat);
+        c1SsChoix.add(c1Boi);
+        c1SsChoix.add(c1Des);
+        c1SsChoix.add(c1Jeu);
+        c1SsChoix.add(c1Acc);
+        c1.getLesPreferences().add(surPlace);
+        c1.setSousChoix(c1SsChoix);
         
+        
+        /////////////// associations ////////////////
 
         burger.getLesMenus().add(bestOfBurger);
         moyenAccomp.getLesMenus().add(bestOfBurger);
@@ -840,7 +858,13 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(moyenJusOrange);
         em.persist(ptitePomme);
         em.persist(menu);
-
+        em.persist(emporter);
+        em.persist(surPlace);
+        em.persist(maintenant);
+        em.persist(plusTard);
+        em.persist(retardable);
+        em.persist(enCuisine);
+        em.persist(delivree);
     }
 
 }

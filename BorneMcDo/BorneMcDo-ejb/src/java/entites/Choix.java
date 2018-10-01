@@ -59,6 +59,27 @@ public class Choix implements Serializable {
         this.prix = prix;
         this.livraison = livraison;
     }
+
+    public Choix(Choix leChoix, SupplementAutre unSuppAut, Article unArticle, SupplementArticle unSuppArt) {
+        this.leChoix = leChoix;
+        this.unSuppAut = unSuppAut;
+        this.unArticle = unArticle;
+        this.unSuppArt = unSuppArt;
+    }
+    
+    
+
+    public Choix(float tauxTva,float prix, Date livraison, SupplementAutre unSuppAut, Article unArticle, Menu unMenu) {
+        this.tauxTva = tauxTva;
+        this.prix = prix;
+        this.livraison = livraison;
+        this.unSuppAut = unSuppAut;
+        this.unArticle = unArticle;
+        this.unMenu = unMenu;
+    }
+
+    
+    
     
     
 
