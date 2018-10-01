@@ -4,6 +4,7 @@ import entites.Article;
 import entites.Choix;
 import entites.SupplementArticle;
 import entites.SupplementAutre;
+import entites.Tva;
 import java.util.ArrayList;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
@@ -29,7 +30,10 @@ public class GestionPanier implements GestionPanierLocal {
         
         Choix c = new Choix();
         
-        c.setTauxTva(a.getLaTva());
+        Tva laTva = new Tva();
+        laTva.setTaux(a.getLaTva().getTaux());
+        
+        c.setTauxTva(laTva);
         c.setPrix(a.getPrix());
         
         Article articleChoix = new Article();
@@ -40,7 +44,7 @@ public class GestionPanier implements GestionPanierLocal {
         articleChoix.setImage(a.getImage());
         articleChoix.setPrix(a.getPrix());
         articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaCategorie(a.getLaCategorie());
+        articleChoix.setLaSousCategorie(a.getLaSousCategorie());
         
         
         c.setUnArticle(articleChoix);
@@ -54,7 +58,10 @@ public class GestionPanier implements GestionPanierLocal {
         
         Choix c = new Choix();
         
-        c.setTauxTva(a.getLaTva());
+        Tva laTva = new Tva();
+        laTva.setTaux(a.getLaTva().getTaux());
+        
+        c.setTauxTva(laTva);
         c.setPrix(a.getPrix());
         c.setUnSuppArt(s);
         
@@ -66,7 +73,7 @@ public class GestionPanier implements GestionPanierLocal {
         articleChoix.setImage(a.getImage());
         articleChoix.setPrix(a.getPrix());
         articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaCategorie(a.getLaCategorie());
+        articleChoix.setLaSousCategorie(a.getLaSousCategorie());
         
         
         c.setUnArticle(articleChoix);
@@ -80,7 +87,10 @@ public class GestionPanier implements GestionPanierLocal {
         
         Choix c = new Choix();
         
-        c.setTauxTva(a.getLaTva());
+        Tva laTva = new Tva();
+        laTva.setTaux(a.getLaTva().getTaux());
+        
+        c.setTauxTva(laTva);
         c.setPrix(a.getPrix());
         c.setUnSuppAut(s);
         
@@ -92,7 +102,7 @@ public class GestionPanier implements GestionPanierLocal {
         articleChoix.setImage(a.getImage());
         articleChoix.setPrix(a.getPrix());
         articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaCategorie(a.getLaCategorie());       
+        articleChoix.setLaSousCategorie(a.getLaSousCategorie());      
         
         c.setUnArticle(articleChoix);
         
