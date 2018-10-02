@@ -1,34 +1,37 @@
 package sousControllers;
 
+import ejb.TestAjoutCatalogueLocal;
 import entites.Article;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ScTestAjoutArticle implements SousController {
-    //@PersistenceContext(unitName = "BorneMcDo-ejbPU")
-    //private EntityManager em;
-    
-    
+public class ScTestAjoutArticle implements SousController {    
+    TestAjoutCatalogueLocal testAjoutCatalogue = lookupTestAjoutCatalogueLocal();
+        
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String url = "/WEB-INF/TestAjoutArticle.jsp";
+        String url = "/WEB-INF/TestAjoutArticle.jsp";                
         
-        //TypedQuery tq = em.createQuery("select a from Article where a.nom = LE CHEESEBURGER", Article.class);
-        //List<Article> la = tq.getResultList();
+        Article a = testAjoutCatalogue.getArticle();
         
-        //Article a = null;
-        
-        /*for (Article i : la) {
-            a = i;
-        }
-        
-        request.setAttribute("article", a);*/
+        request.setAttribute("article", a);
         
         return url;
+    }
+
+    private TestAjoutCatalogueLocal lookupTestAjoutCatalogueLocal() {
+        try {
+            Context c = new InitialContext();
+            return (TestAjoutCatalogueLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/TestAjoutCatalogue!ejb.TestAjoutCatalogueLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
     }
     
 }
