@@ -500,18 +500,18 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Status delivree = new Status("commande délivrée au client");
         
         //choix
-        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
-        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
-        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
-        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
-        Choix c1Des = new Choix(c1, null, ptitePomme, null);
-        Choix c1Jeu = new Choix(c1, null, livre, null);
-        c1.getSousChoix().add(c1Plat);
-        c1.getSousChoix().add(c1Acc);
-        c1.getSousChoix().add(c1Boi);
-        c1.getSousChoix().add(c1Des);
-        c1.getSousChoix().add(c1Jeu);
-        c1.setUnePreference(surPlace);
+//        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
+//        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
+//        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
+//        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
+//        Choix c1Des = new Choix(c1, null, ptitePomme, null);
+//        Choix c1Jeu = new Choix(c1, null, livre, null);
+//        c1.getSousChoix().add(c1Plat);
+//        c1.getSousChoix().add(c1Acc);
+//        c1.getSousChoix().add(c1Boi);
+//        c1.getSousChoix().add(c1Des);
+//        c1.getSousChoix().add(c1Jeu);
+//        c1.setUnePreference(surPlace);
         
 //        c1SsChoix.add(c1Plat);
 //        c1SsChoix.add(c1Boi);
