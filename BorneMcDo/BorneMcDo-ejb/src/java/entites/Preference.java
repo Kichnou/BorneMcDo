@@ -1,12 +1,12 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
@@ -19,17 +19,22 @@ public class Preference implements Serializable {
     private Long id;
     private String libele;
     
-    @ManyToMany
+    @OneToMany(mappedBy = "unePreference")
     private Collection<Article> lesArticles;
-    @ManyToMany
+    @OneToMany (mappedBy = "unePreference")
     private Collection<Choix> lesChoix;
     @OneToMany(mappedBy = "unePreference")
     private Collection<Commande> lesCommandes;
 
     public Preference() {
+        lesArticles = new ArrayList();
+        lesChoix = new ArrayList();
+        lesCommandes = new ArrayList();
+        
     }
 
     public Preference(String libele) {
+        this();
         this.libele = libele;
     }
     

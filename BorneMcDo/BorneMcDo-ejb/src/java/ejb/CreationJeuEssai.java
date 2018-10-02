@@ -278,9 +278,9 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "    France",
                 "./images/ptitePomme.png",
                 1.23f);
-        Article cadeauFille = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
-        Article cadeauGarcon = new Article("LE PETIT CADEAU", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
-        Article livre = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
+        Article cadeauFille = new Article("LE PETIT CADEAU FILLE", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
+        Article cadeauGarcon = new Article("LE PETIT CADEAU GARCON", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
+        Article livre = new Article("LE PETIT CADEAU LIVRE", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
 
         //Ingredients
         Ingredient pain = new Ingredient("pain spécial");
@@ -506,14 +506,19 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
         Choix c1Des = new Choix(c1, null, ptitePomme, null);
         Choix c1Jeu = new Choix(c1, null, livre, null);
-        ArrayList<Choix> c1SsChoix = new ArrayList();
-        c1SsChoix.add(c1Plat);
-        c1SsChoix.add(c1Boi);
-        c1SsChoix.add(c1Des);
-        c1SsChoix.add(c1Jeu);
-        c1SsChoix.add(c1Acc);
-        c1.getLesPreferences().add(surPlace);
-        c1.setSousChoix(c1SsChoix);
+        c1.getSousChoix().add(c1Plat);
+        c1.getSousChoix().add(c1Acc);
+        c1.getSousChoix().add(c1Boi);
+        c1.getSousChoix().add(c1Des);
+        c1.getSousChoix().add(c1Jeu);
+        c1.setUnePreference(surPlace);
+        
+//        c1SsChoix.add(c1Plat);
+//        c1SsChoix.add(c1Boi);
+//        c1SsChoix.add(c1Des);
+//        c1SsChoix.add(c1Jeu);
+//        c1SsChoix.add(c1Acc);
+//        c1.setSousChoix(c1SsChoix);
         
         
         /////////////// associations ////////////////
@@ -596,6 +601,12 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         grandeBoisson.setLaCategorie(nosBoissons);
         boissonChaude.setLaCategorie(nosBoissons);
         cadeau.setLaCategorie(happyMeal);
+        petitBurger.setLaCategorie(happyMeal);
+        petitAccomp.setLaCategorie(happyMeal);
+        petitBoisson.setLaCategorie(happyMeal);
+        boissonJus.setLaCategorie(happyMeal);
+        ptitDessert.setLaCategorie(happyMeal);
+        petitPlatAutre.setLaCategorie(happyMeal);
         boissonJus.setLaCategorie(nosBoissons);
         ptitDessert.setLaCategorie(nosDesserts);
         menu.setLaCategorie(nosMenus);

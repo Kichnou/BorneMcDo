@@ -33,8 +33,8 @@ public class Article implements Serializable {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfoArticle> lesInfos;
     
-    @ManyToMany(mappedBy = "lesArticles")
-    private Collection<Preference> lesPreferences;
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Preference unePreference;
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<SupplementAutre> lesSuppAut;
@@ -64,7 +64,6 @@ public class Article implements Serializable {
     
     public Article() {
         lesInfos = new ArrayList();
-        lesPreferences = new ArrayList();
         lesSuppAut = new ArrayList();
         lesSupArt = new ArrayList();
         lesIngredients = new ArrayList();
@@ -145,14 +144,14 @@ public class Article implements Serializable {
         this.lesInfos = lesInfos;
     }
 
-    public Collection<Preference> getLesPreferences() {
-        return lesPreferences;
+    public Preference getUnePreference() {
+        return unePreference;
     }
 
-    public void setLesPreferences(Collection<Preference> lesPreferences) {
-        this.lesPreferences = lesPreferences;
+    public void setUnePreference(Preference unePreference) {
+        this.unePreference = unePreference;
     }
-
+    
     public Collection<SupplementAutre> getLesSuppAut() {
         return lesSuppAut;
     }
