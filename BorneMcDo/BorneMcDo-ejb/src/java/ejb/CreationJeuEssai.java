@@ -150,25 +150,25 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/cappuccino.png",
                 2.08f);
 
-        Article nuggets4 = new Article("LES CHICKEN McNUGGETS™",
+        Article nuggets4 = new Article("LES CHICKEN McNUGGETS™ boîte de 4",
                 "À déguster seul ou accompagné",
                 "Craquez pour ces nuggets croustillants, à savourer avec ou sans sauce, en famille ou entre amis, faîtes-vous plaisir !",
-                "./images/nuggets.png",
+                "./images/nuggets4.png",
                 2.58f);
-        Article nuggets6 = new Article("LES CHICKEN McNUGGETS™",
+        Article nuggets6 = new Article("LES CHICKEN McNUGGETS™ boîte de 6",
                 "À déguster seul ou accompagné",
                 "Craquez pour ces nuggets croustillants, à savourer avec ou sans sauce, en famille ou entre amis, faîtes-vous plaisir !",
-                "./images/nuggets.png",
+                "./images/nuggets6.png",
                 3.5f);
-        Article nuggets9 = new Article("LES CHICKEN McNUGGETS™",
+        Article nuggets9 = new Article("LES CHICKEN McNUGGETS™ boîte de 9",
                 "À déguster seul ou accompagné",
                 "Craquez pour ces nuggets croustillants, à savourer avec ou sans sauce, en famille ou entre amis, faîtes-vous plaisir !",
-                "./images/nuggets.png",
+                "./images/nuggets9.png",
                 4.42f);
-        Article nuggets20 = new Article("LES CHICKEN McNUGGETS™",
+        Article nuggets20 = new Article("LES CHICKEN McNUGGETS™ boîte de 20 à partager",
                 "À déguster seul ou accompagné",
                 "Craquez pour ces nuggets croustillants, à savourer avec ou sans sauce, en famille ou entre amis, faîtes-vous plaisir !",
-                "./images/nuggets.png",
+                "./images/nuggets20.png",
                 8.25f);
 
         Article petiteFrite = new Article("LES FRITES",
@@ -500,27 +500,31 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Status delivree = new Status("commande délivrée au client");
         
         //choix
-        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
-        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
-        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
-        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
-        Choix c1Des = new Choix(c1, null, ptitePomme, null);
-        Choix c1Jeu = new Choix(c1, null, livre, null);
-        c1.getSousChoix().add(c1Plat);
-        c1.getSousChoix().add(c1Acc);
-        c1.getSousChoix().add(c1Boi);
-        c1.getSousChoix().add(c1Des);
-        c1.getSousChoix().add(c1Jeu);
-        c1.setUnePreference(surPlace);
-        
-//        c1SsChoix.add(c1Plat);
-//        c1SsChoix.add(c1Boi);
-//        c1SsChoix.add(c1Des);
-//        c1SsChoix.add(c1Jeu);
-//        c1SsChoix.add(c1Acc);
-//        c1.setSousChoix(c1SsChoix);
-        
-        
+        Date d1 = new GregorianCalendar(2018, 9, 2, 16, 05).getTime();
+        Choix c1 = new Choix(0.1f, 3.64f, d1);
+        c1.setUnMenu(menuHappyMeal);
+        Choix sc1 = new Choix(cheeseBurger);
+        Choix sc2 = new Choix(petiteFrite);
+        Choix sc3 = new Choix(petitCoca);
+        Choix sc4 = new Choix(ptitePomme);
+        Choix sc5 = new Choix(livre);
+        sc1.setLeChoix(c1);
+        sc2.setLeChoix(c1);
+        sc3.setLeChoix(c1);
+        sc4.setLeChoix(c1);
+        sc5.setLeChoix(c1);
+        Date d2 = new GregorianCalendar(2018, 9, 2, 16, 10).getTime();
+        Choix c2 = new Choix(0.1f, 6.64f, d2);
+        c2.setUnMenu(menuSalade);
+        Choix sc11 = new Choix(salade);
+        Choix sc12 = new Choix(moyenJusOrange);
+        sc11.setLeChoix(c2);
+        sc12.setLeChoix(c2);
+        Date d3 = new GregorianCalendar(2018, 9, 2, 16, 38).getTime();
+        Choix c3 = new Choix(0.1f, 2.58f, d3, null, nuggets4);
+        Date d4 = new GregorianCalendar(2018, 9, 2, 16, 42).getTime();
+        Choix c4 = new Choix(0.1f, 1.92f, d4, napChoco, SundaeCaramel);
+                
         /////////////// associations ////////////////
 
         burger.getLesMenus().add(bestOfBurger);
@@ -529,7 +533,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         platAutre.getLesMenus().add(bestOfAutre);
         moyenAccomp.getLesMenus().add(bestOfAutre);
         moyenBoisson.getLesMenus().add(bestOfAutre);
-        grandsPlatAutre.getLesMenus().add(bestofGrandAutre);
         moyenAccomp.getLesMenus().add(bestofGrandAutre);
         moyenBoisson.getLesMenus().add(bestofGrandAutre);
         burger.getLesMenus().add(maxiBestOfBurger);
@@ -538,7 +541,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         platAutre.getLesMenus().add(maxiBestOfAutre);
         grandAccomp.getLesMenus().add(maxiBestOfAutre);
         grandeBoisson.getLesMenus().add(maxiBestOfAutre);
-        grandsPlatAutre.getLesMenus().add(maxiBestOfGrandAutre);
         grandAccomp.getLesMenus().add(maxiBestOfGrandAutre);
         grandeBoisson.getLesMenus().add(maxiBestOfGrandAutre);
         petitBurger.getLesMenus().add(menuHappyMeal);
@@ -622,7 +624,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         bestofGrandAutre.getLesSousCategories().add(menu);
         bestofGrandAutre.getLesSousCategories().add(moyenAccomp);
         bestofGrandAutre.getLesSousCategories().add(moyenBoisson);
-        bestofGrandAutre.getLesSousCategories().add(grandsPlatAutre);
         maxiBestOfAutre.getLesSousCategories().add(menu);
         maxiBestOfAutre.getLesSousCategories().add(grandAccomp);
         maxiBestOfAutre.getLesSousCategories().add(grandeBoisson);
@@ -634,7 +635,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         maxiBestOfGrandAutre.getLesSousCategories().add(menu);
         maxiBestOfGrandAutre.getLesSousCategories().add(grandAccomp);
         maxiBestOfGrandAutre.getLesSousCategories().add(grandeBoisson);
-        maxiBestOfGrandAutre.getLesSousCategories().add(grandsPlatAutre);
         menuHappyMeal.getLesSousCategories().add(menu);
         menuHappyMeal.getLesSousCategories().add(petitBoisson);
         menuHappyMeal.getLesSousCategories().add(petitBurger);
@@ -876,6 +876,17 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(retardable);
         em.persist(enCuisine);
         em.persist(delivree);
+        em.persist(c1);
+        em.persist(sc1);
+        em.persist(sc2);
+        em.persist(sc3);
+        em.persist(sc4);
+        em.persist(sc5);
+        em.persist(c2);
+        em.persist(sc11);
+        em.persist(sc12);
+        em.persist(c3);
+        em.persist(c4);
     }
 
 }

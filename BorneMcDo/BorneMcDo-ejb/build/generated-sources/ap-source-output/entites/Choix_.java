@@ -14,7 +14,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-02T09:56:54")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-02T16:41:52")
 @StaticMetamodel(Choix.class)
 public class Choix_ { 
 
@@ -22,8 +22,8 @@ public class Choix_ {
     public static volatile SingularAttribute<Choix, Commande> uneCommande;
     public static volatile SingularAttribute<Choix, Article> unArticle;
     public static volatile SingularAttribute<Choix, Float> prix;
+    public static volatile SingularAttribute<Choix, Preference> unePreference;
     public static volatile CollectionAttribute<Choix, Choix> sousChoix;
-    public static volatile CollectionAttribute<Choix, Preference> lesPreferences;
     public static volatile SingularAttribute<Choix, Float> tauxTva;
     public static volatile SingularAttribute<Choix, SupplementAutre> unSuppAut;
     public static volatile SingularAttribute<Choix, SupplementArticle> unSuppArt;

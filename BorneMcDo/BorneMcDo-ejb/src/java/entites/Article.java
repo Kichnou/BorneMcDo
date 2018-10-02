@@ -85,6 +85,10 @@ public class Article implements Serializable {
         this.prix = prix;
     }
 
+    public Article(String nom) {
+        this.nom = nom;
+    }
+    
     public Article(String nom, String titre) {
         this();
         this.nom = nom;
