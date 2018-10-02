@@ -3,6 +3,7 @@ package ejb;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import entites.Article;
 import entites.Categorie;
+import entites.Choix;
 import entites.InfoArticle;
 import entites.Ingredient;
 import entites.Menu;
@@ -12,6 +13,7 @@ import entites.SousCategorie;
 import entites.Status;
 import entites.SupplementAutre;
 import entites.Tva;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.ejb.Singleton;
@@ -276,9 +278,9 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "    France",
                 "./images/ptitePomme.png",
                 1.23f);
-        Article cadeauFille = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
-        Article cadeauGarcon = new Article("LE PETIT CADEAU", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
-        Article livre = new Article("LE PETIT CADEAU", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
+        Article cadeauFille = new Article("LE PETIT CADEAU FILLE", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
+        Article cadeauGarcon = new Article("LE PETIT CADEAU GARCON", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
+        Article livre = new Article("LE PETIT CADEAU LIVRE", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
 
         //Ingredients
         Ingredient pain = new Ingredient("pain spécial");
@@ -322,6 +324,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         SousCategorie saladCat = new SousCategorie("salade");
         SousCategorie dessert = new SousCategorie("dessert");
         SousCategorie ptitDessert = new SousCategorie("p'tit Dessert");
+        SousCategorie menu = new SousCategorie("menu");
 
         //Categories
         Categorie nosMenus = new Categorie("nos menus", "./images/nos_menus.png");
@@ -486,15 +489,39 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/menuSalade.png");
         
         //Preference
-        Preference emporter = new Preference("à emporter");
+        Preference emporter = new Preference("a emporter");
         Preference surPlace = new Preference("sur place");
+        Preference maintenant = new Preference("maintenant");
+        Preference plusTard = new Preference("plus tard");
+        Preference retardable = new Preference("retardable");
         
         //statut
         Status enCuisine = new Status("commande en préparation en cuisine");
         Status delivree = new Status("commande délivrée au client");
         
         //choix
+        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
+        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
+        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
+        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
+        Choix c1Des = new Choix(c1, null, ptitePomme, null);
+        Choix c1Jeu = new Choix(c1, null, livre, null);
+        c1.getSousChoix().add(c1Plat);
+        c1.getSousChoix().add(c1Acc);
+        c1.getSousChoix().add(c1Boi);
+        c1.getSousChoix().add(c1Des);
+        c1.getSousChoix().add(c1Jeu);
+        c1.setUnePreference(surPlace);
         
+//        c1SsChoix.add(c1Plat);
+//        c1SsChoix.add(c1Boi);
+//        c1SsChoix.add(c1Des);
+//        c1SsChoix.add(c1Jeu);
+//        c1SsChoix.add(c1Acc);
+//        c1.setSousChoix(c1SsChoix);
+        
+        
+        /////////////// associations ////////////////
 
         burger.getLesMenus().add(bestOfBurger);
         moyenAccomp.getLesMenus().add(bestOfBurger);
@@ -553,29 +580,70 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         panCakes.getLesIngredients().add(Nutella);
         panCakes.getLesIngredients().add(Beurre);
 
-        burger.getLesCategories().add(nosBurgers);
-        petitBurger.getLesCategories().add(nosBurgers);
-        burgerPromo.getLesCategories().add(nosBurgers);
-        platAutre.getLesCategories().add(nosBurgers);
-        grandsPlatAutre.getLesCategories().add(nosBurgers);
-        petitAccomp.getLesCategories().add(petiteFaim);
-        moyenAccomp.getLesCategories().add(petiteFaim);
-        grandAccomp.getLesCategories().add(petiteFaim);
-        petitAccomp.getLesCategories().add(nosFritesSauces);
-        moyenAccomp.getLesCategories().add(nosFritesSauces);
-        grandAccomp.getLesCategories().add(nosFritesSauces);
-        sauceCat.getLesCategories().add(nosFritesSauces);
-        saladCat.getLesCategories().add(nosSalades);
-        breakfast.getLesCategories().add(nosDesserts);
-        dessert.getLesCategories().add(nosDesserts);
-        petitBoisson.getLesCategories().add(nosBoissons);
-        moyenBoisson.getLesCategories().add(nosBoissons);
-        grandeBoisson.getLesCategories().add(nosBoissons);
-        boissonChaude.getLesCategories().add(nosBoissons);
-        cadeau.getLesCategories().add(happyMeal);
-        boissonJus.getLesCategories().add(nosBoissons);
-        ptitDessert.getLesCategories().add(nosDesserts);
+        burger.setLaCategorie(nosBurgers);
+        petitBurger.setLaCategorie(nosBurgers);
+        burgerPromo.setLaCategorie(nosBurgers);
+        platAutre.setLaCategorie(nosBurgers);
+        grandsPlatAutre.setLaCategorie(nosBurgers);
+        petitPlatAutre.setLaCategorie(petiteFaim);
+        petitAccomp.setLaCategorie(petiteFaim);
+        moyenAccomp.setLaCategorie(petiteFaim);
+        grandAccomp.setLaCategorie(petiteFaim);
+        petitAccomp.setLaCategorie(nosFritesSauces);
+        moyenAccomp.setLaCategorie(nosFritesSauces);
+        grandAccomp.setLaCategorie(nosFritesSauces);
+        sauceCat.setLaCategorie(nosFritesSauces);
+        saladCat.setLaCategorie(nosSalades);
+        breakfast.setLaCategorie(nosDesserts);
+        dessert.setLaCategorie(nosDesserts);
+        petitBoisson.setLaCategorie(nosBoissons);
+        moyenBoisson.setLaCategorie(nosBoissons);
+        grandeBoisson.setLaCategorie(nosBoissons);
+        boissonChaude.setLaCategorie(nosBoissons);
+        cadeau.setLaCategorie(happyMeal);
+        petitBurger.setLaCategorie(happyMeal);
+        petitAccomp.setLaCategorie(happyMeal);
+        petitBoisson.setLaCategorie(happyMeal);
+        boissonJus.setLaCategorie(happyMeal);
+        ptitDessert.setLaCategorie(happyMeal);
+        petitPlatAutre.setLaCategorie(happyMeal);
+        boissonJus.setLaCategorie(nosBoissons);
+        ptitDessert.setLaCategorie(nosDesserts);
+        menu.setLaCategorie(nosMenus);
 
+        bestOfAutre.getLesSousCategories().add(menu);
+        bestOfAutre.getLesSousCategories().add(moyenAccomp);
+        bestOfAutre.getLesSousCategories().add(moyenBoisson);
+        bestOfAutre.getLesSousCategories().add(platAutre);
+        bestOfBurger.getLesSousCategories().add(menu);
+        bestOfBurger.getLesSousCategories().add(moyenAccomp);
+        bestOfBurger.getLesSousCategories().add(moyenBoisson);
+        bestOfBurger.getLesSousCategories().add(burger);
+        bestofGrandAutre.getLesSousCategories().add(menu);
+        bestofGrandAutre.getLesSousCategories().add(moyenAccomp);
+        bestofGrandAutre.getLesSousCategories().add(moyenBoisson);
+        bestofGrandAutre.getLesSousCategories().add(grandsPlatAutre);
+        maxiBestOfAutre.getLesSousCategories().add(menu);
+        maxiBestOfAutre.getLesSousCategories().add(grandAccomp);
+        maxiBestOfAutre.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfAutre.getLesSousCategories().add(platAutre);
+        maxiBestOfBurger.getLesSousCategories().add(menu);
+        maxiBestOfBurger.getLesSousCategories().add(grandAccomp);
+        maxiBestOfBurger.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfBurger.getLesSousCategories().add(burger);
+        maxiBestOfGrandAutre.getLesSousCategories().add(menu);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandAccomp);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandeBoisson);
+        maxiBestOfGrandAutre.getLesSousCategories().add(grandsPlatAutre);
+        menuHappyMeal.getLesSousCategories().add(menu);
+        menuHappyMeal.getLesSousCategories().add(petitBoisson);
+        menuHappyMeal.getLesSousCategories().add(petitBurger);
+        menuHappyMeal.getLesSousCategories().add(petitAccomp);
+        menuHappyMeal.getLesSousCategories().add(petitPlatAutre);
+        menuSalade.getLesSousCategories().add(menu);
+        menuSalade.getLesSousCategories().add(boissonJus);
+        menuSalade.getLesSousCategories().add(saladCat);
+        
         bigMac.setLaSousCategorie(burger);
         cheeseBurger.setLaSousCategorie(petitBurger);
         cbo.setLaSousCategorie(burgerPromo);
@@ -798,7 +866,16 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(cadeauFille);
         em.persist(cadeauGarcon);
         em.persist(livre);
-
+        em.persist(moyenJusOrange);
+        em.persist(ptitePomme);
+        em.persist(menu);
+        em.persist(emporter);
+        em.persist(surPlace);
+        em.persist(maintenant);
+        em.persist(plusTard);
+        em.persist(retardable);
+        em.persist(enCuisine);
+        em.persist(delivree);
     }
 
 }

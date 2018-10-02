@@ -4,21 +4,31 @@
 }
 
 .btn-plein{
-    width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
     border: solid 3px;
     border-radius: 5px;
     border-color: #004812;
     background-color: #004812;
     font-family: 'museo';
-    font-size: 1.6em;
+    font-size: 0.8em;
     text-transform: uppercase;
     color : #ffffff;
+    text-decoration: none;
 }
 
 .btn-plein:hover{
     font-family: 'museo';
     text-transform: uppercase;
     color : #cccccc;
+    text-decoration: none;
+}
+
+.btn-plein a{
+    text-decoration: none;
 }
 
 .btn-evide{
@@ -93,6 +103,56 @@
     align-items: center;
     width: auto;
     height: 70px;
+}
+
+.cat-centre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-centre a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'museo';
+    color: #004812;
+}
+
+.cat-centre p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cat-centre:hover{
+    background-color: #cccccc;
+}
+
+.cat-centre img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100px;
+}
+
+.cat-article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-article img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 120px;
 }
 
 h1{

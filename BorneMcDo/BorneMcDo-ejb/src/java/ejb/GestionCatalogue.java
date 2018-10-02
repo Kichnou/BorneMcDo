@@ -1,5 +1,6 @@
 package ejb;
 
+import entites.Article;
 import entites.Categorie;
 import entites.Menu;
 import java.util.List;
@@ -30,5 +31,13 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         List<Categorie> c = qr.getResultList();
         return c;
     };
+    
+    @Override
+    public List<Article> SelectArticleByCategorie(String refCategorie){
+        TypedQuery<Article> qr = em.createNamedQuery("entites.Article.selectArticleByCategorie", Article.class);
+        qr.setParameter("paramCategorie", refCategorie);
+        List<Article> la = qr.getResultList();
+        return la;
+    }
 
 }

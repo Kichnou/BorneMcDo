@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.CascadeType;
@@ -32,8 +33,8 @@ public class Choix implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date livraison;
     
-    @ManyToMany(mappedBy = "lesChoix")
-    private Collection<Preference> lesPreferences;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Preference unePreference;
     @OneToMany(mappedBy = "leChoix")
     private Collection<Choix> sousChoix;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -43,7 +44,7 @@ public class Choix implements Serializable {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Article unArticle;
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Collection<Ingredient> lesIngredients; 
+    private Collection<Ingredient> lesIngredients;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private SupplementArticle unSuppArt;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -53,12 +54,33 @@ public class Choix implements Serializable {
     
 
     public Choix() {
+        lesIngredients = new ArrayList();
+        sousChoix = new ArrayList();
     }
 
     public Choix(float tauxTva, float prix, Date livraison) {
+        this();
         this.tauxTva = tauxTva;
         this.prix = prix;
         this.livraison = livraison;
+    }
+
+    public Choix(Choix leChoix, SupplementAutre unSuppAut, Article unArticle, SupplementArticle unSuppArt) {
+        this();
+        this.leChoix = leChoix;
+        this.unSuppAut = unSuppAut;
+        this.unArticle = unArticle;
+        this.unSuppArt = unSuppArt;
+    }
+    
+    public Choix(float tauxTva,float prix, Date livraison, SupplementAutre unSuppAut, Article unArticle, Menu unMenu) {
+        this();
+        this.tauxTva = tauxTva;
+        this.prix = prix;
+        this.livraison = livraison;
+        this.unSuppAut = unSuppAut;
+        this.unArticle = unArticle;
+        this.unMenu = unMenu;
     }
     
     
@@ -95,16 +117,14 @@ public class Choix implements Serializable {
         this.livraison = livraison;
     }
 
-    public Collection<Preference> getLesPreferences() {
-        return lesPreferences;
+    public Preference getUnePreference() {
+        return unePreference;
     }
 
-    public void setLesPreferences(Collection<Preference> lesPreferences) {
-        this.lesPreferences = lesPreferences;
+    public void setUnePreference(Preference unePreference) {
+        this.unePreference = unePreference;
     }
-
-
-
+    
     public Collection<Choix> getSousChoix() {
         return sousChoix;
     }

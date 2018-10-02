@@ -3,12 +3,11 @@ package entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -20,7 +19,7 @@ public class Categorie implements Serializable {
     private String nom;
     private String image;
     
-    @ManyToMany(mappedBy = "lesCategories")
+    @OneToMany(mappedBy = "laCategorie")
     private Collection<SousCategorie> lesSousCategories;
     
 
