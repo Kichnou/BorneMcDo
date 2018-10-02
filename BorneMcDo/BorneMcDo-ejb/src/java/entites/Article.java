@@ -11,10 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.Article.selectArticleByCategorie", query="select a from Article a where a.laSousCategorie.laCategorie.nom= :paramCategorie")
+})
 public class Article implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -33,8 +38,8 @@ public class Article implements Serializable {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<InfoArticle> lesInfos;
     
-    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Preference unePreference;
+    @ManyToMany(mappedBy = "lesArticles")
+    private Collection<Preference> lesPreferences;
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<SupplementAutre> lesSuppAut;
@@ -48,7 +53,7 @@ public class Article implements Serializable {
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private SousCategorie laSousCategorie;
     
     @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
@@ -64,6 +69,7 @@ public class Article implements Serializable {
     
     public Article() {
         lesInfos = new ArrayList();
+        lesPreferences = new ArrayList();
         lesSuppAut = new ArrayList();
         lesSupArt = new ArrayList();
         lesIngredients = new ArrayList();
@@ -144,14 +150,14 @@ public class Article implements Serializable {
         this.lesInfos = lesInfos;
     }
 
-    public Preference getUnePreference() {
-        return unePreference;
+    public Collection<Preference> getLesPreferences() {
+        return lesPreferences;
     }
 
-    public void setUnePreference(Preference unePreference) {
-        this.unePreference = unePreference;
+    public void setLesPreferences(Collection<Preference> lesPreferences) {
+        this.lesPreferences = lesPreferences;
     }
-    
+
     public Collection<SupplementAutre> getLesSuppAut() {
         return lesSuppAut;
     }

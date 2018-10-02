@@ -14,11 +14,14 @@
         ${message}
         <div class="container-fluid">
             <div class="row">
+                <div class="col-12" style="height: 20px;"></div>
+            </div>
+            <div class="row">
                 <div class="col-2 text-center">
                     <c:forEach var="s" items="${categorie}">
                         <div class="cat">
                             
-                        <a href="#">
+                        <a href="Controller?section=ScCatalogue&ref=${s.nom}">
                             <img src="${s.image}"/>
                             <p>${s.nom}</p>
                         </a>
@@ -27,7 +30,24 @@
                 </div>
 
                 <div class="col-7">
-                    <p>section centrale</p>
+                    <div class="row d-flex wrap">
+
+                        <c:forEach var="s" items="${central}">
+                            <div class="col-4">
+                                <div class="cat-centre">
+
+                                    <a href="Controller?section=ScCatalogue&ref=${s.nom}">
+                                        <img src="${s.image}"/>
+                                        <p>${s.nom}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </c:forEach>
+                        <c:forEach var="t" items="${test}">
+                            <img src="${t.image}"/>
+                            <p>${t.nom}</p>
+                        </c:forEach>    
+                    </div>
                 </div>
                 <div class="col-3">
                     <p>panier</p>
