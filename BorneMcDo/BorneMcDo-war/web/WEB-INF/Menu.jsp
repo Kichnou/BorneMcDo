@@ -14,5 +14,9 @@
             <c:url value="Controller?section=ScCatalogue" var="catalogue" />
             <a class="nav-link" href="${catalogue}">catalogue</a>
         </li>
+        <li class="nav-item">
+            <c:url value="Controller?section=ScCommande" var="commande" />
+            <a class="nav-link" href="${commande}">commande</a>
+        </li>
     </ul>
 </nav>

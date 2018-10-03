@@ -44,8 +44,13 @@
                             </div>
                         </c:forEach>
                         <c:forEach var="t" items="${test}">
-                            <img src="${t.image}"/>
-                            <p>${t.nom}</p>
+                            <div class="col-4">
+                                <div class="cat-article">
+                                    <img src="${t.image}"/>
+                                    <p>${t.nom}</p>
+                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${t.id}">ajouter</a>
+                                </div>
+                            </div>
                         </c:forEach>    
                     </div>
                 </div>

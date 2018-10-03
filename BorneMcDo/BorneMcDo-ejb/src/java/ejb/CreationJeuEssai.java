@@ -1,6 +1,5 @@
 package ejb;
 
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import entites.Article;
 import entites.Categorie;
 import entites.Choix;
@@ -13,7 +12,6 @@ import entites.SousCategorie;
 import entites.Status;
 import entites.SupplementAutre;
 import entites.Tva;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.ejb.Singleton;
@@ -306,7 +304,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         //SousCatégories
         SousCategorie burger = new SousCategorie("burger");
         SousCategorie petitBurger = new SousCategorie("petit burger");
-        SousCategorie burgerPromo = new SousCategorie("burger en edition limitée");
+        SousCategorie promo = new SousCategorie("burger en edition limitée");
         SousCategorie petitAccomp = new SousCategorie("petit accompagnement");
         SousCategorie moyenAccomp = new SousCategorie("moyen accompagnement");
         SousCategorie grandAccomp = new SousCategorie("grand accompagnement");
@@ -584,7 +582,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
 
         burger.setLaCategorie(nosBurgers);
         petitBurger.setLaCategorie(nosBurgers);
-        burgerPromo.setLaCategorie(nosBurgers);
+        promo.setLaCategorie(nosBurgers);
         platAutre.setLaCategorie(nosBurgers);
         grandsPlatAutre.setLaCategorie(nosBurgers);
         petitPlatAutre.setLaCategorie(petiteFaim);
@@ -646,7 +644,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         
         bigMac.setLaSousCategorie(burger);
         cheeseBurger.setLaSousCategorie(petitBurger);
-        cbo.setLaSousCategorie(burgerPromo);
+        cbo.setLaSousCategorie(promo);
         panCakes.setLaSousCategorie(breakfast);
         petitCoca.setLaSousCategorie(petitBoisson);
         moyenCoca.setLaSousCategorie(moyenBoisson);

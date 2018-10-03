@@ -15,6 +15,10 @@
             <param-name>ScCatalogue</param-name>
             <param-value>sousControllers.ScCatalogue</param-value>
         </init-param>
+        <init-param>
+            <param-name>ScCommande</param-name>
+            <param-value>sousControllers.ScCommande</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -38,5 +42,11 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>ejb.GestionCatalogueLocal</local>
         <ejb-link>BorneMcDo-ejb.jar#GestionCatalogue</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCommande</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>ejb.GestionCommandeLocal</local>
+        <ejb-link>BorneMcDo-ejb.jar#GestionCommande</ejb-link>
     </ejb-local-ref>
 </web-app>
