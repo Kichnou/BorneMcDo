@@ -2,98 +2,48 @@ package ejb;
 
 import entites.Article;
 import entites.Choix;
-import entites.SupplementArticle;
-import entites.SupplementAutre;
-import entites.Tva;
 import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateful
 public class GestionPanier implements GestionPanierLocal {
+
     @PersistenceContext(unitName = "BorneMcDo-ejbPU")
     private EntityManager em;
 
     private ArrayList<Choix> monPanier;
-    
+
     public GestionPanier() {
         monPanier = new ArrayList<>();
     }
 
+    @Override
     public ArrayList<Choix> getMonPanier() {
         return monPanier;
     }
-    
-    public void add(Long article) {
-        Article a = em.find(Article.class, article);
-        
+
+    @Override
+    public void add(String article) {
+        Long id = Long.valueOf(article);
+        Query tq = em.createQuery("select a from Article a where a.id = :paramId");
+        tq.setParameter("paramId", id);
+        List<Article> la = tq.getResultList();
+        Article a = null;
+        for (Article art : la) {
+            a = art;
+        }
+
         Choix c = new Choix();
-        
-        c.setTauxTva(a.getLaTva().getTaux());
+
+        System.out.println("TVA ====> " + a.getLaTva());
+        //c.setTauxTva(a.getLaTva().getTaux());
         c.setPrix(a.getPrix());
-        
-        Article articleChoix = new Article();
-        
-        articleChoix.setNom(a.getNom());
-        articleChoix.setTitre(a.getTitre());
-        articleChoix.setDescription(a.getDescription());        
-        articleChoix.setPrix(a.getPrix());
-        articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaSousCategorie(a.getLaSousCategorie());
-        
-        
-        c.setUnArticle(articleChoix);
-        
-        this.getMonPanier().add(c);
-    }
-    
-    public void add(Long article, Long supplementArticle) {
-        Article a = em.find(Article.class, article);
-        SupplementArticle s = em.find(SupplementArticle.class, supplementArticle);
-        
-        Choix c = new Choix();
-        
-        c.setTauxTva(a.getLaTva().getTaux());
-        c.setPrix(a.getPrix());
-        c.setUnSuppArt(s);
-        
-        Article articleChoix = new Article();
-        
-        articleChoix.setNom(a.getNom());
-        articleChoix.setTitre(a.getTitre());
-        articleChoix.setDescription(a.getDescription());       
-        articleChoix.setPrix(a.getPrix());
-        articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaSousCategorie(a.getLaSousCategorie());
-        
-        
-        c.setUnArticle(articleChoix);
-        
-        this.getMonPanier().add(c);
-    }
-    
-    public void addSuppAutre(Long article, Long supplementArticle) {
-        Article a = em.find(Article.class, article);
-        SupplementAutre s = em.find(SupplementAutre.class, supplementArticle);
-        
-        Choix c = new Choix();
-        
-        c.setTauxTva(a.getLaTva().getTaux());
-        c.setPrix(a.getPrix());
-        c.setUnSuppAut(s);
-        
-        Article articleChoix = new Article();
-        
-        articleChoix.setNom(a.getNom());
-        articleChoix.setTitre(a.getTitre());
-        articleChoix.setDescription(a.getDescription());        
-        articleChoix.setPrix(a.getPrix());
-        articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaSousCategorie(a.getLaSousCategorie());      
-        
-        c.setUnArticle(articleChoix);
-        
+        c.setUnArticle(a);
+
         this.getMonPanier().add(c);
     }
 }
