@@ -8,10 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.SousCategorie.getLesSousCat", query = "SELECT s FROM SousCategorie s WHERE s.laCategorie.nom= :paramSsCat")
+})
 public class SousCategorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,7 +30,7 @@ public class SousCategorie implements Serializable {
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Menu> lesMenus;
     
-    @OneToMany (mappedBy = "laSousCategorie")
+    @ManyToMany (mappedBy = "lesSousCategories")
     private Collection<Article> lesArticles;
 
     public SousCategorie() {

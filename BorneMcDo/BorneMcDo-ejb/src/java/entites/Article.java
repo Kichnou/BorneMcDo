@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "entites.Article.selectArticleByCategorie", query="select a from Article a where a.laSousCategorie.laCategorie.nom= :paramCategorie")
+    @NamedQuery(name = "entites.Article.selectArticleByCategorie", query="select a from Article a WHERE a.lesSousCategories= :paramSsCat")
 })
 public class Article implements Serializable {
 
@@ -53,8 +53,8 @@ public class Article implements Serializable {
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Promotion>lesPromo;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private SousCategorie laSousCategorie;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<SousCategorie> lesSousCategories;
     
     @ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Tva laTva;
@@ -68,6 +68,7 @@ public class Article implements Serializable {
     
     
     public Article() {
+        lesSousCategories = new ArrayList();
         lesInfos = new ArrayList();
         lesSuppAut = new ArrayList();
         lesSupArt = new ArrayList();
@@ -193,12 +194,12 @@ public class Article implements Serializable {
         this.lesPromo = lesPromo;
     }
 
-    public SousCategorie getLaSousCategorie() {
-        return laSousCategorie;
+    public Collection<SousCategorie> getLesSousCategories() {
+        return lesSousCategories;
     }
 
-    public void setLaSousCategorie(SousCategorie laSousCategorie) {
-        this.laSousCategorie = laSousCategorie;
+    public void setLesSousCategories(Collection<SousCategorie> lesSousCategories) {
+        this.lesSousCategories = lesSousCategories;
     }
     
     public Tva getLaTva() {

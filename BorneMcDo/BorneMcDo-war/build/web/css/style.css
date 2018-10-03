@@ -184,18 +184,3 @@ p{
     font-family: 'museo';
     color : #004812; 
 }
-
-.center-box{
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    z-index:99;
-    margin:auto;
-    height:200px;
-    width:200px;
-    border:1px solid #000;
-    text-align:center;
-    line-height:200px;
-}

@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,9 +23,12 @@ public class Information implements Serializable {
     private Collection<Commande> lesCommandes;
 
     public Information() {
+        lesCommandes = new ArrayList();
     }
 
-    public Information(String description) {
+    public Information(String id,String description) {
+        this();
+        this.id = id;
         this.description = description;
     }
     
