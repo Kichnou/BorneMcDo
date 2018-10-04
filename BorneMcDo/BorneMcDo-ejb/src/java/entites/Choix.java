@@ -29,7 +29,10 @@ public class Choix implements Serializable {
     private float tauxTva;
     @Column(nullable = false)
     private float prix;
+<<<<<<< HEAD
     @Column(nullable = true)
+=======
+>>>>>>> aa411f6bd6a75e8c3f3f6a65c01e8caf5ba60789
     @Temporal(TemporalType.TIMESTAMP)
     private Date livraison;
     
@@ -58,6 +61,17 @@ public class Choix implements Serializable {
         sousChoix = new ArrayList();
     }
 
+    public Choix(float tauxTva, float prix) {
+        this();
+        this.tauxTva = tauxTva;
+        this.prix = prix;
+    }
+
+    public Choix(Article unArticle) {
+        this();
+        this.unArticle = unArticle;
+    }
+    
     public Choix(float tauxTva, float prix, Date livraison) {
         this();
         this.tauxTva = tauxTva;
@@ -73,7 +87,7 @@ public class Choix implements Serializable {
         this.unSuppArt = unSuppArt;
     }
     
-    public Choix(float tauxTva,float prix, Date livraison, SupplementAutre unSuppAut, Article unArticle, Menu unMenu) {
+    public Choix(float tauxTva,float prix, Date livraison, SupplementAutre unSuppAut, Article unArticle) {
         this();
         this.tauxTva = tauxTva;
         this.prix = prix;

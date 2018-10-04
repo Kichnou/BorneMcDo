@@ -1,11 +1,10 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -15,8 +14,8 @@ public class Information implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(length = 25)
+    private String id;
     @Column(length = 500)
     private String description;
     
@@ -24,19 +23,22 @@ public class Information implements Serializable {
     private Collection<Commande> lesCommandes;
 
     public Information() {
+        lesCommandes = new ArrayList();
     }
 
-    public Information(String description) {
+    public Information(String id,String description) {
+        this();
+        this.id = id;
         this.description = description;
     }
     
     
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

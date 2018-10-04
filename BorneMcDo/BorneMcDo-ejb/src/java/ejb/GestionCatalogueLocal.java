@@ -4,6 +4,7 @@ package ejb;
 import entites.Article;
 import entites.Categorie;
 import entites.Menu;
+import entites.SousCategorie;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -15,6 +16,8 @@ public interface GestionCatalogueLocal {
 
     public List<Categorie> SelectAllCategorie();
 
-    public List<Article> SelectArticleByCategorie(String refCategorie);
+    public List<SousCategorie> SelectSousCatByCat(Categorie laCat);
+
+    public List<Article> selectArticleByCat(List<SousCategorie> ls);
     
 }
