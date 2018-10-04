@@ -184,3 +184,38 @@ p{
     font-family: 'museo';
     color : #004812; 
 }
+
+.btn-cadre-conf{
+    margin-top: 100px;
+    width: 1000px;
+    height: 150px;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812;
+    font-family: 'museo';
+    font-size: 1em;
+    text-transform: uppercase;
+    color : #004812;
+    display: flex;
+    /*align-items: center;
+    justify-content: center;*/
+}
+
+.btn-cadre-conf:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    
+}
+.btn-confirm{
+    background-color: #004812;
+    color: white;
+    float: right;
+}
+.btn-confirm:hover{
+    background-color: #00280a;
+    color: white;
+}
+.sandwich{
+    background-color: #004812;
+    color: white;
+}

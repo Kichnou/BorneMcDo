@@ -678,6 +678,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         cheeseBurger.getLesSousCategories().add(petitBurger);
         cheeseBurger.getLesSousCategories().add(burger);
         cbo.getLesSousCategories().add(promo);
+        cbo.getLesSousCategories().add(burger);
         panCakes.getLesSousCategories().add(breakfast);
 
         petitCoca.getLesSousCategories().add(petitBoisson);

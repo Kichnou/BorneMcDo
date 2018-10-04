@@ -15,11 +15,17 @@ public class ScCommande implements SousController {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String url = "/WEB-INF/CommandeOk.jsp";
+        String url = "/WEB-INF/ConfCommande.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
         String ref = request.getParameter("ref");
         if (ref == null) {
+            url = "/WEB-INF/ConfCommande.jsp";
+        }
+        if ("conf".equals(ref)) {
             url = "/WEB-INF/CommandeOk.jsp";
+        }
+        if ("Cancel".equals(ref)) {
+            url = "/WEB-INF/Catalogue.jsp";
         }
         if ("quit".equals(ref)) {
             url = "/WEB-INF/Accueil.jsp";
