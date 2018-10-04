@@ -16,7 +16,7 @@ public class ScCommande implements SousController{
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/CommandeOk.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
-        if (request.getParameter("doQuit") != null) {
+        if (request.getParameter("quit") != null) {
             url = "/WEB-INF/Accueil.jsp";
         }
         
