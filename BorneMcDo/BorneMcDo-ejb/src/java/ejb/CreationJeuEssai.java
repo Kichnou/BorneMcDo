@@ -502,30 +502,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Status delivree = new Status("commande délivrée au client");
 
         //choix
-<<<<<<< HEAD
-//        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
-//        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
-//        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
-//        Choix c1Boi = new Choix(c1, null, moyenJusOrange, null);
-//        Choix c1Des = new Choix(c1, null, ptitePomme, null);
-//        Choix c1Jeu = new Choix(c1, null, livre, null);
-//        c1.getSousChoix().add(c1Plat);
-//        c1.getSousChoix().add(c1Acc);
-//        c1.getSousChoix().add(c1Boi);
-//        c1.getSousChoix().add(c1Des);
-//        c1.getSousChoix().add(c1Jeu);
-//        c1.setUnePreference(surPlace);
-        
-//        c1SsChoix.add(c1Plat);
-//        c1SsChoix.add(c1Boi);
-//        c1SsChoix.add(c1Des);
-//        c1SsChoix.add(c1Jeu);
-//        c1SsChoix.add(c1Acc);
-//        c1.setSousChoix(c1SsChoix);
-        
-        
-        /////////////// associations ////////////////
-=======
         Date d1 = new GregorianCalendar(2018, 9, 2, 16, 05).getTime();
         Choix c1 = new Choix(0.1f, 3.64f, d1);
         c1.setUnMenu(menuHappyMeal);
@@ -576,7 +552,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Information infoTVA = new Information("TVA", "TVA INTRA FR56401644067");
         Information infoNumero = new Information("Numero", "Restaurant 25000391");
         Information infoVille = new Information("Ville", "PARIS");
->>>>>>> aa411f6bd6a75e8c3f3f6a65c01e8caf5ba60789
 
         /////////////// associations ////////////////
         burger.getLesMenus().add(bestOfBurger);

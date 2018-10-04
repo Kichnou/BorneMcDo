@@ -18,12 +18,8 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
-<<<<<<< HEAD
-    @NamedQuery(name = "entites.Article.selectArticle", query = "select a from Article a where a.nom = :paramNom"),
-    @NamedQuery(name = "entites.Article.selectArticleByCategorie", query="select a from Article a where a.laSousCategorie.laCategorie.nom= :paramCategorie")
-=======
+    @NamedQuery(name = "entites.Article.selectArticle", query = "select a from Article a where a.nom = :paramNom"),   
     @NamedQuery(name = "entites.Article.selectArticleByCategorie", query="select a from Article a WHERE a.lesSousCategories= :paramSsCat")
->>>>>>> aa411f6bd6a75e8c3f3f6a65c01e8caf5ba60789
 })
 public class Article implements Serializable {
 
