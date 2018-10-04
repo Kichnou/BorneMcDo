@@ -19,6 +19,10 @@
             <param-name>ScCommande</param-name>
             <param-value>sousControllers.ScCommande</param-value>
         </init-param>
+        <init-param>
+            <param-name>ScPanier</param-name>
+            <param-value>sousControllers.ScPanier</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -48,5 +52,11 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>ejb.GestionCommandeLocal</local>
         <ejb-link>BorneMcDo-ejb.jar#GestionCommande</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionPanier</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>ejb.GestionPanierLocal</local>
+        <ejb-link>BorneMcDo-ejb.jar#GestionPanier</ejb-link>
     </ejb-local-ref>
 </web-app>

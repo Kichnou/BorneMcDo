@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "Controller", urlPatterns = {"/Controller"})
 public class Controller extends HttpServlet {
-    
+
     HashMap<String, SousController> map;
-    
+
     @Override
     public void init() throws ServletException {
         super.init();
-        
+
         map = new HashMap();
         for (Enumeration<String> e = this.getInitParameterNames();
                 e.hasMoreElements();) {
@@ -34,24 +34,24 @@ public class Controller extends HttpServlet {
             } catch (IllegalAccessException ex) {
                 System.out.println("IllegalAccess>>>>" + ex.getMessage());
             }
-        }  
+        }
     }
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        
+
         String url = "/WEB-INF/Accueil.jsp";
         String section = request.getParameter("section");
-        
+
         if (section != null) {
             if (map.containsKey(section)) {
                 SousController s = map.get(section);
                 url = s.execute(request, response);
             }
         }
-        
+
         request.getRequestDispatcher(url).include(request, response);
     }
 

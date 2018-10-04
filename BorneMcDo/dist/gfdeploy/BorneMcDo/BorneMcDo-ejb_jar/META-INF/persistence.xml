@@ -2,6 +2,23 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="BorneMcDo-ejbPU" transaction-type="JTA">
     <jta-data-source>jdbc/mcDo</jta-data-source>
+    <class>entites.Article</class>
+    <class>entites.Categorie</class>
+    <class>entites.Choix</class>
+    <class>entites.Client</class>
+    <class>entites.Commande</class>
+    <class>entites.Disponibilite</class>
+    <class>entites.InfoArticle</class>
+    <class>entites.Information</class>
+    <class>entites.Ingredient</class>
+    <class>entites.Menu</class>
+    <class>entites.Preference</class>
+    <class>entites.Promotion</class>
+    <class>entites.SousCategorie</class>
+    <class>entites.Status</class>
+    <class>entites.SupplementArticle</class>
+    <class>entites.SupplementAutre</class>
+    <class>entites.Tva</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
