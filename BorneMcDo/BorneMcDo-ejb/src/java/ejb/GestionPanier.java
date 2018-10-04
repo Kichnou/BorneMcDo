@@ -31,19 +31,8 @@ public class GestionPanier implements GestionPanierLocal {
         Choix c = new Choix();
         
         c.setTauxTva(a.getLaTva().getTaux());
-        c.setPrix(a.getPrix());
-        
-        Article articleChoix = new Article();
-        
-        articleChoix.setNom(a.getNom());
-        articleChoix.setTitre(a.getTitre());
-        articleChoix.setDescription(a.getDescription());        
-        articleChoix.setPrix(a.getPrix());
-        articleChoix.setLesIngredients(a.getLesIngredients());
-        articleChoix.setLaSousCategorie(a.getLaSousCategorie());
-        
-        
-        c.setUnArticle(articleChoix);
+        c.setPrix(a.getPrix());                               
+        c.setUnArticle(a);
         
         this.getMonPanier().add(c);
     }
