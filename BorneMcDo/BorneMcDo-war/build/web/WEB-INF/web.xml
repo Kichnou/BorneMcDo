@@ -16,8 +16,17 @@
             <param-value>sousControllers.ScCatalogue</param-value>
         </init-param>
         <init-param>
+<<<<<<< HEAD
             <param-name>ScCommande</param-name>
             <param-value>sousControllers.ScCommande</param-value>
+=======
+            <param-name>ScTestAjoutArticle</param-name>
+            <param-value>sousControllers.ScTestAjoutArticle</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ScPanier</param-name>
+            <param-value>sousControllers.ScPanier</param-value>
+>>>>>>> a78c4681261c9d314caf2700cc7de48f06cebd0a
         </init-param>
     </servlet>
     <session-config>
@@ -44,9 +53,22 @@
         <ejb-link>BorneMcDo-ejb.jar#GestionCatalogue</ejb-link>
     </ejb-local-ref>
     <ejb-local-ref>
+<<<<<<< HEAD
         <ejb-ref-name>GestionCommande</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>ejb.GestionCommandeLocal</local>
         <ejb-link>BorneMcDo-ejb.jar#GestionCommande</ejb-link>
+=======
+        <ejb-ref-name>TestAjoutCatalogue</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>ejb.TestAjoutCatalogueLocal</local>
+        <ejb-link>BorneMcDo-ejb.jar#TestAjoutCatalogue</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionPanier</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>ejb.GestionPanierLocal</local>
+        <ejb-link>BorneMcDo-ejb.jar#GestionPanier</ejb-link>
+>>>>>>> a78c4681261c9d314caf2700cc7de48f06cebd0a
     </ejb-local-ref>
 </web-app>

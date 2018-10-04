@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -28,6 +29,10 @@ public class Choix implements Serializable {
     private float tauxTva;
     @Column(nullable = false)
     private float prix;
+<<<<<<< HEAD
+=======
+    @Column(nullable = true)
+>>>>>>> a78c4681261c9d314caf2700cc7de48f06cebd0a
     @Temporal(TemporalType.TIMESTAMP)
     private Date livraison;
     
