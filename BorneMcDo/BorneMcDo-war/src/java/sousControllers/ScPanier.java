@@ -42,10 +42,7 @@ public class ScPanier implements SousController {
         } else {
             request.setAttribute("panierVide", "Votre commande est vide.");
             request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
-        }
-        
-        System.out.println("test panier =======>" + gestionPanier.getMonPanier().isEmpty());
-        System.out.println("panier =======>" + gestionPanier.getMonPanier());
+        }        
         
         String url = "/WEB-INF/Accueil.jsp";
         

@@ -20,19 +20,11 @@
                 <div class="col-2 text-center">
                     <c:forEach var="s" items="${categorie}">
                         <div class="cat">
-<<<<<<< HEAD
 
                             <a href="Controller?section=ScCatalogue&ref=${s.nom}">
                                 <img src="${s.image}"/>
                                 <p>${s.nom}</p>
                             </a>
-=======
-                            
-                        <a href="Controller?section=ScCatalogue&ref=${s.nom}">
-                            <img src="${s.image}"/>
-                            <p>${s.nom}</p>
-                        </a>
->>>>>>> aa411f6bd6a75e8c3f3f6a65c01e8caf5ba60789
                         </div>
                     </c:forEach> 
                 </div>
@@ -56,11 +48,7 @@
                                 <div class="cat-article">
                                     <img src="${t.image}"/>
                                     <p>${t.nom}</p>
-<<<<<<< HEAD
                                     <a class="btn-plein" href="Controller?section=ScPanier&article=${t.id}&part=traitement">ajouter</a>
-=======
-                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${t.id}">ajouter</a>
->>>>>>> aa411f6bd6a75e8c3f3f6a65c01e8caf5ba60789
                                 </div>
                             </div>
                         </c:forEach>    
