@@ -29,6 +29,7 @@ public class Choix implements Serializable {
     private float tauxTva;
     @Column(nullable = false)
     private float prix;
+
     @Column(nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date livraison;

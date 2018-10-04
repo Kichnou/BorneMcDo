@@ -9,22 +9,51 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ScPanier implements SousController {
 
-    
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        GestionPanierLocal gestionPanier = lookupGestionPanierLocal();
+        HttpSession session = request.getSession();
         
-        String url = "/WEB-INF/Panier.jsp";
+        GestionPanierLocal gestionPanier;
         
-        gestionPanier.add(request.getParameter("article"));
+        if (session.getAttribute("panier") != null) {
+            gestionPanier = (GestionPanierLocal) session.getAttribute("panier");
+        } else {
+        gestionPanier = lookupGestionPanierLocal();
+        session.setAttribute("panier", gestionPanier);
+        }        
+
+        if (request.getParameter("article") != null) {
+            gestionPanier.add(request.getParameter("article"));
+        }
+
+        Float prixTotal = gestionPanier.getPrixTotal();
+
+        request.setAttribute("prixTotal", prixTotal);
+
+        if (!gestionPanier.getMonPanier().isEmpty()) {
+            List panier = gestionPanier.getMonPanier();
+            System.out.println(panier);
+            request.setAttribute("panier", panier);
+            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
+        } else {
+            request.setAttribute("panierVide", "Votre commande est vide.");
+            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
+        }        
         
-        List panier = gestionPanier.getMonPanier();
-        request.setAttribute("panier", panier);
+        String url = "/WEB-INF/Accueil.jsp";
         
+        if ("traitement".equals(request.getParameter("part"))) {
+        url = "/WEB-INF/Accueil.jsp";
+        }
+        
+        if ("affichage".equals(request.getParameter("part"))) {
+        url = "/WEB-INF/Panier.jsp";
+        }
+
         return url;
     }
 
@@ -37,5 +66,5 @@ public class ScPanier implements SousController {
             throw new RuntimeException(ne);
         }
     }
-    
+
 }

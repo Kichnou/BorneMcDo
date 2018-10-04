@@ -25,6 +25,17 @@ public class GestionPanier implements GestionPanierLocal {
     public ArrayList<Choix> getMonPanier() {
         return monPanier;
     }
+    
+    @Override
+    public float getPrixTotal() {
+        float prix = 0f;
+        
+        for (Choix c : monPanier) {
+            prix += c.getPrix();
+        }
+        
+        return prix;
+    }
 
     @Override
     public void add(String article) {
@@ -39,8 +50,7 @@ public class GestionPanier implements GestionPanierLocal {
 
         Choix c = new Choix();
 
-        System.out.println("TVA ====> " + a.getLaTva());
-        //c.setTauxTva(a.getLaTva().getTaux());
+        c.setTauxTva(a.getLaTva().getTaux());
         c.setPrix(a.getPrix());
         c.setUnArticle(a);
 
