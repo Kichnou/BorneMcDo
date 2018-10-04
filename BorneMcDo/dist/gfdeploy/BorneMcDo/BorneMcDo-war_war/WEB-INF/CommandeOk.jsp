@@ -6,19 +6,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css" />
-        <title>Accueil</title>
+        <title>Merci!</title>
     </head>
     <body>
         <c:url value="Controller?section=ScMenu" var="menu" />
         <c:import url="${menu}"/>
-        ${message}
         <div class="container">
-            <h1 class="text-center">Votre commande est transmise.<br/>
-            Rendez-vous en caisse avec votre ticket pour la récupérer?</h1>
+            <h1 class="text-center">Votre commande est en préparation.<br/>
+            Rendez-vous en caisse avec votre ticket pour la récupérer.</h1>
             <h1 class="text-center">Commande n°</h1>
             <div class="row justify-content-center">
                 <div class="col">
-                    <a class="btn btn-choix-evide mx-auto" href='Controller?section=ScAccueil&ref=quit'>Quitter</a>
+                    <a class="btn btn-choix-evide mx-auto" href='Controller?section=ScCommande&ref=quit'>Quit</a>
                 </div>
             </div>
         </div>

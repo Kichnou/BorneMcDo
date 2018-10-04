@@ -9,17 +9,22 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ScCommande implements SousController{
+public class ScCommande implements SousController {
+
     GestionCommandeLocal gestionCommande = lookupGestionCommandeLocal();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/CommandeOk.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
-        if (request.getParameter("quit") != null) {
+        String ref = request.getParameter("ref");
+        if (ref == null) {
+            url = "/WEB-INF/CommandeOk.jsp";
+        }
+        if ("quit".equals(ref)) {
             url = "/WEB-INF/Accueil.jsp";
         }
-        
+
         return url;
     }
 
