@@ -25,33 +25,14 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         TypedQuery<Menu> qr = em.createNamedQuery("entites.Menu.selectAllMenu", Menu.class);
         List<Menu> m = qr.getResultList();
         return m;
-    };
+    }
     
     @Override
     public List<Categorie> SelectAllCategorie(){
         TypedQuery<Categorie> qr = em.createNamedQuery("entites.Categorie.selectAllCategorie", Categorie.class);
         List<Categorie> c = qr.getResultList();
         return c;
-    };
+    }
     
-    @Override
-    public List<SousCategorie> SelectSousCatByCat(Categorie laCat){
-        TypedQuery<SousCategorie> tq = em.createNamedQuery("entites.SousCategorie.getLesSousCat", SousCategorie.class);
-        tq.setParameter("paramSsCat", laCat);
-        List<SousCategorie> ls = tq.getResultList();
-        return ls;
-    };
-    
-    @Override
-    public List<Article> selectArticleByCat (List<SousCategorie> ls){
-        List<Article> listA = new ArrayList();
-        for (SousCategorie sc : ls) {
-            TypedQuery<Article> tq = em.createNamedQuery("entites.Article.selectArticleByCategorie", Article.class);
-            tq.setParameter("paramCategorie", sc);
-            List<Article> la = tq.getResultList();
-            listA.addAll(la);
-        }
-        return listA;
-    };
 
 }

@@ -11,9 +11,6 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-@NamedQueries({
-    @NamedQuery(name = "entites.Categorie.selectAllCategorie", query ="select c from Categorie c")
-})
 public class Categorie implements Serializable {
     @Id
     private String nom;

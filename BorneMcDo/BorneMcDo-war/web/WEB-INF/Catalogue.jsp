@@ -17,43 +17,44 @@
                 <div class="col-12" style="height: 20px;"></div>
             </div>
             <div class="row">
-                <div class="col-2 text-center">
-                    <c:forEach var="s" items="${categorie}">
-                        <div class="cat">
-                            
-                        <a href="Controller?section=ScCatalogue&ref=${s.nom}">
-                            <img src="${s.image}"/>
-                            <p>${s.nom}</p>
-                        </a>
-                        </div>
-                    </c:forEach> 
-                </div>
-
+<!-- section sidebar -->
+        <%@include file="sidebar.jsp" %>
+<!-- section central -->   
                 <div class="col-7">
                     <div class="row d-flex wrap">
-
                         <c:forEach var="s" items="${central}">
                             <div class="col-4">
                                 <div class="cat-centre">
 
-                                    <a href="Controller?section=ScCatalogue&ref=${s.nom}">
+                                    <a href="Controller?section=ScCatalogue&cat=${s.nom}">
                                         <img src="${s.image}"/>
                                         <p>${s.nom}</p>
                                     </a>
                                 </div>
                             </div>
                         </c:forEach>
-                        <c:forEach var="t" items="${test}">
+                  
+   
+                        <c:forEach var="a" items="${article}">
                             <div class="col-4">
                                 <div class="cat-article">
-                                    <img src="${t.image}"/>
-                                    <p>${t.nom}</p>
-                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${t.id}">ajouter</a>
+                                    <img src="${a.image}"/>
+                                    <p>${a.nom}</p>
+                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">ajouter</a>
                                 </div>
                             </div>
-                        </c:forEach>    
+                        </c:forEach>
+                        <c:forEach var="t" items="${boissons}">
+                            <p>${t.nom}</p>
+                        </c:forEach>
+                        <c:forEach var="b" items="${burgers}">
+                            <p>${b.nom}</p>
+                            <img src="${b.image}"/>
+                            <br>
+                        </c:forEach>
                     </div>
                 </div>
+<!-- panier -->
                 <div class="col-3">
                     <p>panier</p>
                 </div>

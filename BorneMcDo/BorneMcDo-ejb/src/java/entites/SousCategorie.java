@@ -14,9 +14,6 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-@NamedQueries({
-    @NamedQuery(name = "entites.SousCategorie.getLesSousCat", query = "SELECT s FROM SousCategorie s WHERE s.laCategorie.nom= :paramSsCat")
-})
 public class SousCategorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
