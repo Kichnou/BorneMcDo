@@ -5,13 +5,19 @@
  */
 package ejb;
 
+import entites.Choix;
+import java.util.ArrayList;
 import javax.ejb.Local;
 
 /**
  *
- * @author cdi308
+ * @author Kinou
  */
 @Local
 public interface GestionPanierLocal {
+
+    public ArrayList<Choix> getMonPanier();
+
+    public void add(String article);
     
 }

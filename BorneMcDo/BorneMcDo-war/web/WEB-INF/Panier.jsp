@@ -8,6 +8,8 @@
     </head>
     <body>
         <h1>Test panier</h1>    
-        ${message}
+        <c:forEach var="a" items="${panier}">
+            ${a.unArticle.nom}
+        </c:forEach>
     </body>
 </html>
