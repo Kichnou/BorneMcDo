@@ -502,7 +502,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Status delivree = new Status("commande délivrée au client");
 
         //choix
-<<<<<<< HEAD
+
         Date d1 = new GregorianCalendar(2018, 9, 2, 16, 05).getTime();
         Choix c1 = new Choix(0.1f, 3.64f, d1);
         c1.setUnMenu(menuHappyMeal);
@@ -553,7 +553,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Information infoTVA = new Information("TVA", "TVA INTRA FR56401644067");
         Information infoNumero = new Information("Numero", "Restaurant 25000391");
         Information infoVille = new Information("Ville", "PARIS");
-=======
+
 //        Choix c1 = new Choix(0.1f, 3.64f, date2, null, null, menuHappyMeal);
 //        Choix c1Plat = new Choix(c1, null, cheeseBurger, null);
 //        Choix c1Acc = new Choix(c1, null, petiteFrite, null);
@@ -575,8 +575,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
 //        c1.setSousChoix(c1SsChoix);
         
         
-        /////////////// associations ////////////////
->>>>>>> a78c4681261c9d314caf2700cc7de48f06cebd0a
+
 
         /////////////// associations ////////////////
         burger.getLesMenus().add(bestOfBurger);

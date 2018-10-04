@@ -15,13 +15,12 @@
             <a class="nav-link" href="${catalogue}">catalogue</a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
             <c:url value="Controller?section=ScCommande" var="commande" />
             <a class="nav-link" href="${commande}">commande</a>
-=======
+        </li>
+        <li class="nav-item">
             <c:url value="Controller?section=ScTestAjoutArticle" var="testAjoutArticle" />
             <a class="nav-link" href="${testAjoutArticle}">Ajout article</a>
->>>>>>> a78c4681261c9d314caf2700cc7de48f06cebd0a
         </li>
     </ul>
 </nav>
