@@ -415,7 +415,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Tva tva20 = new Tva(20f);
 
         //menus
-        Menu bestOfBurger = new Menu("LE MENU BEST OF",
+        Menu bestOfBurger = new Menu("MENU BEST OF",
                 "Le Menu best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 portion moyenne de frites, ou moyenne de Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -442,7 +442,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
 //                + "*Le sandwich peut varier selon la gamme présente en restaurant.",
 //                6.82f,
 //                "./images/menuBestOf.png");
-        Menu maxiBestOfBurger = new Menu("LE MENU MAXI BEST OF",
+        Menu maxiBestOfBurger = new Menu("MENU MAXI BEST OF",
                 "Le Menu Maxi best Of c'est...",
                 " - 1 sandwich au choix*\n"
                 + "- 1 grande portion de frites, ou de grande Deluxe Potatoes, ou 1 P'tite Salade\n"
@@ -469,7 +469,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
 //                + "*Le sandwich peut varier selon la gamme présente en restaurant.",
 //                7.27f,
 //                "./images/menuMaxiBestOf.png");
-        Menu menuHappyMeal = new Menu("LE MENU HAPPY MEAL™",
+        Menu menuHappyMeal = new Menu("MENU HAPPY MEAL™",
                 "Le menu Happy Meal™, c'est...",
                 " - un plat au choix (McFish, Croque McDo, Hamburger, Cheeseburger, Chicken McNuggets)\n"
                 + "\n"
@@ -480,7 +480,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "- un dessert au choix (Mon Bio à boire, Berlingo Fruits, un sachet de P'tite Pomme et un sachet de fruit du moment qui évolue tout au long de l'année) et aussi un super jouet ou un livre !",
                 3.64f,
                 "./images/menuHappyMeal.png");
-        Menu menuSalade = new Menu("LE MENU SALADE C'EST...",
+        Menu menuSalade = new Menu("MENU SALADE",
                 "Choisissez entre nos deux salades gourmandes…",
                 " - une salade au choix*\n"
                 + "\n"

@@ -16,8 +16,5 @@ public interface GestionCatalogueLocal {
 
     public List<Categorie> SelectAllCategorie();
 
-    public List<SousCategorie> SelectSousCatByCat(Categorie laCat);
-
-    public List<Article> selectArticleByCat(List<SousCategorie> ls);
     
 }
