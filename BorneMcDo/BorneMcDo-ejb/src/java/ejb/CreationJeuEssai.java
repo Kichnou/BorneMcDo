@@ -4,6 +4,7 @@ import entites.Article;
 import entites.Categorie;
 import entites.Choix;
 import entites.Client;
+import entites.Commande;
 import entites.InfoArticle;
 import entites.Information;
 import entites.Ingredient;
@@ -526,6 +527,10 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Choix c3 = new Choix(0.1f, 2.58f, d3, null, nuggets4);
         Date d4 = new GregorianCalendar(2018, 9, 2, 16, 42).getTime();
         Choix c4 = new Choix(0.1f, 1.92f, d4, napChoco, SundaeCaramel);
+        
+        //Commande
+        Commande cm1 = new Commande(d1, "CB01");
+        c1.setUneCommande(cm1);
 
         //Clients
         Client mcdonald = new Client("MCDONALD", "Ronald", 100);

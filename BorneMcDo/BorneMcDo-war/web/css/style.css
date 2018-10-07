@@ -218,4 +218,50 @@ p{
 .sandwich{
     background-color: #004812;
     color: white;
+    top: -15%;
+    text-transform: uppercase;
+    font-family: 'museo';
+}
+.control{
+    color: #004812;
+    border: 3px;
+    border-style: solid;
+    border-color: #004812;
+    border-radius: 5px;
+    font-family: 'museo';
+    height: 300px;
+    text-transform: uppercase;
+    margin: auto;
+}
+.titre{
+    position: absolute;
+    background-color: #004812;
+    color: white;
+    top: -7%;
+    text-transform: uppercase;
+    font-family: 'museo';
+    left: 0;
+}
+.heure{
+    color: black;
+    font-style: oblique;
+    font-weight: bold;
+    line-height: 50%;
+    float: right;
+}
+.tpsEcoule{
+    color: black;
+    font-style: oblique;
+    font-weight: bold;
+    line-height: 50%;
+    
+}
+.article{
+    line-height: 50%;
+}
+.suping{
+    font-size: 0.8em;
+    padding-left: 20px;
+    line-height: 10%;
+    margin-top: -10px;
 }

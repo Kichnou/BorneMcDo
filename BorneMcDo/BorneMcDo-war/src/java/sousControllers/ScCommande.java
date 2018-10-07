@@ -24,11 +24,14 @@ public class ScCommande implements SousController {
         if ("conf".equals(ref)) {
             url = "/WEB-INF/CommandeOk.jsp";
         }
-        if ("Cancel".equals(ref)) {
+        if ("cancel".equals(ref)) {
             url = "/WEB-INF/Catalogue.jsp";
         }
         if ("quit".equals(ref)) {
             url = "/WEB-INF/Accueil.jsp";
+        }
+        if ("control".equals(ref)) {
+            url = "/WEB-INF/EcranBack.jsp";
         }
 
         return url;
