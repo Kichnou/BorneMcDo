@@ -52,8 +52,21 @@ public class GestionPanier implements GestionPanierLocal {
 
         c.setTauxTva(a.getLaTva().getTaux());
         c.setPrix(a.getPrix());
-        c.setUnArticle(a);
+        c.setUnArticle(a);                
 
         this.getMonPanier().add(c);
+    }
+    
+    public void addSuppArticle(String supplement) {
+        Long id = Long.valueOf(supplement);
+        Query tq = em.createQuery("select s from SupplementArticle s where s.id = :paramId");
+        tq.setParameter("paramId", id);
+        List<Article> la = tq.getResultList();
+        Article a = null;
+        for (Article art : la) {
+            a = art;
+        }
+        
+        this.getMonPanier().get(this.getMonPanier().size() - 1).setUnSuppArt(null);
     }
 }
