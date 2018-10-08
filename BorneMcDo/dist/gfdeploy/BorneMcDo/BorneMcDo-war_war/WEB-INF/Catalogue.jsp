@@ -8,6 +8,51 @@
         <link rel="stylesheet" href="./css/style.css" />
         <title>Catalogue</title>
     </head>
+    
+    <script language="javascript">
+        
+        function getxmlhttp() {
+        xmlhttp= null;
+        if( window.XMLHttpRequest) { // Mozilla
+            xmlhttp= new XMLHttpRequest();
+        } else {
+            if( window.ActiveXObject) { // IE
+                try { xmlhttp= new ActiveXObject( "Msxml2.XMLHTTP");
+                } catch (e) { xmlhttp= new ActiveXObject( "Microsoft.XMLHTTP");
+                }
+            } else {
+                alert( "Votre navigateur ne supporte pas XMLHttpRequest");
+            }
+        }
+        return xmlhttp;
+    }
+
+    function go() {
+        url= "Controller?section=ScPanier&article=";
+        // alert( url);
+
+        xmlhttp= getxmlhttp();
+        xmlhttp.onreadystatechange=xmlhttpChange;
+        xmlhttp.open("GET",url,true);
+//      xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send(null);
+    }
+
+    function xmlhttpChange() {
+        if (xmlhttp.readyState==4) { // if xmlhttp shows "loaded"
+            if (xmlhttp.status==200) { // if "OK"
+                s= xmlhttp.responseText;
+                // alert( "("+s+")");
+                d = document.getElementById("panier");
+                d.innerHTML= "coucou";
+            } else {
+                alert("Problem retrieving XML data");
+            }
+        }
+    }
+        
+    </script>
+    
     <body>
         <c:url value="Controller?section=ScMenu" var="menu" />
         <c:import url="${menu}"/>
@@ -40,7 +85,7 @@
                                 <div class="cat-article">
                                     <img src="${a.image}"/>
                                     <p>${a.nom}</p>
-                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">ajouter</a>
+                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}" onclick="go()">ajouter</a>
                                 </div>
                             </div>
                         </c:forEach>

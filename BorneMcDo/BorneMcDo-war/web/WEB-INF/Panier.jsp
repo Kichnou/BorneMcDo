@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>        
-Prix total : ${prixTotal}<br>
+<!DOCTYPE html> 
+<div id="panier"></div>
+<%--Prix total : ${prixTotal}<br>
 <c:if test="${panierEstVide}">
     ${panierVide}
 </c:if>
@@ -10,3 +11,4 @@ Prix total : ${prixTotal}<br>
         ${a.unArticle.nom}<br>
     </c:forEach>
 </c:if>
+--%>

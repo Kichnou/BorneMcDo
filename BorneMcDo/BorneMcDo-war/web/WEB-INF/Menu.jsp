@@ -17,10 +17,6 @@
         <li class="nav-item">
             <c:url value="Controller?section=ScCommande" var="commande" />
             <a class="nav-link" href="${commande}">commande</a>
-        </li>
-        <li class="nav-item">
-            <c:url value="Controller?section=ScTestAjoutArticle" var="testAjoutArticle" />
-            <a class="nav-link" href="${testAjoutArticle}">Ajout article</a>
-        </li>
+        </li>        
     </ul>
 </nav>
