@@ -20,8 +20,6 @@ public class ScCommande implements SousController {
         String url = "/WEB-INF/ConfCommande.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
         List<Commande> lc = command.recupererCommandesEnPrep();
-        
-        List<Choix> lch = command.recupererChoixCommande(ID)
         request.setAttribute("comEnPrepa", lc);
         String ref = request.getParameter("ref");
         if (ref == null) {
