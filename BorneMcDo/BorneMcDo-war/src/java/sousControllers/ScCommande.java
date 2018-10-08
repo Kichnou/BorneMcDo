@@ -1,6 +1,8 @@
 package sousControllers;
 
 import ejb.GestionCommandeLocal;
+import entites.Commande;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -17,6 +19,8 @@ public class ScCommande implements SousController {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/ConfCommande.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
+        List<Commande> lc = command.recupererCommandesEnPrep();
+        request.setAttribute("comEnPrepa", lc);
         String ref = request.getParameter("ref");
         if (ref == null) {
             url = "/WEB-INF/ConfCommande.jsp";
@@ -24,11 +28,14 @@ public class ScCommande implements SousController {
         if ("conf".equals(ref)) {
             url = "/WEB-INF/CommandeOk.jsp";
         }
-        if ("Cancel".equals(ref)) {
+        if ("cancel".equals(ref)) {
             url = "/WEB-INF/Catalogue.jsp";
         }
         if ("quit".equals(ref)) {
             url = "/WEB-INF/Accueil.jsp";
+        }
+        if ("control".equals(ref)) {
+            url = "/WEB-INF/EcranBack.jsp";
         }
 
         return url;

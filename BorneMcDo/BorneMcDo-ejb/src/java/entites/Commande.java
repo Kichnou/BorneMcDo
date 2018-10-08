@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -9,12 +10,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
 @Entity
+@NamedQueries({
+@NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'")
+})
 public class Commande implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -37,6 +43,8 @@ public class Commande implements Serializable {
     private Client unClient;
 
     public Commande() {
+        lesChoix = new ArrayList();
+        lesInfos = new ArrayList();
     }
 
     public Commande(Date heure, String identifiantCourt) {

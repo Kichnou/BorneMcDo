@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,7 @@ public class Status implements Serializable {
     private Collection<Commande> lesCommandes;
 
     public Status() {
+        lesCommandes = new ArrayList();
     }
 
     public Status(String libelle) {

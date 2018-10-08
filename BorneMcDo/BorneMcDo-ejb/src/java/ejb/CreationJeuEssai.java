@@ -4,6 +4,7 @@ import entites.Article;
 import entites.Categorie;
 import entites.Choix;
 import entites.Client;
+import entites.Commande;
 import entites.InfoArticle;
 import entites.Information;
 import entites.Ingredient;
@@ -498,8 +499,8 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Preference retardable = new Preference("retardable");
 
         //statut
-        Status enCuisine = new Status("commande en préparation en cuisine");
-        Status delivree = new Status("commande délivrée au client");
+        Status enPreparation = new Status("en préparation");
+        Status delivree = new Status("délivrée au client");
 
         //choix
         Date d1 = new GregorianCalendar(2018, 9, 2, 16, 05).getTime();
@@ -526,6 +527,20 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Choix c3 = new Choix(0.1f, 2.58f, d3, null, nuggets4);
         Date d4 = new GregorianCalendar(2018, 9, 2, 16, 42).getTime();
         Choix c4 = new Choix(0.1f, 1.92f, d4, napChoco, SundaeCaramel);
+        
+        //Commande
+        Commande cm1 = new Commande(d1, "CB01");
+        c1.setUneCommande(cm1);
+        cm1.setUnStatus(enPreparation);
+        cm1.setUnePreference(surPlace);
+        Commande cm2 = new Commande (d2, "CB02");
+        c2.setUneCommande(cm2);
+        cm2.setUnStatus(enPreparation);
+        cm2.setUnePreference(emporter);
+        Commande cm3 = new Commande(d3, "CB03");
+        c3.setUneCommande(cm3);
+        cm3.setUnStatus(delivree);
+        cm3.setUnePreference(surPlace);
 
         //Clients
         Client mcdonald = new Client("MCDONALD", "Ronald", 100);
@@ -925,7 +940,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(maintenant);
         em.persist(plusTard);
         em.persist(retardable);
-        em.persist(enCuisine);
+        em.persist(enPreparation);
         em.persist(delivree);
         em.persist(c1);
         em.persist(sc1);

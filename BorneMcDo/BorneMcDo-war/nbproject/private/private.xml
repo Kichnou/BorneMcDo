@@ -3,11 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/js/AjaxPanier.jsp</file>
             <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Panier.jsp</file>
             <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Menu.jsp</file>
             <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Catalogue.jsp</file>
             <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScPanier.java</file>
+=======
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScPanier.java</file>
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Menu.jsp</file>
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/css/style.css</file>
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/ConfCommande.jsp</file>
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Panier.jsp</file>
+            <file>file:/I:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/TestAjoutArticle.jsp</file>
+>>>>>>> 6fbaff333c0897ce0e03cd38111e09e9ea469373
         </group>
     </open-files>
 </project-private>

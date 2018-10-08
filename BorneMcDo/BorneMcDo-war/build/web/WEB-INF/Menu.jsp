@@ -17,6 +17,14 @@
         <li class="nav-item">
             <c:url value="Controller?section=ScCommande" var="commande" />
             <a class="nav-link" href="${commande}">commande</a>
+<<<<<<< HEAD
         </li>        
+=======
+        </li>
+        <li class="nav-item">
+            <c:url value="Controller?section=ScCommande&ref=control" var="ecranControle" />
+            <a class="nav-link" href="${ecranControle}">Ecran commandes cuisine</a>
+        </li>
+>>>>>>> 6fbaff333c0897ce0e03cd38111e09e9ea469373
     </ul>
 </nav>
