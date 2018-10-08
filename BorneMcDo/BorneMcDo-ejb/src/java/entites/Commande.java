@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = "entites.Commande.selectCommandeNonLivre", query = "SELECT c from Commande c")
+@NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'")
 })
 public class Commande implements Serializable {
 

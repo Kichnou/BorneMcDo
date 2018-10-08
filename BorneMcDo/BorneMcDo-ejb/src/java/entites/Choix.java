@@ -12,12 +12,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
 @Entity
+@NamedQueries({
+@NamedQuery(name = "entites.Choix.selectChoixByCommande", query = "SELECT c from Choix c WHERE c.uneCommande.id = :paramChoix")
+})
 public class Choix implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -231,29 +231,23 @@ p{
     font-family: 'museo';
     height: 260px;
     text-transform: uppercase;
-    margin: auto;
 }
 .titre{
     position: absolute;
     background-color: #004812;
     color: white;
-    top: -7%;
+    top: -10%;
     text-transform: uppercase;
     font-family: 'museo';
     left: 0;
 }
+
 .heure{
     color: black;
     font-style: oblique;
     font-weight: bold;
     line-height: 50%;
-    float: right;
-}
-.tpsEcoule{
-    color: black;
-    font-style: oblique;
-    font-weight: bold;
-    line-height: 50%;
+    margin-top: 1%;
     
 }
 .article{
