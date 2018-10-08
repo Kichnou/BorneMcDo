@@ -1,7 +1,9 @@
 package sousControllers;
 
 import ejb.GestionCatalogueLocal;
+import entites.Article;
 import entites.Categorie;
+import entites.SousCategorie;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +20,7 @@ public class ScCatalogue implements SousController {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/Catalogue.jsp";
-        String cat = request.getParameter("ref");
+        String cat = request.getParameter("cat");
         
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
         List<Categorie> lc = gestionCatalogue.SelectAllCategorie();
@@ -28,6 +30,14 @@ public class ScCatalogue implements SousController {
             request.setAttribute("central", lc);
         }
         
+        if (cat != null){
+            if(cat.equalsIgnoreCase("nos burgers")){
+                SousCategorie burger = new SousCategorie("burger");
+                List<Article> la = gestionCatalogue.SelectArticleBySousCategorie(burger);
+                System.out.println(">>>>> nom " + la.get(0).getNom());
+                request.setAttribute("article", la);
+            }
+        }
         
         
         
