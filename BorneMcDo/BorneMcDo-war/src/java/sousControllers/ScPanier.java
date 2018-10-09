@@ -15,7 +15,7 @@ public class ScPanier implements SousController {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession();
+        /*HttpSession session = request.getSession();
         
         GestionPanierLocal gestionPanier;
         
@@ -44,7 +44,7 @@ public class ScPanier implements SousController {
             request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
         }        
         
-        String url = "/WEB-INF/Accueil.jsp";
+        String url = "/WEB-INF/Panier.jsp";
         
         if ("traitement".equals(request.getParameter("part"))) {
         url = "/WEB-INF/Accueil.jsp";
@@ -54,7 +54,9 @@ public class ScPanier implements SousController {
         url = "/WEB-INF/Panier.jsp";
         }
 
-        return url;
+        return url;*/
+        
+        return "/WEB-INF/Panier.jsp";
     }
 
     private GestionPanierLocal lookupGestionPanierLocal() {
