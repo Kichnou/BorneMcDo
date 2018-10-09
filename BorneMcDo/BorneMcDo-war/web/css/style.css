@@ -259,3 +259,39 @@ p{
     line-height: 10%;
     margin-top: -10px;
 }
+
+
+.choix-boisson{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choix-boisson a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'museo';
+    color: #004812;
+}
+
+.choix-boisson p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.choix-boisson:hover{
+    background-color: #cccccc;
+}
+
+.choix-boisson img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 200px;
+}

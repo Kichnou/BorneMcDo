@@ -51,7 +51,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/pancakes.png",
                 2.64f);
 
-        Article petitCoca = new Article("COCA-COLA®",
+        Article petitCoca = new Article("PETIT COCA-COLA®",
                 "",
                 "Avec sa recette authentique et son goût unique, Coca-Cola Original Taste nous procure plaisir, rafraîchissement et nous donne au quotidien une énergie positive incomparable... Coca-Cola Original Taste, c'est du bonheur en bouteille !\n"
                 + " \n"
@@ -59,7 +59,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/petitCoca.png",
                 1.73f);
 
-        Article moyenCoca = new Article("COCA-COLA®",
+        Article moyenCoca = new Article("MOYEN COCA-COLA®",
                 "",
                 "Avec sa recette authentique et son goût unique, Coca-Cola Original Taste nous procure plaisir, rafraîchissement et nous donne au quotidien une énergie positive incomparable... Coca-Cola Original Taste, c'est du bonheur en bouteille !\n"
                 + " \n"
@@ -67,7 +67,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/moyenCoca.png",
                 2.09f);
 
-        Article grandCoca = new Article("COCA-COLA®",
+        Article grandCoca = new Article("GRAND COCA-COLA®",
                 "",
                 "Avec sa recette authentique et son goût unique, Coca-Cola Original Taste nous procure plaisir, rafraîchissement et nous donne au quotidien une énergie positive incomparable... Coca-Cola Original Taste, c'est du bonheur en bouteille !\n"
                 + " \n"
@@ -75,28 +75,28 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/grandCoca.png",
                 2.55f);
 
-        Article petitFanta = new Article("FANTA®",
+        Article petitFanta = new Article("PETIT FANTA®",
                 "",
                 "Profitez d'un moment de plaisir en famille chez McDonald's pour découvrir ou redécouvrir le goût unique si fruité et délicieux de Fanta Orange ! \n"
                 + "Fanta Orange contient du jus d'orange et des arômes naturels.",
                 "./images/petitFanta.png",
                 1.73f);
 
-        Article moyenFanta = new Article("FANTA®",
+        Article moyenFanta = new Article("MOYEN FANTA®",
                 "",
                 "Profitez d'un moment de plaisir en famille chez McDonald's pour découvrir ou redécouvrir le goût unique si fruité et délicieux de Fanta Orange ! \n"
                 + "Fanta Orange contient du jus d'orange et des arômes naturels.",
                 "./images/moyenFanta.png",
                 2.09f);
 
-        Article grandFanta = new Article("FANTA®",
+        Article grandFanta = new Article("GRAND FANTA®",
                 "",
                 "Profitez d'un moment de plaisir en famille chez McDonald's pour découvrir ou redécouvrir le goût unique si fruité et délicieux de Fanta Orange ! \n"
                 + "Fanta Orange contient du jus d'orange et des arômes naturels.",
                 "./images/grandFanta.png",
                 2.55f);
 
-        Article petitSprite = new Article("SPRITE ZERO®",
+        Article petitSprite = new Article("PETIT SPRITE ZERO®",
                 "Plus qu'une boisson, un frisson !",
                 "Vivez l'expérience Sprite zero chez McDonald's et redécouvrez le goût unique de la célèbre boisson rafraîchissante aux arômes naturels de citron et citron vert, maintenant sans sucre !\n"
                 + " \n"
@@ -105,7 +105,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/petitSprite.png",
                 1.73f);
 
-        Article moyenSprite = new Article("SPRITE ZERO®",
+        Article moyenSprite = new Article("MOYEN SPRITE ZERO®",
                 "Plus qu'une boisson, un frisson !",
                 "Vivez l'expérience Sprite zero chez McDonald's et redécouvrez le goût unique de la célèbre boisson rafraîchissante aux arômes naturels de citron et citron vert, maintenant sans sucre !\n"
                 + " \n"
@@ -114,7 +114,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/moyenSprite.png",
                 2.09f);
 
-        Article grandSprite = new Article("SPRITE ZERO®",
+        Article grandSprite = new Article("GRAND SPRITE ZERO®",
                 "Plus qu'une boisson, un frisson !",
                 "Vivez l'expérience Sprite zero chez McDonald's et redécouvrez le goût unique de la célèbre boisson rafraîchissante aux arômes naturels de citron et citron vert, maintenant sans sucre !\n"
                 + " \n"
@@ -123,7 +123,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/grandSprite.png",
                 2.55f);
 
-        Article moyenJusOrange = new Article("MINUTE MAID® ORANGE",
+        Article moyenJusOrange = new Article("MOYEN MINUTE MAID® ORANGE",
                 "MINUTE MAID® ORANGE",
                 " A tout moment de la journée, Minute Maid vous apporte une délicieuse dose de vitalité avec son jus d'orange à base de concentré avec pulpe.\n"
                 + "\n"
@@ -172,28 +172,28 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 "./images/nuggets20.png",
                 8.25f);
 
-        Article petiteFrite = new Article("LES FRITES",
+        Article petiteFrite = new Article("PETITE FRITES",
                 "Comment ne pas craquer ?",
                 "En menu, pour combler une petite faim, en petite, moyenne ou bien grande portion, goûtez-les croustillantes et savoureuses.",
                 "./images/petiteFrite.png",
                 1.33f);
-        Article moyenneFrite = new Article("LES FRITES",
+        Article moyenneFrite = new Article("MOYENNE FRITES",
                 "Comment ne pas craquer ?",
                 "En menu, pour combler une petite faim, en petite, moyenne ou bien grande portion, goûtez-les croustillantes et savoureuses.",
                 "./images/moyenneFrite.png",
                 2.08f);
-        Article grandeFrite = new Article("LES FRITES",
+        Article grandeFrite = new Article("GRANDE FRITES",
                 "Comment ne pas craquer ?",
                 "En menu, pour combler une petite faim, en petite, moyenne ou bien grande portion, goûtez-les croustillantes et savoureuses.",
                 "./images/grandeFrite.jpg",
                 2.42f);
 
-        Article moyennePotatoes = new Article("LES DELUXE POTATOES™",
+        Article moyennePotatoes = new Article("MOYENNE POTATOES™",
                 "Craquantes et savoureuses !",
                 "Découvrez ces délicieux morceaux de pomme de terre épicés et leur sauce spéciale à la ciboulette, en accompagnement d'un menu ou pour les petites faims, ils sauront à la perfection trouver leur place sur votre plateau.",
                 "./images/petitPotatoes.png",
                 2.08f);
-        Article grandePotatoes = new Article("LES DELUXE POTATOES™",
+        Article grandePotatoes = new Article("GRANDE POTATOES™",
                 "Craquantes et savoureuses !",
                 "Découvrez ces délicieux morceaux de pomme de terre épicés et leur sauce spéciale à la ciboulette, en accompagnement d'un menu ou pour les petites faims, ils sauront à la perfection trouver leur place sur votre plateau.",
                 "./images/moyenPotatoes.png",
@@ -253,15 +253,15 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
                 + "Tout simplement irrésistible !",
                 "./images/McFlurryOreo.png",
                 2.67f);
-        Article SundaeChoco = new Article("LE SUNDAE",
+        Article SundaeChoco = new Article("LE SUNDAE CHOCOLAT",
                 "",
                 "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.",
-                "./images/SundaeChocolat.png",
+                "./images/sundaeChocolat.png",
                 1.92f);
-        Article SundaeCaramel = new Article("LE SUNDAE",
+        Article SundaeCaramel = new Article("LE SUNDAE CARAMEL",
                 "",
                 "Craquez pour un plaisir glacé au lait avec des éclats de cacahuètes et retrouvez les nappages saveur caramel et chocolat, pour une pause gourmande ou un plaisir de fin de repas.",
-                "./images/SundaeCaramel.png",
+                "./images/sundaeCaramel.png",
                 1.92f);
         Article ptitePomme = new Article("LA P'TITE POMME",
                 "Une touche fruitée à croquer",
@@ -336,7 +336,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Categorie nosSalades = new Categorie("nos salades", "./images/nos_salades.png");
         Categorie nosBoissons = new Categorie("nos boissons", "./images/nos_boissons.png");
         Categorie nosDesserts = new Categorie("nos desserts", "./images/nos_desserts.png");
-        Categorie nosFritesSauces = new Categorie("nos frites & sauces", "./images/nos_frites&sauces.png");
+        Categorie nosFritesSauces = new Categorie("nos frites et sauces", "./images/nos_frites&sauces.png");
         Categorie happyMeal = new Categorie("happy meal", "./images/happy_meal.png");
 
         //Information articles
@@ -975,6 +975,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoTVA);
         em.persist(infoNumero);
         em.persist(infoVille);
+        em.persist(petiteFaim);
     }
 
 }
