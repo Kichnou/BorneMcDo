@@ -186,7 +186,6 @@ p{
 }
 
 .btn-cadre-conf{
-    /*margin-top: 100px;*/
     margin: auto;
     width: 100%;
     height: 150px;
@@ -199,8 +198,6 @@ p{
     color : #004812;
     display: flex;
     margin-bottom: 2%;
-    /*align-items: center;
-    justify-content: center;*/
 }
 
 .btn-cadre-conf:hover{
@@ -215,6 +212,16 @@ p{
     float: right;
 }
 .btn-confirm:hover{
+    background-color: #00280a;
+    color: white;
+}
+.btn-paiement{
+    background-color: #004812;
+    color: white;
+    margin-top: 150%;
+    
+}
+.btn-paiement:hover{
     background-color: #00280a;
     color: white;
 }
@@ -305,4 +312,13 @@ p{
     align-items: center;
     width: auto;
     height: 200px;
+}
+.pay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carte{
+    line-height: 250%;
 }

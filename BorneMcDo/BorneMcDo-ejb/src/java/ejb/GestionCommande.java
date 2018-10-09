@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 @Stateful
@@ -144,9 +145,11 @@ public class GestionCommande implements GestionCommandeLocal {
     }
 
     public String genererIdCourt() {
-        int id;
         String idCourt = "CB";
-        TypedQuery<Commande> tq = em.createNamedQuery("entites.Commande.selectMaxId", Commande.class);
+        Query q = em.createNamedQuery("entites.Commande.selectMaxId");
+        int id = q.getMaxResults();
+        TypedQuery<Commande> tq = em.createNamedQuery("entites.Commande.SelectLastCommande", Commande.class);
+        tq.setParameter("paramMaxId", id);
         Commande c = tq.getSingleResult();
         GregorianCalendar today = new GregorianCalendar();
         GregorianCalendar d1 = new GregorianCalendar();

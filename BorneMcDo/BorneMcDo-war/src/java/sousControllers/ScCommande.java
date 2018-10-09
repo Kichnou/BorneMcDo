@@ -27,7 +27,7 @@ public class ScCommande implements SousController {
             url = "/WEB-INF/ConfCommande.jsp";
         }
         if ("conf".equals(ref)) {
-            url = "/WEB-INF/CommandeOk.jsp";
+            url = "/WEB-INF/Paiement.jsp";
         }
         if ("cancel".equals(ref)) {
             url = "/WEB-INF/Catalogue.jsp";
@@ -37,6 +37,9 @@ public class ScCommande implements SousController {
         }
         if ("control".equals(ref)) {
             url = "/WEB-INF/EcranBack.jsp";
+        }
+        if ("payOk".equals(ref)) {
+            url = "WEB-INF/CommandeOk.jsp";
         }
         HttpSession session = request.getSession();
         GestionPanierLocal panier = (GestionPanierLocal) session.getAttribute("panier");

@@ -19,7 +19,8 @@ import javax.persistence.TemporalType;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'"),
-    @NamedQuery(name = "entites.Commande.selectMaxId", query = "SELECT c FROM Commande c WHERE c.id = (SELECT MAX(c.id) FROM Commande)")
+    @NamedQuery(name = "entites.Commande.selectMaxId", query = "SELECT c.id FROM Commande c"),
+    @NamedQuery(name = "entites.Commande.SelectLastCommande", query = "SELECT c FROM Commande c WHERE c.id = :paramMaxId")
         
 })
 public class Commande implements Serializable {
