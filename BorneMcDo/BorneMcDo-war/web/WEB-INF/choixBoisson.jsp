@@ -23,26 +23,21 @@
         <%@include file="sidebar.jsp" %>
 <!-- section central -->   
 <div class="col-7" id="contenu">
-    <div class="row d-flex wrap">
-        <c:forEach var="c" items="${central}">
-            <div class="col-4">
-                <div class="cat-centre">
-                    <a class="cat-centre" href="Controller?section=ScCatalogue&cat=${c.nom}">
-                        <img class="cat-centre" src="${c.image}"/>
-                        <p class="cat-centre">${c.nom}</p>
-                    </a>
-                </div>
-            </div>
-        </c:forEach>
-        <c:forEach var="a" items="${article}">
-            <div class="col-4">
-                <div class="cat-article">
-                    <img class="cat-article" src="${a.image}"/>
-                    <p class="text-center">${a.nom}</p>
-                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">${a.prix} €</a>
-                </div>
-            </div>
-        </c:forEach>
+    <div class="row justify-content-center">
+        <div class="choix-boisson">
+            <a href="Controller?section=ScCatalogue&cat=nos boissons&souscat=boissons froides">
+                <img src="./images/grandCoca.png"/>
+                <p>boissons froides</p>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="choix-boisson">
+            <a href="Controller?section=ScCatalogue&cat=nos boissons&souscat=boisson chaude">
+                <img src="./images/expresso.png"/>
+                <p>boissons chaudes</p>
+            </a>
+        </div>
     </div>
 </div>
 <!-- panier -->
