@@ -16,10 +16,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
 @NamedQueries({
-@NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'")
+    @NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'"),
+    @NamedQuery(name = "entites.Commande.selectMaxId", query = "SELECT c FROM Commande c WHERE c.id = (SELECT MAX(c.id) FROM Commande)")
+        
 })
 public class Commande implements Serializable {
 
@@ -30,7 +31,7 @@ public class Commande implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date heure;
     private String identifiantCourt;
-    
+
     @ManyToOne
     private Preference unePreference;
     @OneToMany(mappedBy = "uneCommande")
@@ -51,8 +52,6 @@ public class Commande implements Serializable {
         this.heure = heure;
         this.identifiantCourt = identifiantCourt;
     }
-    
-    
 
     public Long getId() {
         return id;
@@ -86,8 +85,6 @@ public class Commande implements Serializable {
         this.unePreference = unePreference;
     }
 
-
-
     public Collection<Choix> getLesChoix() {
         return lesChoix;
     }
@@ -119,8 +116,6 @@ public class Commande implements Serializable {
     public void setUnClient(Client unClient) {
         this.unClient = unClient;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -146,7 +141,5 @@ public class Commande implements Serializable {
     public String toString() {
         return "Commande n°" + id + ", heure=" + heure + ", identifiantCourt=" + identifiantCourt;
     }
-
-    
 
 }

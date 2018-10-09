@@ -18,15 +18,13 @@
                         <h4 class="col-sm-12 titre">commande ${i.identifiantCourt}</h4><br/>
                         <p class="heure"><fmt:formatDate value="${i.heure}" pattern="dd/MM/yyyy HH:mm:ss"/></p>
                         <c:forEach var="a" items="${panier}">
-                            ${a.unArticle.nom}<br>
+                            <p class="article"> ${a.unArticle.nom}</p>
                         </c:forEach>
-                        <p class="article">1 BigMac</p>
-                        <p class="suping"> sans oignon</p>
-                        <p class="article">1 grande frite<p>
-                        <p class="article">1 grand coca</p>
-                        <p class="article">1 sundae Caramel</p>
-                        <p class="suping">nappage chocolat</p>
-                        <p class="suping">sans cacahuète</p>
+                        <%
+                        //<p class="suping"> sans oignon</p>
+                        //<p class="suping">nappage chocolat</p>
+                        //<p class="suping">sans cacahuète</p>
+                        %>
                     </div>
                 </c:forEach>
             </div>

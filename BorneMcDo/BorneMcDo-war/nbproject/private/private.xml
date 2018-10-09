@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/EcranBack.jsp</file>
-            <file>file:/D:/BorneMcDo/BorneMcDo/BorneMcDo-war/web/css/style.css</file>
-            <file>file:/D:/BorneMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScCommande.java</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/css/style.css</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/EcranBack.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/ConfCommande.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScCommande.java</file>
         </group>
     </open-files>
 </project-private>

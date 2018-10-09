@@ -71,6 +71,8 @@ public class ScCommande implements SousController {
         request.setAttribute("noSalades", lesSalades.isEmpty());
         request.setAttribute("nbSalades", lesSalades.size());
         
+        
+        
         return url;
     }
 

@@ -198,6 +198,7 @@ p{
     text-transform: uppercase;
     color : #004812;
     display: flex;
+    margin-bottom: 2%;
     /*align-items: center;
     justify-content: center;*/
 }
@@ -205,6 +206,7 @@ p{
 .btn-cadre-conf:hover{
     font-family: 'museo';
     text-transform: uppercase;
+    
     
 }
 .btn-confirm{
@@ -252,7 +254,8 @@ p{
     
 }
 .article{
-    line-height: 50%;
+    line-height: 40%;
+    font-size: 0.8em;
 }
 .suping{
     font-size: 0.8em;
@@ -268,4 +271,38 @@ p{
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
+}
+.choix-boisson{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choix-boisson a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'museo';
+    color: #004812;
+}
+
+.choix-boisson p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.choix-boisson:hover{
+    background-color: #cccccc;
+}
+
+.choix-boisson img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 200px;
 }
