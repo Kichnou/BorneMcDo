@@ -22,21 +22,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="row">
-                <div class="box btn-cadre-conf mx-auto">
-                    <span class="sandwich">SANDWICHS</span><br/>
-                    Image
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <br/><br/>
     <div class="container">
-        <a class="btn btn-danger" href="Controller?section=ConfCommande&ref=cancel">Continuer la commande</a>
-        <a class="btn btn-confirm" href="Controller?section=ConfCommande&ref=conf">Finaliser la commande</a>
+        <a class="btn btn-danger" href="Controller?section=ScCommande&ref=cancel">Continuer la commande</a>
+        <a class="btn btn-confirm" href="Controller?section=ScCommande&ref=conf">Finaliser la commande</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
