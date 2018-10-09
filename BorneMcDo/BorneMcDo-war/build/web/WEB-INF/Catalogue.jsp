@@ -67,41 +67,6 @@
 <!-- section sidebar -->
         <%@include file="sidebar.jsp" %>
 <!-- section central -->   
-<<<<<<< HEAD
-                <div class="col-7">
-                    <div class="row d-flex wrap">
-                        <c:forEach var="s" items="${central}">
-                            <div class="col-4">
-                                <div class="cat-centre">
-
-                                    <a href="Controller?section=ScCatalogue&cat=${s.nom}">
-                                        <img src="${s.image}"/>
-                                        <p>${s.nom}</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </c:forEach>
-                  
-   
-                        <c:forEach var="a" items="${article}">
-                            <div class="col-4">
-                                <div class="cat-article">
-                                    <img src="${a.image}"/>
-                                    <p>${a.nom}</p>
-                                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}" onclick="go()">ajouter</a>
-                                </div>
-                            </div>
-                        </c:forEach>
-                        <c:forEach var="t" items="${boissons}">
-                            <p>${t.nom}</p>
-                        </c:forEach>
-                        <c:forEach var="b" items="${burgers}">
-                            <p>${b.nom}</p>
-                            <img src="${b.image}"/>
-                            <br>
-                        </c:forEach>
-                    </div>
-=======
 <div class="col-7" id="contenu">
     <div class="row d-flex wrap">
         <c:forEach var="a" items="${article}">
@@ -110,7 +75,6 @@
                     <img class="cat-article" src="${a.image}"/>
                     <p>${a.nom}</p>
                     <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">${a.prix} €</a>
->>>>>>> 3ab5a08e5136eb42c5c3db0cb9058bec524fffae
                 </div>
             </div>
         </c:forEach>
