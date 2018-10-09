@@ -11,23 +11,26 @@
     </head>
     <body>
         <div class="container-fluid">
-            
-                <div class="row test">
-                    <c:forEach var="i" items="${comEnPrepa}">
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control">
-                            <h4 class="col-sm-12 titre">commande ${i.identifiantCourt}</h4><br/>
-                            <p class="heure"><fmt:formatDate value="${i.heure}" pattern="dd/MM/yyyy HH:mm:ss"/></p>
-                            <p class="article">1 BigMac</p>
-                            <p class="suping"> sans oignon</p>
-                            <p class="article">1 grande frite<p>
-                            <p class="article">1 grand coca</p>
-                            <p class="article">1 sundae Caramel</p>
-                            <p class="suping">nappage chocolat</p>
-                            <p class="suping">sans cacahuète</p>
-                        </div>
-                    </c:forEach>
-                </div>
-           
+
+            <div class="row test">
+                <c:forEach var="i" items="${comEnPrepa}">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control">
+                        <h4 class="col-sm-12 titre">commande ${i.identifiantCourt}</h4><br/>
+                        <p class="heure"><fmt:formatDate value="${i.heure}" pattern="dd/MM/yyyy HH:mm:ss"/></p>
+                        <c:forEach var="a" items="${panier}">
+                            ${a.unArticle.nom}<br>
+                        </c:forEach>
+                        <p class="article">1 BigMac</p>
+                        <p class="suping"> sans oignon</p>
+                        <p class="article">1 grande frite<p>
+                        <p class="article">1 grand coca</p>
+                        <p class="article">1 sundae Caramel</p>
+                        <p class="suping">nappage chocolat</p>
+                        <p class="suping">sans cacahuète</p>
+                    </div>
+                </c:forEach>
+            </div>
+
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -2,14 +2,9 @@ package ejb;
 
 import entites.Choix;
 import entites.Commande;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import entites.SousCategorie;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -32,7 +27,6 @@ public class GestionCommande implements GestionCommandeLocal {
     public Commande creerCommande(ArrayList<Choix> lesChoix){
         Commande com = new Commande();
         
-        
         return com;
     }
     
@@ -51,5 +45,102 @@ public class GestionCommande implements GestionCommandeLocal {
         return lch;
     }
 
+    @Override
+    public List<Choix> GetChoixBurger (List<Choix> panier){
+        List<Choix> panierBurger = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getLaCategorie().getNom().equals("nos burgers")) {
+                    panierBurger.add(c);
+                }
+            }
+        }
+        return panierBurger;
+    }
+    
+    @Override
+    public List<Choix> getChoixAccomp (List<Choix> panier){
+        List<Choix> panierAccomp = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getNom().equals("accompagnements")) {
+                    panierAccomp.add(c);
+                }
+            }
+        }
+        return panierAccomp;
+    }
+    
+    @Override
+    public List<Choix> getChoixBoisson (List<Choix> panier){
+        List<Choix> choixBoisson = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getLaCategorie().getNom().equals("nos boissons")) {
+                    choixBoisson.add(c);
+                }
+            }
+        }
+        return choixBoisson;
+    }
+    
+    @Override
+    public List<Choix> getChoixDessert (List<Choix> panier){
+        List<Choix> choixDessert = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getLaCategorie().getNom().equals("nos desserts")) {
+                    choixDessert.add(c);
+                }
+            }
+        }
+        return choixDessert;
+    }
+    
+    @Override
+    public List<Choix> getChoixSauce (List<Choix> panier){
+        List<Choix> choixSauce = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getNom().equals("sauce")) {
+                    choixSauce.add(c);
+                }
+            }
+        }
+        return choixSauce;
+    }
+    
+    @Override
+    public List<Choix> getChoixSalade (List<Choix> panier){
+        List<Choix> choixSalade = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getLaCategorie().getNom().equals("nos salades")) {
+                    choixSalade.add(c);
+                }
+            }
+        }
+        return choixSalade;
+    }
+    
+    @Override
+    public List<Choix> getChoixCadeau (List<Choix> panier){
+        List<Choix> choixCadeau = new ArrayList();
+        for (Choix c : panier) {
+            List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
+            for (SousCategorie sc : lsc) {
+                if (sc.getNom().equals("cadeau")) {
+                    choixCadeau.add(c);
+                }
+            }
+        }
+        return choixCadeau;
+    }
     
 }
