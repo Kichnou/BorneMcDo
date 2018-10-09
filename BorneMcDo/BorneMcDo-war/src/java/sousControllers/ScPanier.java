@@ -1,7 +1,8 @@
 package sousControllers;
 
 import ejb.GestionPanierLocal;
-import java.util.List;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -15,7 +16,7 @@ public class ScPanier implements SousController {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        /*HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         
         GestionPanierLocal gestionPanier;
         
@@ -26,6 +27,10 @@ public class ScPanier implements SousController {
         session.setAttribute("panier", gestionPanier);
         }        
 
+        if (gestionPanier.getMonPanier().isEmpty()) {
+            
+        }
+        
         if (request.getParameter("article") != null) {
             gestionPanier.add(request.getParameter("article"));
         }
@@ -34,27 +39,14 @@ public class ScPanier implements SousController {
 
         request.setAttribute("prixTotal", prixTotal);
 
-        if (!gestionPanier.getMonPanier().isEmpty()) {
-            List panier = gestionPanier.getMonPanier();
-            System.out.println(panier);
-            request.setAttribute("panier", panier);
-            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
-        } else {
-            request.setAttribute("panierVide", "Votre commande est vide.");
-            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
-        }        
-        
-        String url = "/WEB-INF/Panier.jsp";
-        
-        if ("traitement".equals(request.getParameter("part"))) {
-        url = "/WEB-INF/Accueil.jsp";
-        }
-        
-        if ("affichage".equals(request.getParameter("part"))) {
-        url = "/WEB-INF/Panier.jsp";
-        }
-
-        return url;*/
+        PrintWriter out;
+        try {
+            out = response.getWriter();
+            
+            out.println("coucou");
+        } catch (IOException ex) {
+            Logger.getLogger(ScPanier.class.getName()).log(Level.SEVERE, null, ex);
+        }                
         
         return "/WEB-INF/Panier.jsp";
     }

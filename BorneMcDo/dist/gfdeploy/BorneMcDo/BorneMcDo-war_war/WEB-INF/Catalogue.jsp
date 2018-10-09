@@ -49,7 +49,7 @@
                     s = xmlhttp.responseText;
                     // alert( "("+s+")");
                     d = document.getElementById("panier");
-                    d.innerHTML = "coucou";
+                    d.innerHTML = s;
                 } else {
                     alert("Problem retrieving XML data");
                 }
@@ -67,54 +67,44 @@
                 <div class="col-12" style="height: 20px;"></div>
             </div>
             <div class="row">
-<<<<<<< HEAD
                 <!-- section sidebar -->
                 <%@include file="sidebar.jsp" %>
                 <!-- section central -->   
                 <div class="col-7" id="contenu">
                     <div class="row d-flex wrap">
+                        <c:forEach var="c" items="${central}">
+                            <div class="col-4">
+                                <div class="cat-centre">
+                                    <a class="cat-centre" href="Controller?section=ScCatalogue&cat=${c.nom}">
+                                        <img class="cat-centre" src="${c.image}"/>
+                                        <p class="cat-centre">${c.nom}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </c:forEach>
                         <c:forEach var="a" items="${article}">
                             <div class="col-4">
                                 <div class="cat-article">
                                     <img class="cat-article" src="${a.image}"/>
-                                    <p>${a.nom}</p>
-                                    <a class="btn-plein" href="#" onclick="go();return false">${a.prix} €</a>
+                                    <p class="text-center">${a.nom}</p>
+                                    <a class="btn-plein" href="#" onclick="go();
+                                            return false">${a.prix} €</a>
                                 </div>
                             </div>
                         </c:forEach>
                     </div>
-=======
-<!-- section sidebar -->
-        <%@include file="sidebar.jsp" %>
-<!-- section central -->   
-<div class="col-7" id="contenu">
-    <div class="row d-flex wrap">
-        <c:forEach var="c" items="${central}">
-            <div class="col-4">
-                <div class="cat-centre">
-                    <a class="cat-centre" href="Controller?section=ScCatalogue&cat=${c.nom}">
-                        <img class="cat-centre" src="${c.image}"/>
-                        <p class="cat-centre">${c.nom}</p>
-                    </a>
-                </div>
-            </div>
-        </c:forEach>
-        <c:forEach var="a" items="${article}">
-            <div class="col-4">
-                <div class="cat-article">
-                    <img class="cat-article" src="${a.image}"/>
-                    <p class="text-center">${a.nom}</p>
-                    <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">${a.prix} €</a>
->>>>>>> 42e97502d0a78f67cfbb89b3b11ff7544355fdb4
                 </div>
                 <!-- panier -->
                 <div class="col-3">
                     <p>panier</p>
                     <c:url value="Controller?section=ScPanier&part=affichage" var="panier" />
                     <c:import url="${panier}"/>
-                </div>
-            </div>
-        </div>        
+                </div>                   
+
+            </div>  
+        </div>
+
+
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
