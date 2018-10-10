@@ -1,7 +1,9 @@
 package sousControllers;
 
 import ejb.GestionPanierLocal;
-import java.util.List;
+import entites.Article;
+import entites.Choix;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -16,45 +18,37 @@ public class ScPanier implements SousController {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        
+
         GestionPanierLocal gestionPanier;
-        
+
         if (session.getAttribute("panier") != null) {
             gestionPanier = (GestionPanierLocal) session.getAttribute("panier");
         } else {
-        gestionPanier = lookupGestionPanierLocal();
-        session.setAttribute("panier", gestionPanier);
-        }        
+            gestionPanier = lookupGestionPanierLocal();
+            session.setAttribute("panier", gestionPanier);
+        }
 
         if (request.getParameter("article") != null) {
             gestionPanier.add(request.getParameter("article"));
         }
 
-        Float prixTotal = gestionPanier.getPrixTotal();
+        request.setAttribute("prixTotal", gestionPanier.getPrixTotal());
 
-        request.setAttribute("prixTotal", prixTotal);
-
-        if (!gestionPanier.getMonPanier().isEmpty()) {
-            List panier = gestionPanier.getMonPanier();
-            System.out.println(panier);
-            request.setAttribute("panier", panier);
-            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
-        } else {
-            request.setAttribute("panierVide", "Votre commande est vide.");
-            request.setAttribute("panierEstVide", gestionPanier.getMonPanier().isEmpty());
-        }        
-        
-        String url = "/WEB-INF/Accueil.jsp";
-        
-        if ("traitement".equals(request.getParameter("part"))) {
-        url = "/WEB-INF/Accueil.jsp";
-        }
-        
-        if ("affichage".equals(request.getParameter("part"))) {
-        url = "/WEB-INF/Panier.jsp";
+        if (gestionPanier.getMonPanier().isEmpty()) {
+            request.setAttribute("panierVide", "Le panier est vide");
         }
 
-        return url;
+        ArrayList<Article> listeArticle = new ArrayList<Article>();
+
+        for (Choix c : gestionPanier.getMonPanier()) {
+            if (c.getUnArticle() != null) {
+                listeArticle.add(c.getUnArticle());
+            }
+        }
+
+        request.setAttribute("listeArticle", listeArticle);
+
+        return "/WEB-INF/Panier.jsp";
     }
 
     private GestionPanierLocal lookupGestionPanierLocal() {
