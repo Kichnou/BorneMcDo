@@ -1,8 +1,9 @@
 package sousControllers;
 
 import ejb.GestionPanierLocal;
-import java.io.IOException;
-import java.io.PrintWriter;
+import entites.Article;
+import entites.Choix;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -17,37 +18,36 @@ public class ScPanier implements SousController {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        
+
         GestionPanierLocal gestionPanier;
-        
+
         if (session.getAttribute("panier") != null) {
             gestionPanier = (GestionPanierLocal) session.getAttribute("panier");
         } else {
-        gestionPanier = lookupGestionPanierLocal();
-        session.setAttribute("panier", gestionPanier);
-        }        
-
-        if (gestionPanier.getMonPanier().isEmpty()) {
-            
+            gestionPanier = lookupGestionPanierLocal();
+            session.setAttribute("panier", gestionPanier);
         }
-        
+
         if (request.getParameter("article") != null) {
             gestionPanier.add(request.getParameter("article"));
         }
 
-        Float prixTotal = gestionPanier.getPrixTotal();
+        request.setAttribute("prixTotal", gestionPanier.getPrixTotal());
 
-        request.setAttribute("prixTotal", prixTotal);
+        if (gestionPanier.getMonPanier().isEmpty()) {
+            request.setAttribute("panierVide", "Le panier est vide");
+        }
 
-        PrintWriter out;
-        try {
-            out = response.getWriter();
-            
-            out.println("coucou");
-        } catch (IOException ex) {
-            Logger.getLogger(ScPanier.class.getName()).log(Level.SEVERE, null, ex);
-        }                
-        
+        ArrayList<Article> listeArticle = new ArrayList<Article>();
+
+        for (Choix c : gestionPanier.getMonPanier()) {
+            if (c.getUnArticle() != null) {
+                listeArticle.add(c.getUnArticle());
+            }
+        }
+
+        request.setAttribute("listeArticle", listeArticle);
+
         return "/WEB-INF/Panier.jsp";
     }
 

@@ -32,23 +32,22 @@
             return xmlhttp;
         }
 
-        function go() {
-            url = "Controller?section=ScPanier";
-            // alert( url);
+        function go(idArticle) {
+            url = "Controller?section=ScPanier&article=" + idArticle;
+            alert(url);
 
             xmlhttp = getxmlhttp();
             xmlhttp.onreadystatechange = xmlhttpChange;
             xmlhttp.open("GET", url, true);
-//      xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xmlhttp.send(null);
         }
 
         function xmlhttpChange() {
-            if (xmlhttp.readyState == 4) { // if xmlhttp shows "loaded"
-                if (xmlhttp.status == 200) { // if "OK"
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
                     s = xmlhttp.responseText;
-                    // alert( "("+s+")");
                     d = document.getElementById("panier");
+                    d.innerHTML = "";
                     d.innerHTML = s;
                 } else {
                     alert("Problem retrieving XML data");
@@ -87,7 +86,7 @@
                                 <div class="cat-article">
                                     <img class="cat-article" src="${a.image}"/>
                                     <p class="text-center">${a.nom}</p>
-                                    <a class="btn-plein" href="#" onclick="go();
+                                    <a class="btn-plein" href="#" onclick="go(${a.id});
                                             return false">${a.prix} €</a>
                                 </div>
                             </div>
@@ -97,8 +96,10 @@
                 <!-- panier -->
                 <div class="col-3">
                     <p>panier</p>
-                    <c:url value="Controller?section=ScPanier&part=affichage" var="panier" />
-                    <c:import url="${panier}"/>
+                    <div id="panier">
+                        <c:url value="Controller?section=ScPanier" var="panier" />
+                        <c:import url="${panier}"/>
+                    </div>
                 </div>                   
 
             </div>  
