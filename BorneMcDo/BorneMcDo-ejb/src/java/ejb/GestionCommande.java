@@ -10,7 +10,6 @@ import java.util.List;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 @Stateful
@@ -24,11 +23,15 @@ public class GestionCommande implements GestionCommandeLocal {
         em.persist(object);
     }
 
+    
     @Override
-    public Commande creerCommande(ArrayList<Choix> lesChoix) {
-        Commande com = new Commande();
-        
-        return com;
+    public void creerCommande(List<Choix> lesChoix, String idCourt) {
+        Date d = new GregorianCalendar().getTime();
+        Commande com = new Commande(d, idCourt);
+        for (Choix ch : lesChoix) {
+            ch.setUneCommande(com);
+            em.persist(ch);
+        }
     }
 
     @Override
@@ -144,10 +147,11 @@ public class GestionCommande implements GestionCommandeLocal {
         return choixCadeau;
     }
 
+    @Override
     public String genererIdCourt() {
         String idCourt = "CB";
-        Query q = em.createNamedQuery("entites.Commande.selectMaxId");
-        int id = q.getMaxResults();
+        TypedQuery<Long> q = em.createNamedQuery("entites.Commande.selectMaxId", Long.class);
+        Long id = q.getSingleResult();
         TypedQuery<Commande> tq = em.createNamedQuery("entites.Commande.SelectLastCommande", Commande.class);
         tq.setParameter("paramMaxId", id);
         Commande c = tq.getSingleResult();
@@ -156,10 +160,13 @@ public class GestionCommande implements GestionCommandeLocal {
         Date d = c.getHeure();
         d1.setTime(d);
         String oldId = c.getIdentifiantCourt().substring(2);
-        if (today != d1) {
-            id = 0;
+        if (today.compareTo(d1) != 0) {
+            System.out.println("today = "+ today + " d1 = " + d1 + " >>>>>>>>>>>>>>>>> le jour a changé :");
+            id = 0L;
+            System.out.println("id = " + id);
         } else {
-            id = Integer.getInteger(oldId) + 1;
+            id = Long.parseLong(oldId)+1;
+            System.out.println("today = "+ today + " d1 = " + d1 + " >!>!>!>!>!>!>!>!> le jour n'a pas changé!! id = " + id);
         }
         return idCourt + id;
     }

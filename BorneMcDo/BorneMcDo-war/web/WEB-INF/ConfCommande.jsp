@@ -96,7 +96,7 @@
 
         <br/><br/>
         <div class="container">
-            <a class="btn btn-danger" href="Controller?section=ScCommande&ref=cancel">Continuer la commande</a>
+            <a class="btn btn-danger" href="Controller?section=ScCatalogue&ref=cancel">Continuer la commande</a>
             <a class="btn btn-confirm" href="Controller?section=ScCommande&ref=conf">Finaliser la commande</a>
         </div>
 
