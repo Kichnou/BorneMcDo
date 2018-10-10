@@ -16,5 +16,12 @@ public interface GestionCatalogueLocal {
 
     public List<Categorie> SelectAllCategorie();
 
+    public List<SousCategorie> SelectSousCatByCategorie(String Cat);
+
+    public List<Article> SelectArticleBySousCategorie(SousCategorie ssCat);
+
+    public List<SousCategorie> getSousCategorieByMenu(String idMenu);
+
+
     
 }

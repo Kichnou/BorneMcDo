@@ -1,7 +1,9 @@
 package ejb;
 
+import entites.Article;
 import entites.Categorie;
 import entites.Menu;
+import entites.SousCategorie;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -31,5 +33,27 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         return c;
     }
     
+    @Override
+    public List<SousCategorie> SelectSousCatByCategorie(String Cat){
+        TypedQuery<SousCategorie> qr = em.createNamedQuery("entites.SousCategorie.getLesSousCat", SousCategorie.class);
+        qr.setParameter("paramSsCat", Cat);
+        List<SousCategorie> lsc = qr.getResultList();
+        return lsc;
+    }
 
+    @Override
+    public List<Article> SelectArticleBySousCategorie(SousCategorie ssCat){
+        TypedQuery<Article> qr = em.createNamedQuery("entites.Article.selectArticleByCategorie", Article.class);
+        qr.setParameter("paramSsCat", ssCat);
+        List<Article> la = qr.getResultList();
+        return la;
+    }
+    
+    @Override
+    public List<SousCategorie> getSousCategorieByMenu(String idMenu){
+        TypedQuery<SousCategorie> qr = em.createNamedQuery("entites.Menu.getSousCategorieByIdMenu", SousCategorie.class);
+        qr.setParameter("param", Integer.valueOf(idMenu));
+        List<SousCategorie> lsc = qr.getResultList();
+        return lsc;
+    }
 }
