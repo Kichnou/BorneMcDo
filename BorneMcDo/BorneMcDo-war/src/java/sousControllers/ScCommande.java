@@ -1,9 +1,11 @@
 package sousControllers;
 
+import ejb.CreationJeuEssaiLocal;
 import ejb.GestionCommandeLocal;
 import ejb.GestionPanierLocal;
 import entites.Choix;
 import entites.Commande;
+import entites.Preference;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +24,9 @@ public class ScCommande implements SousController {
         GestionCommandeLocal command = lookupGestionCommandeLocal();
         List<Commande> lc = command.recupererCommandesEnPrep();
         request.setAttribute("comEnPrepa", lc);
+        HttpSession session = request.getSession();
+        Preference p = (Preference) session.getAttribute("prefConso");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> Preference = " + p);
         String ref = request.getParameter("ref");
         if (ref == null) {
             url = "/WEB-INF/ConfCommande.jsp";
@@ -35,10 +40,11 @@ public class ScCommande implements SousController {
         if ("control".equals(ref)) {
             url = "/WEB-INF/EcranBack.jsp";
         }
-        HttpSession session = request.getSession();
+        
         GestionPanierLocal panier = (GestionPanierLocal) session.getAttribute("panier");
         List<Choix> lch = panier.getMonPanier();
         request.setAttribute("panier", lch);
+        //CreationJeuEssaiLocal jeu = (CreationJeuEssaiLocal) session.getAttribute("prefConso"); 
         List<Choix> lesBurgers = command.GetChoixBurger(lch);
         request.setAttribute("sandwichs", lesBurgers);
         request.setAttribute("noSandwich", lesBurgers.isEmpty());

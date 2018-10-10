@@ -42,7 +42,7 @@ public class Controller extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        String url = "/WEB-INF/Accueil.jsp";
+        String url = "/WEB-INF/PrefSurPlace.jsp";
         String section = request.getParameter("section");
 
         if (section != null) {

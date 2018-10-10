@@ -20,6 +20,7 @@ import java.util.GregorianCalendar;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 @Singleton
 public class CreationJeuEssai implements CreationJeuEssaiLocal {
@@ -977,5 +978,13 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoVille);
         em.persist(petiteFaim);
     }
-
+    
+    @Override
+    public Preference recupererPreference(String libelle){
+        TypedQuery<Preference> tq = em.createNamedQuery("entites.Preference.SelectPrefByLibelle", Preference.class);
+        tq.setParameter("ParamPrefLib", libelle);
+        Preference p = tq.getSingleResult();
+        return p;
+    }
+        
 }

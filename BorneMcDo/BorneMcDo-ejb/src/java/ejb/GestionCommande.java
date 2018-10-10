@@ -167,12 +167,9 @@ public class GestionCommande implements GestionCommandeLocal {
         d1.setTime(d);
         String oldId = c.getIdentifiantCourt().substring(2);
         if (today.get(Calendar.DAY_OF_MONTH)!= d1.get(Calendar.DAY_OF_MONTH)) {
-            System.out.println("today = "+ today.get(Calendar.DAY_OF_MONTH) + " d1 = " + d1.get(Calendar.DAY_OF_MONTH) + " >>>>>>>>>>>>>>>>> le jour a changé :");
             id = 0L;
-            System.out.println("id = " + id);
         } else {
             id = Long.parseLong(oldId)+1;
-            System.out.println("today = "+ today.get(Calendar.DAY_OF_MONTH) + " d1 = " + d1.get(Calendar.DAY_OF_MONTH) + " >!>!>!>!>!>!>!>!> le jour n'a pas changé!! id = " + id);
         }
         if (id < 10) {
             idCourt = "CB0";
