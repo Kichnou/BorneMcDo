@@ -251,7 +251,6 @@ p{
     font-family: 'museo';
     left: 0;
 }
-
 .heure{
     color: black;
     font-style: oblique;
@@ -270,7 +269,6 @@ p{
     line-height: 10%;
     margin-top: -10px;
 }
-<<<<<<< HEAD
 .artCom{
     display: flex;
     top: -40px;
@@ -280,10 +278,6 @@ p{
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-=======
-
-
->>>>>>> 3120b32a37c8efe98b8b7d7aa816afbfb8770e44
 .choix-boisson{
     display: flex;
     flex-direction: column;
@@ -317,7 +311,6 @@ p{
     align-items: center;
     width: auto;
     height: 200px;
-<<<<<<< HEAD
 }
 .pay{
     display: flex;
@@ -327,6 +320,4 @@ p{
 }
 .carte{
     line-height: 250%;
-=======
->>>>>>> 3120b32a37c8efe98b8b7d7aa816afbfb8770e44
 }

@@ -3,7 +3,9 @@ package ejb;
 import entites.Choix;
 import entites.Commande;
 import entites.SousCategorie;
+import entites.Status;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -28,6 +30,10 @@ public class GestionCommande implements GestionCommandeLocal {
     public void creerCommande(List<Choix> lesChoix, String idCourt) {
         Date d = new GregorianCalendar().getTime();
         Commande com = new Commande(d, idCourt);
+        TypedQuery<Status> tq = em.createNamedQuery("selectStatusByLibelle", Status.class);
+        tq.setParameter("paramStatusLib", "en préparation");
+        Status st = tq.getSingleResult();
+        com.setUnStatus(st);
         for (Choix ch : lesChoix) {
             ch.setUneCommande(com);
             em.persist(ch);
@@ -160,13 +166,16 @@ public class GestionCommande implements GestionCommandeLocal {
         Date d = c.getHeure();
         d1.setTime(d);
         String oldId = c.getIdentifiantCourt().substring(2);
-        if (today.compareTo(d1) != 0) {
-            System.out.println("today = "+ today + " d1 = " + d1 + " >>>>>>>>>>>>>>>>> le jour a changé :");
+        if (today.get(Calendar.DAY_OF_MONTH)!= d1.get(Calendar.DAY_OF_MONTH)) {
+            System.out.println("today = "+ today.get(Calendar.DAY_OF_MONTH) + " d1 = " + d1.get(Calendar.DAY_OF_MONTH) + " >>>>>>>>>>>>>>>>> le jour a changé :");
             id = 0L;
             System.out.println("id = " + id);
         } else {
             id = Long.parseLong(oldId)+1;
-            System.out.println("today = "+ today + " d1 = " + d1 + " >!>!>!>!>!>!>!>!> le jour n'a pas changé!! id = " + id);
+            System.out.println("today = "+ today.get(Calendar.DAY_OF_MONTH) + " d1 = " + d1.get(Calendar.DAY_OF_MONTH) + " >!>!>!>!>!>!>!>!> le jour n'a pas changé!! id = " + id);
+        }
+        if (id < 10) {
+            idCourt = "CB0";
         }
         return idCourt + id;
     }
