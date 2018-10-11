@@ -4,6 +4,8 @@ import entites.Article;
 import entites.Categorie;
 import entites.Menu;
 import entites.SousCategorie;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -75,4 +77,82 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         
         return true;
     }
+    
+        @Override
+    public List<Article> afficheArticleByCategorie(String categorie){
+        List<Article> laListe = new ArrayList<Article>();
+        List<SousCategorie> lsc = SelectSousCatByCategorie(categorie);
+        for (SousCategorie lsc1 : lsc) {
+            List<Article> la = SelectArticleBySousCategorie(lsc1);
+            for (Article la1 : la) {
+                laListe.add(la1);
+            }
+        }
+        return laListe;                
+    }
+    
+    @Override
+    public List<Article> afficherArticleBySousCategorie(String SsCat){
+        SousCategorie sousCat = new SousCategorie(SsCat);
+        List<Article> la = SelectArticleBySousCategorie(sousCat);
+        return la;
+    }
+    
+    @Override
+    public List<Article> afficherArticleBySousCategorie(List<String> SsCat) {
+        List<Article> laListe = new ArrayList<>();
+        for (String SsCat1 : SsCat) {
+            List<Article> la1 = afficherArticleBySousCategorie(SsCat1);
+            for (Article ar : la1) {
+                laListe.add(ar);
+            }
+        }
+        return laListe;
+    }
+    
+         @Override
+     public Article getArticleByid(String id){
+         TypedQuery<Article> qr = em.createNamedQuery("entites.Article.getArticleById", Article.class);
+         qr.setParameter("param", Integer.valueOf(id));
+         Article a = qr.getSingleResult();
+         return a;
+     }
+     
+     @Override
+     public Menu getMenuById(String id){
+         TypedQuery<Menu> qr = em.createNamedQuery("entites.Menu.getMenuById", Menu.class);
+         qr.setParameter("param", Integer.valueOf(id));
+         Menu m = qr.getSingleResult();
+         return m;
+     }
+     
+     @Override
+     public Long getIdMenu(String nom){
+         TypedQuery<Long> qr = em.createNamedQuery("entites.Menu.getIdMenu", Long.class);
+         qr.setParameter("param", nom);
+        Long id = qr.getSingleResult();
+        return id;
+    }
+     
+    @Override
+     public List<Article> afficherBurgerByMenu(String idMenu){
+         List<Article> la = new ArrayList<>();
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU HAPPY MEAL™")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("petit burger");
+             ls.add("autre petit plat");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU BEST OF") || getMenuById(idMenu).getNom().equalsIgnoreCase("MENU MAXI BEST OF")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("burger");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU SALADE")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("salade");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         return la;
+     }
 }
