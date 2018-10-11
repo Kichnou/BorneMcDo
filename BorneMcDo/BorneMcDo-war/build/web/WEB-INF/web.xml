@@ -11,6 +11,18 @@
             <param-name>ScMenu</param-name>
             <param-value>sousControllers.ScMenu</param-value>
         </init-param>
+        <init-param>
+            <param-name>ScChoixConnexion</param-name>
+            <param-value>sousControllers.ScChoixConnexion</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ScSaisieNumeroMembre</param-name>
+            <param-value>sousControllers.ScSaisieNumeroMembre</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ScChoixPreferenceCommande</param-name>
+            <param-value>sousControllers.ScChoixPreferenceCommande</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>

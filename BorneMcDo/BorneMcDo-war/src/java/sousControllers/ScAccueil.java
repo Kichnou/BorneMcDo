@@ -15,7 +15,6 @@ public class ScAccueil implements SousController {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/Accueil.jsp";
-
         CreationJeuEssaiLocal jeuEssai = lookupCreationJeuEssaiLocal();
         jeuEssai.creerDonnees();
         request.setAttribute("message", "donnée OK");

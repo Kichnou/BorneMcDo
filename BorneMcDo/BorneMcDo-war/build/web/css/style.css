@@ -5,37 +5,38 @@
 
 .btn-plein{
     width: 400px;
+    margin-top: 50px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
-    background-color: #004812;
+    border-color: #004812; /* Vert foncé */
+    background-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1.6em;
     text-transform: uppercase;
-    color : #ffffff;
+    color : white; /* #ffffff : Blanc */
 }
 
 .btn-plein:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
 }
 
 .btn-evide{
     width: 400px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1.6em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
 }
 
 .btn-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
 }
 
 .btn-choix-evide{
@@ -44,11 +45,11 @@
     height: 200px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 4em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,14 +58,520 @@
 .btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+
+.TODELbtn-carre{
+    width: 200px;
+    height: 200px;
+	/*padding-top: 100px;*/ /* Chacune des deux valeurs de padding à 100 px pour bien garantir un bouton de 200 px de haut */
+	/*padding-bottom: 100px;*/ /* Chacune des deux valeurs de padding à 100 px pour bien garantir un bouton de 200 px de haut */
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 2em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word;
+	text-align: center;
+	display: block;
+}
+
+.TODELbtn-carre-centreverticalement{
+    width: 200px;
+    height: 200px;
+	display: flex; /* Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car une balise inline ne peut pas avoir de "height". */
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Si un mot trop "jfjfdkfdskfkfdskdfk" long ne rentre pas dans la width il faudra réduire la font-size pour avoir un texte centré.*/
+/*	vertical-align: middle; */ /* Centrer verticalement. */
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*justify-content: xxxxxxx;*/ /* ATTENTION : centrer horizontalement avec un justify-content valant "center" ne fonctionne que si l'on n'a qu'une seule ligne de texte. */
+}
+
+
+.TODELbtn-carre-cenhorverwordwrap{
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+
+.TODELbtn-modeconsommationbis-evide{
+    width: 200px;
+    height: 200px;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 0.6em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	padding: 10px;
+	word-wrap: break-word;
+	text-align: center;
+}
+   
+/*
+	Ajout par Florent : bouton btn-modeconsommation-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-modeconsommation-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-modeconsommation-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/*
+	Ajout par Florent : bouton btn-promotion-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-promotion-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-promotion-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+.TODELbtn-modeconsommationtest-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+
+	/* NOTA :
+	align-items et justify-content : que pour un display de type flex.
+    */
+	
+	/*Essai 01 : Comme dans choix :
+	display: flex;
+	align-items: center; /Centré verticalement
+	justify-content: center; /Centré horizontalement
+	Verdict Essai 01 avec un <p> : centre bien verticalement, mais pas horizontalement, et pas de word-wrap. */
+	
+	/*Essai 02 :
+	display: flex;
+	align-items: center; 
+	justify-content: space-between; 
+	Verdict Essai 02 avec un <p> : centre bien verticalement, mais pas horizontalement, et pas de word-wrap. */
+	
+	/*Essai 03 :
+	display: flex;
+	align-items: center; 
+	justify-content: space-around; 
+	Verdict Essai 03 avec un <p> : centre bien verticalement, mais pas horizontalement, et pas de word-wrap. */
+	
+	
+	/*Essai 04 :
+	display: flex;
+    vertical-align: middle; //PB : ne fonctionne pas ? (IE 11, Chrome 69)
+	justify-content: center; //OK avec Chrome => centré
+	Verdict Essai 04 avec un <p> : centre ni verticalement, ni horizontalement, et pas de word-wrap. */
+	
+	/*Essai 05 :
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	Verdict Essai 05 avec un <p> : centre pas verticalement, mais bien horizontalement, et pas de word-wrap ; par contre le bouton se trouve calé à gauche. */
+	
+	/*Essai 06 :
+	text-align: center;
+	padding-left: auto;
+	padding-right: auto;
+	Verdict Essai 06 avec un <p> : centre pas verticalement, mais bien horizontalement, et pas de word-wrap ; par contre le bouton se trouve calé à gauche. */
+
+	
+	/*Essai 07 :
+	line-height:200px;
+	text-align:center;
+	Verdict Essai 07 avec un <p> : centre bien verticalement, mais aussi horizontalement, et pas de word-wrap ; par contre le bouton se trouve calé à gauche. */
+	
+	/*Essai 08 :
+	display: flex;
+	align-items: center; 
+	justify-content: center; 
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: auto;
+	padding-right: auto;
+	Verdict Essai 08 avec un <p> :
+		bouton : centré
+		texte : centré verticalement dans Chrome et IE
+		texte : centré horizontalement dans Chrome ; aligné à gauche dans IE
+		word-wrap : sans. */
+	
+	/*Essai 09 :
+	display: flex;
+	align-items: center; 
+	justify-content: center; 
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	Verdict Essai 09 avec un <p> :
+		bouton : centré
+		texte : centré verticalement dans Chrome et IE
+		texte : centré horizontalement dans Chrome ; aligné à gauche dans IE
+		word-wrap : sans. */
+	
+	/*Essai 10 :
+	align-items: center; 
+	justify-content: center; 
+	padding-left: 5px;
+	padding-right: 5px;
+	Verdict Essai 10 avec un <p> :
+		bouton : non centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement dans Chrome et IE
+		word-wrap : sans. */
+	
+	/*Essai 11 :
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	Verdict Essai 11 avec un <p> :
+		bouton : non centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement dans Chrome et IE
+		word-wrap : sans. */
+
+	/*Essai 12 :
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    text-justify: inter-word;
+	Verdict Essai 12 avec un <p> :
+		bouton : non centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement dans Chrome et IE
+		word-wrap : sans. */
+		
+
+	/*Essai 13 :
+    display: flex;
+    line-height: 200px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 20px;
+	Verdict Essai 13 avec un <p> :
+		bouton : centré
+		texte : centré verticalement dans Chrome et IE
+		texte : centré horizontalement dans Chrome, mais pas dans IE
+		word-wrap : sans. */
+
+	/*Essai 14 :
+    display: flex;
+    line-height: 200px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+	Verdict Essai 14 avec un <p> :
+		bouton : centré
+		texte : centré verticalement dans Chrome et IE
+		texte : centré horizontalement dans Chrome, mais pas dans IE
+		word-wrap : sans. */
+
+
+	/*Essai 15 :
+    text-align: justify;
+    text-justify: inter-word;
+	Verdict Essai 15 avec un <p> :
+		bouton : non centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement dans Chrome et IE
+		word-wrap : sans. */
+
+		
+		
+	/*Essai 16 :
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:200px;
+	height:500px;		
+	Verdict Essai 16 avec un <p> :
+		bouton : centré
+		texte : centré verticalement dans Chrome et IE
+		texte : centré horizontalement dans Chrome, mais pas dans IE
+		word-wrap : sans. */
+
+
+
+	/*Essai 17 :
+	display:flex;
+	width:200px;
+	height:200px;		
+	Verdict Essai 17 avec un <p> :
+		bouton : centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement, ni dans Chrome, ni dans IE
+		word-wrap : sans. */
+
+		
+	/*Essai 18 :
+	text-align: center;
+	margin : auto;		
+	Verdict Essai 18 avec un <p> :
+		bouton : centré
+		texte : non centré verticalement dans Chrome et IE
+		texte : non centré horizontalement, ni dans Chrome, ni dans IE
+		word-wrap : sans. */
+		
+		
+/*
+Pour centrer un élément de type inline à l'intérieur d'un bloc parent :
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+*/
+
+
+		
+/*    
+padding:10px; / * aération interne de la zone de texte * /
+vertical-align:middle;
+display:inline-block;
+line-height:1.2; / * on rétablit le line-height * /
+*/    
+    
+/*    
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    text-justify: inter-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+*/
+/*    
+    margin-left: auto;
+    margin-right: auto;    
+    vertical-align: middle;
+    
+    display: flex;
+*/    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Pour centrer le texte horizontalement dans le flex :
+    text-align: center;*/
+    /* Pour justifier le texte dans le <a> : */
+/*    word-wrap: break-word;*/
+    
+/*    
+    flex-wrap: wrap; => PB : propriété inconnue.
+    justify-content:center;    
+*/    
+    
+/*    
+text-align: justify;
+text-justify: inter-word;
+    margin-left: auto;
+    margin-right: auto;*/
+    /* Et pour le centrer verticalement dans le flex : */
+/*    vertical-align: middle; */
+/*    align-items: center;*/
+/*    
+    vertical-align: middle;
+*/
+/*    justify-content: center; */
+/*    line-height:1.3em; */
+/*    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+*/
+    
+/*    
+    display: block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+*/
+/*    
+    line-height: 200px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    display: flex;
+    margin: 0;
+    padding: 20px;
+*/    
+}
+
+/* TODEL ? */
+.center-table {
+  display: table;
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+}
+
+/* TODEL ? */
+.center-table p {
+  display: table-cell;
+  height: 200px;
+  width: 200px;
+  margin: 0;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+/* Ajout par Florent : erreur : texte en rouge pour les éléments utilisant
+   cette classe. */
+.erreur {
+    color: red; /* Rouge */
+}
+
+/* Ajout par Florent : indentation : 30 pixels de marge extérieure (margin)
+   à gauche des éléments utilisant cette classe. */
+.indentation {
+    margin-left: 30px;
 }
 
 h1{
     margin-top: 100px;
     font-family: 'museo';
     font-size: 2em;
-    color : #004812;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : h2. */
+h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
 }
 
 h4{
@@ -72,12 +579,1202 @@ h4{
     margin-bottom: 20px;
     font-family: 'museo';
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : zone de saisie de texte. */
+input[type=text] {
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : label. */
+label{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */ 
 }
 
 p{
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'museo';
-    color : #004812; 
+    color : #004812; /* Vert foncé */ 
 }
+
+
+
+
+
+.TODELparent {
+	
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+ width: 200px;
+ /* line-break: loose; affecterait CJK seulement */
+line-height: 200px;
+
+
+
+}
+
+
+
+
+
+.TODELchild {
+	
+display:inline-block;
+width:200px; /* largeur de la zone de texte */
+padding:10px; /* aération interne de la zone de texte */
+vertical-align:middle;
+line-height:1.2; /* on rétablit le line-height */
+
+  
+}
+
+
+/* TODEL ? */
+.flexbox-container {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
+}
+
+
+/*TODEL
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+h1 { font-size: 60px; }
+h3 {
+  font-size: 32px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+h6 { font-size: 22px; }
+
+.banner h1, .banner h3, .banner h6 {
+  margin: 0;
+  text-shadow: 2px 2px 6px #000;
+  text-align: center;
+}
+
+.banner {
+  color: white;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/banner-flowers.jpg') top left/cover no-repeat;
+  height: 300px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+
+
+/*
+Source :
+C:/Users/cdi315/Desktop/MaCopieLocalecdi1804/NotePadPP/CSS3/Centrer%20en%20CSS,%20un%20guide%20complet.htm
+
+Éléments inline ou inline-* (p.ex. texte ou lien)?
+Vous pouvez centrer horizontalement des éléments inline à l'intérieur d'un élément parent de niveau bloc :
+
+
+HTML :
+<header>
+  This text is centered.
+</header>
+
+<nav role='navigation'>
+  <a href="#0">One</a>
+  <a href="#0">Two</a>
+  <a href="#0">Three</a>
+  <a href="#0">Four</a>
+</nav>  
+
+CSS :
+header, nav {
+  text-align: center;
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  background: #333;
+  border-radius: 5px;
+  color: white;
+  padding: 3px 8px;
+}
+
+Éléments block ?
+Vous pouvez centrer un élément de niveau bloc en lui donnant une marge gauche et droite automatique, ce qui se traduit par :
+
+HTML :
+<main>
+  <div class="center">
+    I'm a block level element and am centered.
+  </div>
+</main>
+ 
+CSS :
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.center {
+  margin: 0 auto;
+  width: 200px;
+  background: black;
+  padding: 20px;
+  color: white;
+}
+
+
+
+
+Y a-t-il plus d'un élément block ?
+Si vous avez deux éléments blocs, ou plus, à centrer dans une rangée, une bonne solution consistera souvent à changer le type de display. Voici deux exemples, le premier utilise display: inline-block, le second utilise Flexbox :
+
+HTML :
+<main class="inline-block-center">
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row. I have more content in me than my siblings do.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+</main>
+
+<main class="flex-center">
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row. I have more content in me than my siblings do.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+</main>
+
+CSS :
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+main div {
+  background: black;
+  color: white;
+  padding: 15px;
+  max-width: 125px;
+  margin: 5px;
+}
+
+.inline-block-center {
+  text-align: center;
+}
+.inline-block-center div {
+  display: inline-block;
+  text-align: left;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+Voilà pour les rangées. Et si vous avez plusieurs éléments blocks empilés les uns sur les autres, la technique de marge automatique fonctionne parfaitement :
+
+HTML :
+<main>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row. I have more content in me than my siblings do.
+  </div>
+  <div>
+    I'm an element that is block-like with my siblings and we're centered in a row.
+  </div>
+</main>
+
+CSS :
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+main div {
+  background: black;
+  margin: 0 auto;
+  color: white;
+  padding: 15px;
+  margin: 5px auto;
+}
+
+main div:nth-child(1) {
+  width: 200px;
+}
+main div:nth-child(2) {
+  width: 400px;
+}
+main div:nth-child(3) {
+  width: 125px;
+}
+
+
+
+Centrer verticalement
+=====================
+Le centrage vertical est un peu plus délicat en CSS.
+
+
+Éléments inline ou inline-* (p.ex. texte ou lien)?
+Est-ce une ligne unique ?
+Des éléments inline ou texte peuvent apparaître centrés verticalement parfois simplement parce qu'il y a un padding top et bottom égal :
+
+HTML :
+<main>
+  <a href="#0">We're</a>
+  <a href="#0">Centered</a>
+  <a href="#0">Bits of</a>
+  <a href="#0">Text</a>
+</main>
+
+CSS :
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 50px;
+}
+
+main a {
+  background: black;
+  color: white;
+  padding: 40px 30px;
+  text-decoration: none;
+}
+
+
+
+Si vous ne pouvez pas utiliser le padding et que vous cherchez à centrer un texte qui doit rester sur une ligne unique, le truc est de donner à la propriété line-height la même valeur qu'à height.
+
+HTML :
+<main>
+  <div>
+    I'm a centered line.
+  </div>
+</main>
+
+
+CSS :
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 40px;
+}
+
+main div {
+  background: black;
+  color: white;
+  height: 100px;
+  line-height: 100px;
+  padding: 20px;
+  width: 50%;
+  white-space: nowrap;
+}
+
+
+
+Ou des lignes multiples ?
+Là aussi on peut obtenir le centrage avec des padding top et bottom égaux.
+
+Si pour une raison quelconque vous ne pouvez pas utiliser cette technique, peut-être l'élément dans lequel est situé le texte est-il une cellule de tableau, ou bien on peut forcer cet élément à se comporter comme s'il était une cellule. La propriété vertical-align gère cette situation, puisqu'elle sert habituellement à aligner des contenus situés sur une rangée.
+
+HTML :
+<table>
+  <tr>
+    <td>
+      I'm vertically centered multiple lines of text in a real table cell.
+    </td>
+  </tr>
+</table>
+
+<div class="center-table">
+  <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+</div>
+
+CSS :
+table {
+  background: white;
+  width: 240px;
+  border-collapse: separate;
+  margin: 20px;
+  height: 250px;
+}
+
+table td {
+  background: black;
+  color: white;
+  padding: 20px;
+  border: 10px solid white;
+  //default is vertical-align: middle;
+}
+
+.center-table {
+  display: table;
+  height: 250px;
+  background: white;
+  width: 240px;
+  margin: 20px;
+}
+.center-table p {
+  display: table-cell;
+  margin: 0;
+  background: black;
+  color: white;
+  padding: 20px;
+  border: 10px solid white;
+  vertical-align: middle;
+}
+
+
+
+Une autre solution consiste à utiliser flexbox. Centrer un flex-child dans un flex-parent est assez facile :
+
+HTML :
+<div class="flex-center">
+  <p>I'm vertically centered multiple lines of text in a flexbox container.</p>
+</div>
+
+
+
+CSS :
+div {
+  background: white;
+  width: 240px;
+  margin: 20px;
+}
+
+.flex-center {
+  background: black;
+  color: white;
+  border: 10px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  resize: vertical;
+  overflow: auto;
+}
+.flex-center p {
+  margin: 0;
+  padding: 20px;
+}
+
+ATTENTION : N'oubliez pas que cela fonctionne uniquement si le container parent a une hauteur fixe (en px, en % ou ce que vous voulez), c'est pourquoi le container ici a une hauteur.
+
+
+
+
+Si vous ne pouvez utiliser aucune de ces techniques, il vous reste encore celle du “ghost-element”, l'élément fantôme, dans lequel un pseudo-élément prenant toute la hauteur est placé à l'intérieur du container et le texte est aligné verticalement sur lui :
+
+HTML :
+<div class="ghost-center">
+  <p>I'm vertically centered multiple lines of text in a container. Centered with a ghost pseudo element</p>
+</div>
+
+
+CSS :
+div {
+  background: white;
+  width: 240px;
+  height: 200px;
+  margin: 20px;
+  color: white;
+  resize: vertical;
+  overflow: auto;
+  padding: 20px;
+}
+
+.ghost-center {
+  position: relative;
+}
+.ghost-center::before {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+.ghost-center p {
+  display: inline-block;
+  vertical-align: middle;
+  width: 190px;
+  margin: 0;
+  padding: 20px;
+  background: black;
+}
+
+
+
+
+Élements block
+Connaissez-vous la hauteur de l'élément ?
+Il est assez courant de ne pas connaître la hauteur d'un élément, pour des tas de raisons : Si la largeur change, la réorganisation du texte peut changer la hauteur, une modification du style du texte peut également changer la hauteur, de même qu'un ajout de texte... Idem si le ratio d'aspect de votre image est fixe, tout redimensionnement entraînera une modification de sa hauteur.
+
+Mais si vous connaissez sa hauteur, vous pouvez le centrer avec :
+
+
+
+HTML :
+<main>
+  <div>
+     I'm a block-level element with a fixed height, centered vertically within my parent.
+  </div>
+</main>
+
+
+
+
+CSS :
+main {
+  background: white;
+  height: 300px;
+  margin: 20px;
+  width: 300px;
+  position: relative;
+  resize: vertical;
+  overflow: auto;
+}
+
+main div {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 100px;
+  margin-top: -70px;
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+
+
+La hauteur de l'élément est-elle inconnue ?
+Si vous ne connaissez pas la hauteur de l'élément, vous pouvez le centrer en le remontant de la moitié de sa hauteur après l'avoir fait descendre de la moitié de la hauteur du contenant :
+
+HTML :
+<main>
+  <div>
+     I'm a block-level element with an unknown height, centered vertically within my parent.
+  </div>
+</main>
+
+
+CSS :
+main {
+  background: white;
+  height: 300px;
+  margin: 20px;
+  width: 300px;
+  position: relative;
+  resize: vertical;
+  overflow: auto;
+}
+
+main div {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  padding: 20px;
+  transform: translateY(-50%);
+  resize: vertical;
+  overflow: auto;
+}
+
+
+
+Pouvez-vous utiliser Flexbox ?
+Sans surprise, c'est bien plus facile avec flexbox.
+
+
+HTML :
+<main>
+  <div>
+     I'm a block-level element with an unknown height, centered vertically within my parent.
+  </div>
+</main>
+
+
+CSS :
+main {
+  background: white;
+  height: 300px;
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+  overflow: auto;
+}
+
+main div {
+  background: black;
+  color: white;
+  padding: 20px;
+  resize: vertical;
+  overflow: auto;
+}
+
+
+
+
+
+Horizontalement et verticalement
+Vous pouvez combiner les techniques qui précèdent pour obtenir des éléments parfaitement centrés. Mais il me semble qu'elles peuvent se regrouper en trois catégories :
+
+Éléments de hauteur et largeur fixes
+Vous pouvez utiliser des marges négatives égales à la moitié de cette hauteur et de cette largeur, un positionnement absolu à 50%/50% centrera l'élément :
+
+HTML :
+<main>
+  <div>
+     I'm a block-level element a fixed height and width, centered vertically within my parent.
+  </div>
+</main>
+
+CSS :
+body {
+  background: #f06d06;
+  font-size: 80%;
+  padding: 20px;
+}
+
+main {
+  position: relative;
+  background: white;
+  height: 200px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+}
+
+main div {
+  background: black;
+  color: white;
+  width: 200px;
+  height: 100px;
+  margin: -70px 0 0 -120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+}
+
+
+
+Éléments de hauteur et largeur inconnues
+Si vous ne connaissez pas la largeur ou la hauteur, vous pouvez utiliser la propriété  transform et une translation négative de 50% dans les deux directions (elle sera basée sur les largeur et hauteur actuelles de l'élément) :
+
+HTML :
+<main>
+  <div>
+     I'm a block-level element of an unknown height and width, centered vertically within my parent.
+  </div>
+</main>
+
+
+
+CSS :
+body {
+  background: #f06d06;
+  font-size: 80%;
+  padding: 20px;
+}
+
+main {
+  position: relative;
+  background: white;
+  height: 200px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+}
+
+main div {
+  background: black;
+  color: white;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+}
+
+
+
+Pouvez-vous utiliser Flexbox ?
+Pour centrer dans les deux directions avec flexbox, vous devez utiliser deux propriétés de centrage :
+
+
+
+HTML :
+<main>
+  <div>
+     I'm a block-level-ish element of an unknown width and height, centered vertically within my parent.
+  </div>
+</main>
+
+
+
+
+CSS :
+body {
+  background: #f06d06;
+  font-size: 80%;
+  padding: 20px;
+}
+
+main {
+  background: white;
+  height: 200px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+}
+
+main div {
+  background: black;
+  color: white;
+  width: 50%;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+}
+
+
+================================================================
+
+.parent {
+  display: flex; //contexte sur le parent
+}
+.enfant {
+  margin: auto; //eh oui, tout bêtement
+}
+
+
+
+Block ou display:block
+======================
+
+css#element {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+Pour centrer un inline ou un inline-block :
+Appliquer sur le parent :
+#parent { text-align: center; }
+
+
+
+CSS :
+p.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+HTML :
+<p class="blocktext">Cet étroit bloc de texte est centré. Notez que les lignes à l'intérieur du bloc ne sont pas centrées mais alignées à gauche.</p>
+
+
+
+Pour centrer une image :
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+ ...
+<IMG class="displayed" src="..." alt="...">
+
+
+
+
+Pour centrer verticalement un texte :
+
+CSS :
+div.center-text-v{
+height: 40px; //Ces deux lignes...
+line-height: 40px; //...alignent le texte verticalement
+}
+
+HTML :
+<div class="center-text-v">Un texte centré verticalement</div>
+
+
+
+Pour centrer horizontalement un texte :
+
+CSS :
+div.center-text-h{
+text-align: center; //Aligne le texte dans un bloc
+}
+
+HTML :
+<div class="center-text-h">Un texte centré horizontalement</div>
+ 
+ 
+Pour centrer horizontalement et verticalement un texte :
+
+CSS :
+div.center-text-h-v{
+text-align: center; //Aligne le texte horizontalement
+height: 40px; //Ces deux lignes... 
+line-height: 40px; // ...alignent le texte verticalement
+}
+
+HTML :
+<div class="center-text-h-v">Un texte centré</div>
+ 
+
+
+Pour centrer verticalement sur une seule ligne :
+
+HTML :
+HTML<div class="parent">
+  <div class="enfant">centré verticalement ?</div>
+</div><
+
+CSS :
+CSS.parent {
+  height: 20em; //hauteur du parent 
+  line-height: 20em; // hauteur de ligne (identique) 
+  white-space: nowrap; // interdiction de passer à la ligne
+}
+Avantages : très simple à mettre en oeuvre
+Inconvénients : ne fonctionne que sur une seule ligne, nécessite une hauteur de parent définie
+Compatibilité : IE6 (et le reste du monde)
+
+
+Pour centrer verticalement via table-cell :
+
+Le modèle tabulaire en CSS, le même que celui basé sur les décriés <table> HTML, offre des possibilités d'alignement vertical simplissime, tout simplement à l'aide de vertical-align: middle.
+
+HTML :
+HTML<div class="parent">
+  <div class="enfant">centré verticalement ?</div>
+</div><
+
+CSS :
+CSS.parent {
+  display: table-cell; // comportement visuel de cellule
+  vertical-align: middle;
+}
+Avantages : pas de sortie du flux, nul besoin de fixer ou connaître la hauteur du parent
+Inconvénients : les tableaux nécessitent certains aménagements pour éviter les débordements de contenus (table-layout: fixed et largeur définie)
+Compatibilité : IE8 (et le reste du monde)
+
+
+
+
+Pour centrer verticalement via flexbox :
+
+CSS3 Flexbox est une véritable révolution pour les webdesigners car il remet enfin à plat toutes les bidouilles ancestrales de CSS. Sa compatibilité (IE10) le rend aujourd'hui utilisable en production, tout particulièrement dans un environnement mobile ou responsive.
+
+Méthode 1 : j'indique l'alignement sur l'enfant
+
+HTML :
+HTML<div class="parent">
+  <div class="enfant">centré verticalement ?</div>
+</div><
+
+CSS :
+CSS.parent {
+  display: flex; //contexte sur le parent
+}
+.enfant {
+  margin: auto; //eh oui, tout bêtement
+}
+
+Méthode 2 : j'indique l'alignement sur le parent
+
+HTML :
+HTML<div class="parent">
+  <div class="enfant">centré verticalement ?</div>
+</div><
+
+CSS :
+CSS.parent {
+  display: flex; //contexte sur le parent
+  flex-direction: column; // direction d'affichage verticale
+  justify-content: center; // alignement vertical
+}
+Avantages : pas de sortie du flux, nul besoin de fixer ou connaître la hauteur du parent, pas de bidouilles
+Inconvénients : aucun, à l'exception de la compatibilité
+Compatibilité : IE10 (et le reste du monde)
+
+Note : cette technique d'alignement via Flexbox fonctionne aussi en employant la déclaration align-items: center; si vous demeurez dans l'axe horizontal par défaut (flex-direction: row).
+
+
+
+Un bloc dans un bloc :
+
+.parent {
+position: relative;
+// facultatif : résoud un bug non systématique de blur sur IE
+transformstyle:
+preserve3d;
+}
+.child {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(50%,
+50%);
+// compatibilité : ie9+
+}
+
+
+Des blocs dans un bloc :
+
+.parent {
+textalign:
+center;
+}
+.parent:before {
+content: "";
+display: inlineblock;
+height: 100%;
+verticalalign:
+middle;
+marginright:
+0.25em;
+// space width
+}
+.child {
+display: inlineblock;
+verticalalign:
+middle;
+}
+
+
+
+Des éléments inline dans un bloc :
+.parent {
+textalign:
+center;
+}
+.child {
+verticalalign:
+middle;
+}
+
+
+
+Un bloc dans un bloc :
+Centrage horizontal :
+
+.parent {
+}
+.child {
+margin: 0 auto;
+}
+
+Centrage vertical :
+
+.parent {
+position: relative;
+}
+.child {
+height: {Y}em; // remplacer {Y} par votre valeur
+position: absolute;
+top: 50%;
+margintop:
+{
+Y/2}em; //remplacer {Y/2} par la moitié de votre height
+}
+
+
+
+
+Les deux :
+En réutilisant toutes les techniques expliquées précédemment, on peut arriver à plusieurs
+solutions, à choisir selon votre contexte et vos préférences.
+Méthode à base de display : inline-block
+
+.parent {
+textalign:
+center;
+}
+.parent:before {
+content: "";
+display: inlineblock;
+height: 100%;
+verticalalign:
+middle;
+marginright:
+0.25em;
+}
+.child {
+display: inlineblock;
+verticalalign:
+middle;
+}
+
+
+
+Des blocs dans un bloc
+Centrage horizontal
+.parent {
+textalign:
+center;
+}
+.child {
+display: inlineblock;
+}
+
+Centrage vertical
+.parent {
+}
+.child {
+display: inlineblock;
+verticalalign:
+middle;
+}
+
+
+
+Autre technique :
+.parent:before {
+display: table;
+width: 100%;
+}
+.parent {
+display: tablecell;
+verticalalign:
+middle;
+}
+.child {
+display: inlineblock;
+// à enlever si vous ne souhaitez pas avoir vos blocs enfa
+nts alignés sur la même ligne, mais juste centrés verticalement sur la hauteur
+}
+
+
+
+Les deux
+On peut combiner les deux solutions basées sur le display: inlineblock;
+pour avoir le
+résultat souhaité.
+.parent {
+textalign:
+center;
+}
+.child {
+display: inlineblock;
+verticalalign:
+middle;
+}
+
+
+
+
+On peut aussir réutiliser la méthode à base de display: tablecell
+et l'adapter pour
+qu'elle centre horizontalement et verticalement.
+.parent:before {
+display: table;
+width: 100%;
+}
+.parent {
+display: tablecell;
+verticalalign:
+middle;
+textalign:
+center;
+}
+.child {
+display: inlineblock;
+textalign:
+left;
+}
+
+
+
+
+Encore une autre technique :
+
+.parent {
+textalign:
+center;
+}
+.parent:before {
+content: "";
+display: inlineblock;
+height: 100%;
+verticalalign:
+middle;
+marginright:
+0.25em;
+}
+.child {
+display: inlineblock;
+verticalalign:
+middle;
+}
+
+
+Des éléments inlines dans un bloc :
+Ces éléments inline peuvent être par exemple des liens <a> ou des <span> tout
+simples. Ces techniques sont souvent très connues et ne devraient pas vous poser
+beaucoup de problèmes, elles ne seront pas commentées. Veuillez vous référer text-align
+et vertical-align si vous souhaitez plus d'informations.
+
+Centrage horizontal :
+.parent {
+textalign:
+center;
+}
+.child {
+}
+
+
+Centrage vertical :
+.parent {
+}
+.child {
+verticalalign:
+middle;
+}
+
+Les deux :
+.parent {
+textalign:
+center;
+}
+.child {
+verticalalign:
+middle;
+}
+
+
+
+Techniques avancées : flexbox (ie11+) :
+Flexbox est un outil très puissant quand il s'agit de gérer le position de blocs flex. Son seul
+défaut consiste en son faible support navigateur, mais il vous faudra maitriser ces
+techniques si vous comptez faire du développement web dans les années à venir, d'autant
+plus qu'elles sont très simples à rédiger et comprendre.
+
+Centrage horizontal :
+On déclare le conteneur en bloc flex, et on lui applique la propriété justify-content.
+
+.parent {
+display: flex;
+justifycontent:
+center;
+}
+.child {
+}
+
+
+Centrage vertical :
+Idem, on déclare le conteneur en bloc flex, et cette fois, on lui applique la propriété alignitems.
+.parent {
+display: flex;
+alignitems:
+center;
+}
+.child {
+}
+
+Les deux :
+On combine le tout pour un résultat génial et simpliste.
+.parent {
+display: flex;
+justifycontent:
+center;
+alignitems:
+center;
+}
+.child {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+

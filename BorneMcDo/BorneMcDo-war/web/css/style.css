@@ -5,37 +5,38 @@
 
 .btn-plein{
     width: 400px;
+    margin-top: 50px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
-    background-color: #004812;
+    border-color: #004812; /* Vert foncé */
+    background-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1.6em;
     text-transform: uppercase;
-    color : #ffffff;
+    color : white; /* #ffffff : Blanc */
 }
 
 .btn-plein:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
 }
 
 .btn-evide{
     width: 400px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1.6em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
 }
 
 .btn-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
 }
 
 .btn-choix-evide{
@@ -44,11 +45,11 @@
     height: 200px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 4em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,14 +58,127 @@
 .btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/*
+	Ajout par Florent : bouton btn-modeconsommation-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-modeconsommation-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-modeconsommation-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/*
+	Ajout par Florent : bouton btn-promotion-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-promotion-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-promotion-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/* Ajout par Florent : erreur : texte en rouge pour les éléments utilisant
+   cette classe. */
+.erreur {
+    color: red; /* Rouge */
+}
+
+/* Ajout par Florent : indentation : 30 pixels de marge extérieure (margin)
+   à gauche des éléments utilisant cette classe. */
+.indentation {
+    margin-left: 30px;
 }
 
 h1{
     margin-top: 100px;
     font-family: 'museo';
     font-size: 2em;
-    color : #004812;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : h2. */
+h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
 }
 
 h4{
@@ -72,12 +186,31 @@ h4{
     margin-bottom: 20px;
     font-family: 'museo';
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : zone de saisie de texte. */
+input[type=text] {
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : label. */
+label{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */ 
 }
 
 p{
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'museo';
-    color : #004812; 
+    color : #004812; /* Vert foncé */ 
 }

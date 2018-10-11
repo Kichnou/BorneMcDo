@@ -2,6 +2,8 @@ package ejb;
 
 import entites.Article;
 import entites.Categorie;
+import entites.Client;
+import entites.Information;
 import entites.Ingredient;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
@@ -383,6 +385,55 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(cadeauFille);
         em.persist(cadeauGarcon);
         em.persist(livre);
+        
+        Client mcdonald = new Client("MCDONALD", "Ronald", 100);
+        Client lecanard = new Client("LECANARD", "Donald", 200);
+        Client trompe = new Client("TROMPE", "Donald", 300);
+        Client mangepeu = new Client("MANGEPEU", "Harry", 400);
+        Client mangetout = new Client("MANGETOUT", "Haricot", 500);
+        Client lapin = new Client("LAPIN", "Bugs", 600);
+        Client canard = new Client("CANARD", "Daffy", 700);
+        Client porc = new Client("PORC", "Porky", 800);
+        Client chat = new Client("CHAT", "Sylvestre", 900);
+        Client canari = new Client("CANARI", "Titi", 1000);
+        Client chien = new Client("CHIEN", "Hector", 1100);
+
+        em.persist(canard);
+        em.persist(canari);
+        em.persist(chat);
+        em.persist(chien);
+        em.persist(lapin);
+        em.persist(lecanard);
+        em.persist(mangepeu);
+        em.persist(mangetout);
+        em.persist(mcdonald);
+        em.persist(porc);
+        em.persist(trompe);
+ 
+
+        Information info1 = new Information("Restaurant McDonald's");
+        Information info2 = new Information("Paris Reuilly Diderot");
+        Information info3 = new Information("116 Boulevard Diderot");
+        Information info4 = new Information("75012 PARIS");
+        Information info5 = new Information("Tél. 01.43.45.91.00.");
+        Information info6 = new Information("SIRET 401 644 067 00027");
+        Information info7 = new Information("APE 5610C");
+        Information info8 = new Information("RCS CRETEIL");
+        Information info9 = new Information("TVA INTRA FR56401644067");
+        Information info10 = new Information("Restaurant 25000391");
+
+        em.persist(info1);
+        em.persist(info2);
+        em.persist(info3);
+        em.persist(info4);
+        em.persist(info5);
+        em.persist(info6);
+        em.persist(info7);
+        em.persist(info8);
+        em.persist(info9);
+        em.persist(info10);
+        
+        
         
     }
 
