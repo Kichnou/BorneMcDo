@@ -51,7 +51,8 @@ public class GestionPanier implements GestionPanierLocal {
         Choix c = new Choix();
 
         c.setTauxTva(a.getLaTva().getTaux());
-        c.setPrix(a.getPrix() + (c.getPrix() * c.getTauxTva()));
+        System.out.println("montant TVA ==========>" + (c.getPrix() * c.getTauxTva()));
+        c.setPrix(a.getPrix() + (a.getPrix() * c.getTauxTva()));
         c.setUnArticle(a);
 
         this.getMonPanier().add(c);
