@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Panier.jsp</file>
-            <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Catalogue.jsp</file>
-            <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScPanier.java</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/css/style.css</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Paiement.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/ConfCommande.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/CommandeOk.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/js/AjaxPanier.jsp</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/src/java/sousControllers/ScCommande.java</file>
+            <file>file:/D:/monMcDo/BorneMcDo/BorneMcDo-war/web/WEB-INF/Catalogue.jsp</file>
         </group>
     </open-files>
 </project-private>

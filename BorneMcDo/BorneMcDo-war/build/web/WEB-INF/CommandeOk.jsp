@@ -14,7 +14,7 @@
         <div class="container">
             <h1 class="text-center">Votre commande est en préparation.<br/>
             Rendez-vous en caisse avec votre ticket pour la récupérer.</h1>
-            <h1 class="text-center">Commande n°</h1>
+            <h1 class="text-center">Commande n° ${idCourt}</h1>
             <div class="row justify-content-center">
                 <div class="col">
                     <a class="btn btn-choix-evide mx-auto" href='Controller?section=ScCommande&ref=quit'>Quit</a>

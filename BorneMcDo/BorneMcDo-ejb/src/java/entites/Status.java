@@ -8,10 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
-
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.Status.selectStatusByLibelle", query = "SELECT s FROM Status s WHERE s.libelle = :paramStatusLib" )
+})
 public class Status implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,7 +24,7 @@ public class Status implements Serializable {
     private Long id;
     @Column(nullable = false, length = 50)
     private String libelle;
-    
+
     @OneToMany(mappedBy = "unStatus")
     private Collection<Commande> lesCommandes;
 
@@ -31,8 +35,6 @@ public class Status implements Serializable {
     public Status(String libelle) {
         this.libelle = libelle;
     }
-
-    
 
     public Long getId() {
         return id;
@@ -57,8 +59,6 @@ public class Status implements Serializable {
     public void setLesCommandes(Collection<Commande> lesCommandes) {
         this.lesCommandes = lesCommandes;
     }
-    
-    
 
     @Override
     public int hashCode() {
