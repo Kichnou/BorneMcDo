@@ -47,7 +47,7 @@ public class Article implements Serializable {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient>lesIngredients;
     
-    @ManyToMany(mappedBy = "lesArticles")
+    @OneToMany (mappedBy = "unArticle")
     private Collection<SupplementArticle>lesSupArt;
     
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})

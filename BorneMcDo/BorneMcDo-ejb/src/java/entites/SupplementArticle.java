@@ -2,11 +2,12 @@ package entites;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -19,8 +20,8 @@ public class SupplementArticle implements Serializable {
     private Long id;
     private float prix;
     
-    @ManyToMany
-    private Collection<Article> lesArticles;
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Article unArticle;
     @OneToMany(mappedBy = "unSuppArt")
     private Collection<Choix> lesChoix;
 
@@ -49,12 +50,12 @@ public class SupplementArticle implements Serializable {
         this.prix = prix;
     }
 
-    public Collection<Article> getLesArticles() {
-        return lesArticles;
+    public Article getUnArticle() {
+        return unArticle;
     }
 
-    public void setLesArticles(Collection<Article> lesArticles) {
-        this.lesArticles = lesArticles;
+    public void setUnArticle(Article unArticle) {
+        this.unArticle = unArticle;
     }
 
     public Collection<Choix> getLesChoix() {
