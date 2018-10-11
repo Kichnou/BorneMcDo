@@ -46,7 +46,7 @@ public class Choix implements Serializable {
     private Choix leChoix;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private SupplementAutre unSuppAut;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne//(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Article unArticle;
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Ingredient> lesIngredients;
