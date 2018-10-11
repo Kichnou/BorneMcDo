@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,6 +10,7 @@
         <link rel="stylesheet" href="./css/style.css" />
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/naviguation.js"></script>
+        <fmt:setLocale value="fr_FR"/>
         <title>Catalogue</title>
     </head>
 
@@ -34,7 +36,7 @@
 
         function go(idArticle) {
             url = "Controller?section=ScPanier&article=" + idArticle;
-            alert(url);
+            //alert(url);
 
             xmlhttp = getxmlhttp();
             xmlhttp.onreadystatechange = xmlhttpChange;

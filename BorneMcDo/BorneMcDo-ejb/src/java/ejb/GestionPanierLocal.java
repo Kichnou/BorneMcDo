@@ -18,8 +18,10 @@ public interface GestionPanierLocal {
 
     public ArrayList<Choix> getMonPanier();
 
-    public void add(String article);
+    public Choix add(String article);
 
     public float getPrixTotal();
+
+    public Choix addSuppArt(String idArticle);
     
 }

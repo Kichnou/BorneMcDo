@@ -22,6 +22,8 @@ public interface GestionCatalogueLocal {
 
     public List<SousCategorie> getSousCategorieByMenu(String idMenu);
 
+    public boolean isArticleSuppArt(String idArt);
+
 
     
 }

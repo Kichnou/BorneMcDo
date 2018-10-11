@@ -1,5 +1,6 @@
 package sousControllers;
 
+import ejb.GestionCatalogueLocal;
 import ejb.GestionPanierLocal;
 import entites.Article;
 import entites.Choix;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class ScPanier implements SousController {
+
+    GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -48,6 +51,12 @@ public class ScPanier implements SousController {
 
         request.setAttribute("listeArticle", listeArticle);
 
+        if (request.getParameter("article") != null) {
+            if (gestionCatalogue.isArticleSuppArt(request.getParameter("article"))) {
+                
+            }
+        }
+        
         return "/WEB-INF/Panier.jsp";
     }
 
@@ -55,6 +64,16 @@ public class ScPanier implements SousController {
         try {
             Context c = new InitialContext();
             return (GestionPanierLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/GestionPanier!ejb.GestionPanierLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+    private GestionCatalogueLocal lookupGestionCatalogueLocal() {
+        try {
+            Context c = new InitialContext();
+            return (GestionCatalogueLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/GestionCatalogue!ejb.GestionCatalogueLocal");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

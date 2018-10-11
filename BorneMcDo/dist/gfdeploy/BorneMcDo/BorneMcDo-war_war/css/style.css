@@ -15,6 +15,7 @@
     background-color: #004812;
     font-family: 'museo';
     font-size: 0.8em;
+    font-weight: 900;
     text-transform: uppercase;
     color : #ffffff;
     text-decoration: none;
@@ -38,6 +39,7 @@
     border-color: #004812;
     font-family: 'museo';
     font-size: 1.6em;
+    font-weight: 900;
     text-transform: uppercase;
     color : #004812;
 }
@@ -45,7 +47,7 @@
 .btn-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #00280a;
 }
 
 .btn-choix-evide{
@@ -62,12 +64,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.ouinon{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #004812;
+}
+.ouinon:hover{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #00280a;
 }
 
 .btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #00280a;
+    text-decoration: none;
 }
 
 .cat{
@@ -75,6 +93,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-weight: 900;
 }
 
 .cat a{
@@ -110,6 +129,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 900;
 }
 
 .cat-centre a{
@@ -145,6 +165,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 900;
 }
 
 .cat-article img{
@@ -168,6 +189,7 @@ h4{
     font-family: 'museo';
     text-transform: uppercase;
     color : #004812;
+    font-weight: 900;
 }
 
 h6{
@@ -176,6 +198,7 @@ h6{
     font-family: 'museo';
     text-transform: uppercase;
     color : #004812;
+    font-weight: 900;
 }
 
 p{
@@ -183,6 +206,7 @@ p{
     margin-bottom: 20px;
     font-family: 'museo';
     color : #004812; 
+    font-weight: 900;
 }
 
 .btn-cadre-conf{
@@ -283,6 +307,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 900;
 }
 
 .choix-boisson a{
@@ -320,4 +345,10 @@ p{
 }
 .carte{
     line-height: 250%;
+}
+.choixConso{
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

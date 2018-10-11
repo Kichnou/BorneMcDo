@@ -20,6 +20,7 @@ import java.util.GregorianCalendar;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 @Singleton
 public class CreationJeuEssai implements CreationJeuEssaiLocal {
@@ -411,9 +412,9 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Promotion promoCbo = new Promotion("promotion CBO", "le CBO va vous faire aimer la rentrée", 0, date1, date2, "CBO", "./images/PromoCbo.jpg");
 
         //Tva
-        Tva tva5 = new Tva(5.5f);
-        Tva tva10 = new Tva(10f);
-        Tva tva20 = new Tva(20f);
+        Tva tva5 = new Tva(0.055f);
+        Tva tva10 = new Tva(0.10f);
+        Tva tva20 = new Tva(0.20f);
 
         //menus
         Menu bestOfBurger = new Menu("MENU BEST OF",
@@ -977,5 +978,13 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoVille);
         em.persist(petiteFaim);
     }
-
+    
+    @Override
+    public Preference recupererPreference(String libelle){
+        TypedQuery<Preference> tq = em.createNamedQuery("entites.Preference.SelectPrefByLibelle", Preference.class);
+        tq.setParameter("ParamPrefLib", libelle);
+        Preference p = tq.getSingleResult();
+        return p;
+    }
+        
 }

@@ -2,6 +2,7 @@ package ejb;
 
 import entites.Choix;
 import entites.Commande;
+import entites.Preference;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -30,7 +31,7 @@ public interface GestionCommandeLocal {
 
     public String genererIdCourt();
 
-    public void creerCommande(List<Choix> lesChoix, String idCourt);
+    public void creerCommande(List<Choix> lesChoix, String idCourt, Preference p);
     
     
 }
