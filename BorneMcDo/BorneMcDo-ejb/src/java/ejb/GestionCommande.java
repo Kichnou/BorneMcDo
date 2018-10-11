@@ -2,6 +2,7 @@ package ejb;
 
 import entites.Choix;
 import entites.Commande;
+import entites.Preference;
 import entites.SousCategorie;
 import entites.Status;
 import java.util.ArrayList;
@@ -25,15 +26,15 @@ public class GestionCommande implements GestionCommandeLocal {
         em.persist(object);
     }
 
-    
     @Override
-    public void creerCommande(List<Choix> lesChoix, String idCourt) {
+    public void creerCommande(List<Choix> lesChoix, String idCourt, Preference p) {
         Date d = new GregorianCalendar().getTime();
         Commande com = new Commande(d, idCourt);
-        TypedQuery<Status> tq = em.createNamedQuery("selectStatusByLibelle", Status.class);
+        TypedQuery<Status> tq = em.createNamedQuery("entites.Status.selectStatusByLibelle", Status.class);
         tq.setParameter("paramStatusLib", "en préparation");
         Status st = tq.getSingleResult();
         com.setUnStatus(st);
+        com.setUnePreference(p);
         for (Choix ch : lesChoix) {
             ch.setUneCommande(com);
             em.persist(ch);
@@ -58,11 +59,25 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> GetChoixBurger(List<Choix> panier) {
         List<Choix> panierBurger = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getLaCategorie().getNom().equals("nos burgers")) {
-                    panierBurger.add(c);
+                    if (panierBurger.isEmpty()) {
+                        panierBurger.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : panierBurger) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            panierBurger.add(c);
+                        }
+                    }
+
                 }
             }
         }
@@ -72,11 +87,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixAccomp(List<Choix> panier) {
         List<Choix> panierAccomp = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getNom().equals("accompagnements")) {
-                    panierAccomp.add(c);
+                    if (panierAccomp.isEmpty()) {
+                        panierAccomp.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : panierAccomp) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            panierAccomp.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -86,11 +114,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixBoisson(List<Choix> panier) {
         List<Choix> choixBoisson = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getLaCategorie().getNom().equals("nos boissons")) {
-                    choixBoisson.add(c);
+                    if (choixBoisson.isEmpty()) {
+                        choixBoisson.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : choixBoisson) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            choixBoisson.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -100,11 +141,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixDessert(List<Choix> panier) {
         List<Choix> choixDessert = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getLaCategorie().getNom().equals("nos desserts")) {
-                    choixDessert.add(c);
+                    if (choixDessert.isEmpty()) {
+                        choixDessert.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : choixDessert) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            choixDessert.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -114,11 +168,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixSauce(List<Choix> panier) {
         List<Choix> choixSauce = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getNom().equals("sauce")) {
-                    choixSauce.add(c);
+                    if (choixSauce.isEmpty()) {
+                        choixSauce.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : choixSauce) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            choixSauce.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -128,11 +195,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixSalade(List<Choix> panier) {
         List<Choix> choixSalade = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getLaCategorie().getNom().equals("nos salades")) {
-                    choixSalade.add(c);
+                    if (choixSalade.isEmpty()) {
+                        choixSalade.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : choixSalade) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            choixSalade.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -142,11 +222,24 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public List<Choix> getChoixCadeau(List<Choix> panier) {
         List<Choix> choixCadeau = new ArrayList();
+        int i;
         for (Choix c : panier) {
             List<SousCategorie> lsc = (List<SousCategorie>) c.getUnArticle().getLesSousCategories();
             for (SousCategorie sc : lsc) {
                 if (sc.getNom().equals("cadeau")) {
-                    choixCadeau.add(c);
+                    if (choixCadeau.isEmpty()) {
+                        choixCadeau.add(c);
+                    } else {
+                        i = 0;
+                        for (Choix ch : choixCadeau) {
+                            if (c == ch) {
+                                i++;
+                            }
+                        }
+                        if (i == 0) {
+                            choixCadeau.add(c);
+                        }
+                    }
                 }
             }
         }
@@ -166,10 +259,10 @@ public class GestionCommande implements GestionCommandeLocal {
         Date d = c.getHeure();
         d1.setTime(d);
         String oldId = c.getIdentifiantCourt().substring(2);
-        if (today.get(Calendar.DAY_OF_MONTH)!= d1.get(Calendar.DAY_OF_MONTH)) {
+        if (today.get(Calendar.DAY_OF_MONTH) != d1.get(Calendar.DAY_OF_MONTH)) {
             id = 0L;
         } else {
-            id = Long.parseLong(oldId)+1;
+            id = Long.parseLong(oldId) + 1;
         }
         if (id < 10) {
             idCourt = "CB0";
