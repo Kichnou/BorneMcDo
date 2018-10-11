@@ -7,10 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.Preference.SelectPrefByLibelle", query = "SELECT p FROM Preference p WHERE p.libele = :ParamPrefLib")
+})
 public class Preference implements Serializable {
 
     private static final long serialVersionUID = 1L;

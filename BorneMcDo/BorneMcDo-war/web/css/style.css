@@ -47,7 +47,7 @@
 .btn-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #00280a;
 }
 
 .btn-choix-evide{
@@ -64,13 +64,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     font-weight: 900;
+=======
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.ouinon{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #004812;
+}
+.ouinon:hover{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #00280a;
+>>>>>>> de69781f9865392e51f64723d7aeb39f594fd234
 }
 
 .btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #00280a;
+    text-decoration: none;
 }
 
 .cat{
@@ -330,4 +349,13 @@ p{
 }
 .carte{
     line-height: 250%;
+<<<<<<< HEAD
+=======
+}
+.choixConso{
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+>>>>>>> de69781f9865392e51f64723d7aeb39f594fd234
 }

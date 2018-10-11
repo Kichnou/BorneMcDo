@@ -16,12 +16,16 @@
             <h1 class="text-center">Souhaitez-vous accéder à vos avantanges avec votre carte client ?</h1>
             <div class="row justify-content-center">
                 <div class="col">
-                    <div class="btn btn-choix-evide mx-auto" href='#'>oui</div>
+                    <div class="btn btn-choix-evide mx-auto">
+                        <a class="ouinon" href='Controller?section=ScCatalogue'>oui</a>
+                    </div>
                     <h4 class="text-center">Je m'identifie</h4>
                     <p class="text-center">Mon prénom sera affiché sur<br>les écrans suivants</p>
                 </div>
                 <div class="col">
-                    <div class="btn btn-choix-evide mx-auto" href='#'>non</div>
+                    <div class="btn btn-choix-evide mx-auto">
+                        <a class="ouinon" href='Controller?section=ScCatalogue'>non</a>
+                    </div>
                     <h4 class="text-center">Je ne m'identifie pas</h4>
                 </div>
             </div>

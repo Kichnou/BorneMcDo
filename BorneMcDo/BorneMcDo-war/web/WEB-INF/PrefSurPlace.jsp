@@ -6,27 +6,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css" />
-        <title>Accueil</title>
+        <title>Mode de consommation</title>
     </head>
     <body>
-        <c:url value="Controller?section=ScMenu" var="menu" />
+        <c:url value="Controller?section=ScMenu" var="menu"/>
         <c:import url="${menu}"/>
-        ${message}
         <div class="container">
-            <h1 class="text-center">Souhaitez-vous accéder à vos avantanges avec votre carte client ?</h1>
-            <div class="row justify-content-center">
-                <div class="col">
-                    <div class="btn btn-choix-evide mx-auto">
-                        <a class="ouinon" href='Controller?section=ScCatalogue'>oui</a>
-                    </div>
-                    <h4 class="text-center">Je m'identifie</h4>
-                    <p class="text-center">Mon prénom sera affiché sur<br>les écrans suivants</p>
+            <div class="row choixConso">
+                <div class="row-4">
+                    <a href="Controller?section=ScAccueil&ref=surPlace"><img src="./images/surplace.png"  width="250" height="300" alt="surplace"/></a>
                 </div>
-                <div class="col">
-                    <div class="btn btn-choix-evide mx-auto">
-                        <a class="ouinon" href='Controller?section=ScCatalogue'>non</a>
-                    </div>
-                    <h4 class="text-center">Je ne m'identifie pas</h4>
+                <div class="row-4">
+                    <a href="Controller?section=ScAccueil&ref=aEmporter"><img src="./images/aemporter.png" width="250" height="300" alt="aemporter"/></a>
                 </div>
             </div>
         </div>
