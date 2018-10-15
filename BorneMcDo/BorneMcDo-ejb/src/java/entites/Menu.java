@@ -19,7 +19,9 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "entites.Menu.selectAllMenu", query= "select m from Menu m"),
-    @NamedQuery(name = "entites.Menu.getSousCategorieByIdMenu", query="select m.lesSousCategories from Menu m where m.id= :param")
+    @NamedQuery(name = "entites.Menu.getSousCategorieByIdMenu", query="select m.lesSousCategories from Menu m where m.id= :param"),
+    @NamedQuery(name = "entites.Menu.getMenuById", query ="select m from Menu m where m.id= :param"),
+    @NamedQuery(name = "entites.Menu.getIdMenu", query ="select m.id from Menu m where m.nom= :param")
 })
 public class Menu implements Serializable {
 
