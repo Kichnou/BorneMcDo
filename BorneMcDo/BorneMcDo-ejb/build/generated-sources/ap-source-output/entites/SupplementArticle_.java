@@ -7,12 +7,12 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-11T12:03:44")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-15T10:50:08")
 @StaticMetamodel(SupplementArticle.class)
 public class SupplementArticle_ { 
 
+    public static volatile SingularAttribute<SupplementArticle, Article> unArticle;
     public static volatile SingularAttribute<SupplementArticle, Float> prix;
-    public static volatile CollectionAttribute<SupplementArticle, Article> lesArticles;
     public static volatile SingularAttribute<SupplementArticle, Long> id;
     public static volatile CollectionAttribute<SupplementArticle, Choix> lesChoix;
 

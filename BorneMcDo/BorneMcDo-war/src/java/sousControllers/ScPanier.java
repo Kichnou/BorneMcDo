@@ -52,11 +52,19 @@ public class ScPanier implements SousController {
         request.setAttribute("listeArticle", listeArticle);
 
         if (request.getParameter("article") != null) {
+            request.setAttribute("suppArticle", gestionCatalogue.isArticleSuppArt(request.getParameter("article")));
+        }
+
+        if (request.getParameter("article") != null) {
+            System.out.println("=============> supplement article : " + gestionCatalogue.isArticleSuppArt(request.getParameter("article")));
+        }
+
+        if (request.getParameter("article") != null) {
             if (gestionCatalogue.isArticleSuppArt(request.getParameter("article"))) {
-                
+                return "/WEB-INF/SuppArticle.jsp";
             }
         }
-        
+
         return "/WEB-INF/Panier.jsp";
     }
 
