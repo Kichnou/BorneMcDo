@@ -16,6 +16,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class ScCatalogue implements SousController {
@@ -30,7 +31,10 @@ public class ScCatalogue implements SousController {
         String ssCat = request.getParameter("souscat");
         String idMenu = request.getParameter("menu");
         String burger = request.getParameter("burger");
-        String etape = request.getParameter("etape");
+//        String boisson = request.getParameter("boisson");
+        
+        HttpSession session = request.getSession();
+
         Menu m = new Menu();
         Choix choixMenu = new Choix();
         
@@ -74,27 +78,33 @@ public class ScCatalogue implements SousController {
             if(cat.equalsIgnoreCase("nos menus") && idMenu == null){
                 url = "/WEB-INF/choix.jsp";
                 request.setAttribute("liste", gestionCatalogue.SelectAllMenu());
-                request.setAttribute("etape", "1");
+                request.setAttribute("next", "burger");
                 request.setAttribute("attribut", "menu");
                 request.setAttribute("titre", "Sélectionnez votre Menu");
             }
            
-            if(cat.equalsIgnoreCase("nos menus") && idMenu != null){
+            if(cat.equalsIgnoreCase("nos menus") && ("burger").equalsIgnoreCase(request.getParameter("next"))){
                 //section pour le burger
                 url = "/WEB-INF/choix.jsp";
-                if(burger == null){
-                    request.setAttribute("liste", gestionCatalogue.afficherBurgerByMenu(idMenu));
-                    request.setAttribute("etape", "2");
-                    request.setAttribute("attribut", "burger");
-                    request.setAttribute("titre", "Sélectionnez votre Burger");
-                    choixMenu.setUnMenu(gestionCatalogue.getMenuById(idMenu));
-                }
-                if(burger != null){
-                    choixMenu.setUnArticle(gestionCatalogue.getArticleByid(burger));
-                }
-                
+                request.setAttribute("liste", gestionCatalogue.afficherBurgerByMenu(idMenu));
+                request.setAttribute("attribut", "burger");
+                request.setAttribute("next", "boisson");
+                request.setAttribute("titre", "Sélectionnez votre Burger");
+                choixMenu.setUnMenu(gestionCatalogue.getMenuById(idMenu));
+                System.out.println("choixMenu ::: " + choixMenu.getUnMenu().getNom());
+                session.setAttribute("choixMenu", choixMenu);
             }
             
+            if(cat.equalsIgnoreCase("nos menus") && ("boisson").equalsIgnoreCase(request.getParameter("next"))){
+                //section pour la boisson
+                url = "/WEB-INF/choix.jsp";
+                Choix test = (Choix) session.getAttribute("choixMenu");
+                
+                request.setAttribute("liste", gestionCatalogue.afficherBoissonByMenu(String.valueOf(test.getUnMenu().getId())));
+                request.setAttribute("attribut", "boisson");
+                request.setAttribute("next", "accompagnement");
+                request.setAttribute("titre", "Sélectionnez votre Boisson");
+            }
         }
         return url;
     }

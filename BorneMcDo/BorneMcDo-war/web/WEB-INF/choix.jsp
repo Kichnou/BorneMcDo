@@ -30,7 +30,7 @@
         <c:forEach var="b" items="${liste}">
             <div class="col-4">
                 <div class="cat-centre">
-                   <a class="cat-centre" href="Controller?section=ScCatalogue&cat=nos%20menus&${attribut}=${b.id}&etape=${etape}">
+                   <a class="cat-centre" href="Controller?section=ScCatalogue&cat=nos%20menus&${attribut}=${b.id}&next=${next}">
                         <img class="cat-centre" src="${b.image}"/>
                         <p class="cat-centre">${b.nom}</p>
                     </a>

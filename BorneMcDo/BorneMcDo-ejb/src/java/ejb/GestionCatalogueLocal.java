@@ -38,6 +38,8 @@ public interface GestionCatalogueLocal {
 
     public List<Article> afficherBurgerByMenu(String idMenu);
 
+    public List<Article> afficherBoissonByMenu(String idMenu);
+
     
     
 }

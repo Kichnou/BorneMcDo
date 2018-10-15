@@ -155,4 +155,31 @@ public class GestionCatalogue implements GestionCatalogueLocal {
          }
          return la;
      }
+     
+    @Override
+          public List<Article> afficherBoissonByMenu(String idMenu){
+         List<Article> la = new ArrayList<>();
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU HAPPY MEAL™")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("petite boisson");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU BEST OF")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("moyenne boisson");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU MAXI BEST OF")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("grande boisson");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU SALADE")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("jus de fruit");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         return la;
+     }
+     
 }
