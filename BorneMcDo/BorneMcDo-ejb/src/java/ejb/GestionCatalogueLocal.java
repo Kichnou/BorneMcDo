@@ -40,6 +40,15 @@ public interface GestionCatalogueLocal {
 
     public List<Article> afficherBoissonByMenu(String idMenu);
 
+    public List<Article> supprimerLesDoublons(List<Article> la);
+
+    public List<Article> afficherAccompagnementByMenu(String idMenu);
+
+
+
+
+
+
     
     
 }

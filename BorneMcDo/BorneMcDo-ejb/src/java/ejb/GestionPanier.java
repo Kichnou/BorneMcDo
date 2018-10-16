@@ -2,6 +2,7 @@ package ejb;
 
 import entites.Article;
 import entites.Choix;
+import entites.Menu;
 import entites.SupplementArticle;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,5 +93,14 @@ public class GestionPanier implements GestionPanierLocal {
         for (Choix c : listePanier) {
             this.getMonPanier().add(c);
         }
+    }
+    
+    @Override
+    public Choix addMenu(Menu m){
+        Choix choixMenu = new Choix();
+        
+        choixMenu.setUnMenu(m);
+        
+        return choixMenu;
     }
 }

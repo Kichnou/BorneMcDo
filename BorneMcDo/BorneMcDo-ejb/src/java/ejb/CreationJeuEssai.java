@@ -592,6 +592,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         boissonJus.getLesMenus().add(menuHappyMeal);
         ptitDessert.getLesMenus().add(menuHappyMeal);
         boissonJus.getLesMenus().add(menuSalade);
+
         saladCat.getLesMenus().add(menuSalade);
 
         cbo.getLesIngredients().add(painsp);
@@ -976,7 +977,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoTVA);
         em.persist(infoNumero);
         em.persist(infoVille);
-        em.persist(petiteFaim);
+        
     }
     
     @Override

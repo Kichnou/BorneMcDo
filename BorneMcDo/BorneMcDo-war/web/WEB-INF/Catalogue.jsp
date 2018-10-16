@@ -89,7 +89,7 @@
                                     <img class="cat-article" src="${a.image}"/>
                                     <p class="text-center">${a.nom}</p>
                                     <a class="btn-plein" href="#" onclick="go(${a.id});
-                                            return false">${a.prix} €</a>
+                                            return false">${a.prix} €</a>  
                                 </div>
                             </div>
                         </c:forEach>

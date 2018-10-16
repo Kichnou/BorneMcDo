@@ -6,7 +6,9 @@ import entites.Menu;
 import entites.SousCategorie;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -88,14 +90,16 @@ public class GestionCatalogue implements GestionCatalogueLocal {
                 laListe.add(la1);
             }
         }
-        return laListe;                
+        List<Article> filtre = new ArrayList<Article>(supprimerLesDoublons(laListe));
+        return filtre;                
     }
     
     @Override
     public List<Article> afficherArticleBySousCategorie(String SsCat){
-        SousCategorie sousCat = new SousCategorie(SsCat);
+       SousCategorie sousCat = new SousCategorie(SsCat);
         List<Article> la = SelectArticleBySousCategorie(sousCat);
-        return la;
+        List<Article> filtre = new ArrayList<Article>(supprimerLesDoublons(la));
+        return filtre;
     }
     
     @Override
@@ -107,7 +111,8 @@ public class GestionCatalogue implements GestionCatalogueLocal {
                 laListe.add(ar);
             }
         }
-        return laListe;
+        List<Article> filtre = new ArrayList<Article>(supprimerLesDoublons(laListe));
+        return filtre;
     }
     
          @Override
@@ -181,5 +186,41 @@ public class GestionCatalogue implements GestionCatalogueLocal {
          }
          return la;
      }
+     
+          
+    @Override
+        public List<Article> supprimerLesDoublons (List<Article> la){
+            Set<Article> set = new HashSet<Article>() ;
+            set.addAll(la);
+            return new ArrayList<Article>(set);
+        }
+        
+    
+         @Override
+          public List<Article> afficherAccompagnementByMenu(String idMenu){
+         List<Article> la = new ArrayList<>();
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU HAPPY MEAL™")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("petit accompagnement");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU BEST OF")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("moyen accompagnement");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU MAXI BEST OF")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("grand accompagnement");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         if (getMenuById(idMenu).getNom().equalsIgnoreCase("MENU SALADE")) {
+             List<String> ls = new ArrayList<>();
+             ls.add("petit accompagnement");
+             la = afficherArticleBySousCategorie(ls);
+         }
+         return la;
+     }
+
      
 }
