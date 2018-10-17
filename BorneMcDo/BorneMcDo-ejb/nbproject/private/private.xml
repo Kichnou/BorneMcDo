@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/D:/Projet%20Team/BorneMcDo/BorneMcDo/BorneMcDo-ejb/src/java/ejb/GestionCatalogue.java</file>
+        </group>
+>>>>>>> f1d605b9c7334bf2e35d5238f5d9feeddc8ff9e8
     </open-files>
 </project-private>

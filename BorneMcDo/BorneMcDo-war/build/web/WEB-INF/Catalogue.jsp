@@ -10,55 +10,10 @@
         <link rel="stylesheet" href="./css/style.css" />
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/naviguation.js"></script>
+        <script type="text/javascript" src="./js/AjaxPanier.js"></script>
         <fmt:setLocale value="fr_FR"/>
         <title>Catalogue</title>
-    </head>
-
-    <script language="javascript">
-
-        function getxmlhttp() {
-            xmlhttp = null;
-            if (window.XMLHttpRequest) { // Mozilla
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                if (window.ActiveXObject) { // IE
-                    try {
-                        xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-                    } catch (e) {
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-                } else {
-                    alert("Votre navigateur ne supporte pas XMLHttpRequest");
-                }
-            }
-            return xmlhttp;
-        }
-
-        function go(idArticle) {
-            url = "Controller?section=ScPanier&article=" + idArticle;
-            //alert(url);
-
-            xmlhttp = getxmlhttp();
-            xmlhttp.onreadystatechange = xmlhttpChange;
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send(null);
-        }
-
-        function xmlhttpChange() {
-            if (xmlhttp.readyState == 4) {
-                if (xmlhttp.status == 200) {
-                    s = xmlhttp.responseText;
-                    d = document.getElementById("panier");
-                    d.innerHTML = "";
-                    d.innerHTML = s;
-                } else {
-                    alert("Problem retrieving XML data");
-                }
-            }
-        }
-
-    </script>
-
+    </head>    
     <body>
         <c:url value="Controller?section=ScMenu" var="menu" />
         <c:import url="${menu}"/>
@@ -88,8 +43,13 @@
                                 <div class="cat-article">
                                     <img class="cat-article" src="${a.image}"/>
                                     <p class="text-center">${a.nom}</p>
-                                    <a class="btn-plein" href="#" onclick="go(${a.id});
-                                            return false">${a.prix} €</a>
+                                    <c:if test="${!suppArt}">
+                                        <a class="btn-plein" href="#" onclick="go(${a.id});
+                                                return false">${a.prix} €</a>
+                                    </c:if>
+                                    <c:if test="${suppArt}">
+                                        <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">${a.prix} €</a>
+                                    </c:if>
                                 </div>
                             </div>
                         </c:forEach>

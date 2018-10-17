@@ -24,6 +24,22 @@ public interface GestionCatalogueLocal {
 
     public boolean isArticleSuppArt(String idArt);
 
+    public List<Article> afficheArticleByCategorie(String categorie);
 
+    public List<Article> afficherArticleBySousCategorie(String SsCat);
+
+    public List<Article> afficherArticleBySousCategorie(List<String> SsCat);
+
+    public Article getArticleByid(String id);
+
+    public Menu getMenuById(String id);
+
+    public Long getIdMenu(String nom);
+
+    public List<Article> afficherBurgerByMenu(String idMenu);
+
+    public List<Article> afficherBoissonByMenu(String idMenu);
+
+    
     
 }

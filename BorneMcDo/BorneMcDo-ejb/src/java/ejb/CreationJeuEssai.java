@@ -13,6 +13,7 @@ import entites.Preference;
 import entites.Promotion;
 import entites.SousCategorie;
 import entites.Status;
+import entites.SupplementArticle;
 import entites.SupplementAutre;
 import entites.Tva;
 import java.util.Date;
@@ -283,6 +284,19 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         Article cadeauFille = new Article("LE PETIT CADEAU FILLE", "MON PETIT PONEY", "", "./images/cadeauFille.png", 0.6f);
         Article cadeauGarcon = new Article("LE PETIT CADEAU GARCON", "TRANSFORMERS", "", "./images/cadeauGarcon.png", 0.6f);
         Article livre = new Article("LE PETIT CADEAU LIVRE", "MON PETIT PONEY", "", "./images/livre.png", 0.6f);
+        
+        //Supplements Articles
+        
+        /*SupplementArticle suppKetchup = new SupplementArticle(0f);
+        suppKetchup.setUnArticle(ketchup);
+        SupplementArticle suppSauceFrite = new SupplementArticle(0f);
+        suppSauceFrite.setUnArticle(sauceFrite);
+        SupplementArticle suppMoutarde = new SupplementArticle(0f);
+        suppMoutarde.setUnArticle(ketchup);
+        SupplementArticle suppSauceBbq = new SupplementArticle(0f);
+        suppSauceBbq.setUnArticle(sauceBbq);
+        SupplementArticle suppSauceCurry = new SupplementArticle(0f);
+        suppSauceCurry.setUnArticle(sauceCurry);*/
 
         //Ingredients
         Ingredient pain = new Ingredient("pain spécial");
@@ -977,6 +991,11 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoNumero);
         em.persist(infoVille);
         em.persist(petiteFaim);
+        /*em.persist(suppKetchup);
+        em.persist(suppMoutarde);
+        em.persist(suppSauceBbq);
+        em.persist(suppSauceCurry);
+        em.persist(suppSauceFrite);*/
     }
     
     @Override

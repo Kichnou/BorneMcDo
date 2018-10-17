@@ -23,11 +23,14 @@
         <%@include file="sidebar.jsp" %>
 <!-- section central -->   
 <div class="col-7" id="contenu">
-    <div class="row d-flex wrap">
+        <div class="row" style="margin-bottom: 40px;">
+           <p>${titre}</p>
+        </div>
+        <div class="row d-flex wrap">
         <c:forEach var="b" items="${liste}">
             <div class="col-4">
                 <div class="cat-centre">
-                   <a class="cat-centre" href="Controller?section=ScCatalogue&${chemin}&burger=${b.id}">
+                   <a class="cat-centre" href="Controller?section=ScCatalogue&cat=nos%20menus&${attribut}=${b.id}&next=${next}">
                         <img class="cat-centre" src="${b.image}"/>
                         <p class="cat-centre">${b.nom}</p>
                     </a>
