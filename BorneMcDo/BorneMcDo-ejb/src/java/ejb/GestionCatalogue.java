@@ -91,6 +91,17 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         return laListe;                
     }
     
+    /*public List<Article> afficherToutSousCategorie(List<SousCategorie> ls) {
+        List<Article> la = new ArrayList();
+        for (SousCategorie sc : ls) {
+            for( Article a : sc.getLesArticles()) {
+                la.add(a);
+            }
+        }
+        
+        return la;
+    }*/
+    
     @Override
     public List<Article> afficherArticleBySousCategorie(String SsCat){
         SousCategorie sousCat = new SousCategorie(SsCat);

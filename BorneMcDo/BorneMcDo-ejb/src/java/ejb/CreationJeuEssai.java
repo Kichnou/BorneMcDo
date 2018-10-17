@@ -287,7 +287,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         
         //Supplements Articles
         
-        SupplementArticle suppKetchup = new SupplementArticle(0f);
+        /*SupplementArticle suppKetchup = new SupplementArticle(0f);
         suppKetchup.setUnArticle(ketchup);
         SupplementArticle suppSauceFrite = new SupplementArticle(0f);
         suppSauceFrite.setUnArticle(sauceFrite);
@@ -296,7 +296,7 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         SupplementArticle suppSauceBbq = new SupplementArticle(0f);
         suppSauceBbq.setUnArticle(sauceBbq);
         SupplementArticle suppSauceCurry = new SupplementArticle(0f);
-        suppSauceCurry.setUnArticle(sauceCurry);
+        suppSauceCurry.setUnArticle(sauceCurry);*/
 
         //Ingredients
         Ingredient pain = new Ingredient("pain spécial");
@@ -991,11 +991,11 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoNumero);
         em.persist(infoVille);
         em.persist(petiteFaim);
-        em.persist(suppKetchup);
+        /*em.persist(suppKetchup);
         em.persist(suppMoutarde);
         em.persist(suppSauceBbq);
         em.persist(suppSauceCurry);
-        em.persist(suppSauceFrite);
+        em.persist(suppSauceFrite);*/
     }
     
     @Override
