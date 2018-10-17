@@ -35,16 +35,11 @@ public class ScCatalogue implements SousController {
         
         HttpSession session = request.getSession();
 
-        Menu m = new Menu();
-        Choix choixMenu = new Choix();
         
         GestionCatalogueLocal gestionCatalogue = lookupGestionCatalogueLocal();
          List<Categorie> lc = gestionCatalogue.SelectAllCategorie();
          request.setAttribute("categorie", lc);
          
-//         if(idMenu != null){
-//              m = gestionCatalogue.getMenuById(idMenu);
-//         }
          
          if (cat == null) {
              request.setAttribute("central", lc);
@@ -78,33 +73,129 @@ public class ScCatalogue implements SousController {
             if(cat.equalsIgnoreCase("nos menus") && idMenu == null){
                 url = "/WEB-INF/choix.jsp";
                 request.setAttribute("liste", gestionCatalogue.SelectAllMenu());
-                request.setAttribute("next", "burger");
+                request.setAttribute("add", "burger");
                 request.setAttribute("attribut", "menu");
                 request.setAttribute("titre", "Sélectionnez votre Menu");
+                request.setAttribute("cat", "nos menus");
             }
            
-            if(cat.equalsIgnoreCase("nos menus") && ("burger").equalsIgnoreCase(request.getParameter("next"))){
+            if(cat.equalsIgnoreCase("nos menus") && ("burger").equalsIgnoreCase(request.getParameter("add"))){
                 //section pour le burger
                 url = "/WEB-INF/choix.jsp";
                 request.setAttribute("liste", gestionCatalogue.afficherBurgerByMenu(idMenu));
                 request.setAttribute("attribut", "burger");
-                request.setAttribute("next", "boisson");
+                request.setAttribute("add", "boisson");
                 request.setAttribute("titre", "Sélectionnez votre Burger");
-                choixMenu.setUnMenu(gestionCatalogue.getMenuById(idMenu));
-                System.out.println("choixMenu ::: " + choixMenu.getUnMenu().getNom());
-                session.setAttribute("choixMenu", choixMenu);
+                request.setAttribute("cat", "nos menus");
+                
+                
+                session.setAttribute("choixMenu", gestionPanier.addMenu(gestionCatalogue.getMenuById(idMenu)));
             }
             
-            if(cat.equalsIgnoreCase("nos menus") && ("boisson").equalsIgnoreCase(request.getParameter("next"))){
+            if(cat.equalsIgnoreCase("nos menus") && ("boisson").equalsIgnoreCase(request.getParameter("add"))){
                 //section pour la boisson
                 url = "/WEB-INF/choix.jsp";
-                Choix test = (Choix) session.getAttribute("choixMenu");
+                Choix menu = (Choix) session.getAttribute("choixMenu");
                 
-                request.setAttribute("liste", gestionCatalogue.afficherBoissonByMenu(String.valueOf(test.getUnMenu().getId())));
+                request.setAttribute("liste", gestionCatalogue.afficherBoissonByMenu(String.valueOf(menu.getUnMenu().getId())));
                 request.setAttribute("attribut", "boisson");
-                request.setAttribute("next", "accompagnement");
+                request.setAttribute("add", "accompagnement");
                 request.setAttribute("titre", "Sélectionnez votre Boisson");
+                request.setAttribute("cat", "nos menus");
             }
+            
+               if(cat.equalsIgnoreCase("nos menus") && ("accompagnement").equalsIgnoreCase(request.getParameter("add"))){
+                //section pour les accompagnements
+                url = "/WEB-INF/choix.jsp";
+                Choix menu = (Choix) session.getAttribute("choixMenu");
+                
+                request.setAttribute("liste", gestionCatalogue.afficherAccompagnementByMenu(String.valueOf(menu.getUnMenu().getId())));
+                request.setAttribute("attribut", "accompagnement");
+                request.setAttribute("add", "sauce");
+                request.setAttribute("titre", "Sélectionnez votre accompagnement");
+                request.setAttribute("cat", "nos menus");
+            }
+             
+            if(cat.equalsIgnoreCase("nos menus") && ("sauce").equalsIgnoreCase(request.getParameter("add"))){
+                //section pour les accompagnements
+                url = "/WEB-INF/choix.jsp";
+                Choix menu = (Choix) session.getAttribute("choixMenu");
+                
+                request.setAttribute("liste", gestionCatalogue.afficherArticleBySousCategorie("sauce"));
+                request.setAttribute("attribut", "accompagnement");
+                if(menu.getUnMenu().getNom().equalsIgnoreCase("MENU HAPPY MEAL™")){
+                 request.setAttribute("add", "cadeau");
+                }else{
+                   request.setAttribute("add", "autre"); 
+                }
+                
+                request.setAttribute("titre", "Sélectionnez votre sauce");
+                request.setAttribute("cat", "nos menus");
+            }
+            
+             if(cat.equalsIgnoreCase("nos menus") && ("cadeau").equalsIgnoreCase(request.getParameter("add"))){
+                //section pour les cadeaux
+                url = "/WEB-INF/choix.jsp";
+                Choix menu = (Choix) session.getAttribute("choixMenu");
+                
+                request.setAttribute("liste", gestionCatalogue.afficherArticleBySousCategorie("cadeau"));
+                request.setAttribute("attribut", "cadeau");
+  
+                request.setAttribute("add", "autre"); 
+
+                
+                request.setAttribute("titre", "Sélectionnez votre cadeau");
+                request.setAttribute("cat", "nos menus");
+            }
+            
+            if(cat.equalsIgnoreCase("happy meal") && idMenu == null){
+                url = "/WEB-INF/choix.jsp";
+                Long id = gestionCatalogue.getIdMenu("MENU HAPPY MEAL™");
+                request.setAttribute("liste", gestionCatalogue.afficherBurgerByMenu(String.valueOf(id)));
+                request.setAttribute("add", "boisson");
+                request.setAttribute("attribut", "burger");
+                request.setAttribute("titre", "Sélectionnez votre burger");
+                request.setAttribute("cat", "happy meal");
+            } 
+            
+            if(cat.equalsIgnoreCase("happy meal") && ("boisson").equalsIgnoreCase(request.getParameter("add"))){
+                url = "/WEB-INF/choix.jsp";
+                Long id = gestionCatalogue.getIdMenu("MENU HAPPY MEAL™");
+                request.setAttribute("liste", gestionCatalogue.afficherBoissonByMenu(String.valueOf(id)));
+                request.setAttribute("add", "accompagnement");
+                request.setAttribute("attribut", "boisson");
+                request.setAttribute("titre", "Sélectionnez votre boisson");
+                request.setAttribute("cat", "happy meal");
+            }
+            if(cat.equalsIgnoreCase("happy meal") && ("accompagnement").equalsIgnoreCase(request.getParameter("add"))){
+                url = "/WEB-INF/choix.jsp";
+                Long id = gestionCatalogue.getIdMenu("MENU HAPPY MEAL™");
+                request.setAttribute("liste", gestionCatalogue.afficherAccompagnementByMenu(String.valueOf(id)));
+                request.setAttribute("add", "sauce");
+                request.setAttribute("attribut", "accompagnement");
+                request.setAttribute("titre", "Sélectionnez votre accompagnement");
+                request.setAttribute("cat", "happy meal");
+            }
+            if (cat.equalsIgnoreCase("happy meal") && ("sauce").equalsIgnoreCase(request.getParameter("add"))) {
+                url = "/WEB-INF/choix.jsp";
+                
+                request.setAttribute("liste", gestionCatalogue.afficherArticleBySousCategorie("sauce"));
+                request.setAttribute("add", "cadeau");
+                request.setAttribute("attribut", "sauce");
+                request.setAttribute("titre", "Sélectionnez votre sauce");
+                request.setAttribute("cat", "happy meal");
+            }
+
+            if (cat.equalsIgnoreCase("happy meal") && ("cadeau").equalsIgnoreCase(request.getParameter("add"))) {
+                url = "/WEB-INF/choix.jsp";
+                
+                request.setAttribute("liste", gestionCatalogue.afficherArticleBySousCategorie("cadeau"));
+                request.setAttribute("add", "autre");
+                request.setAttribute("attribut", "cadeau");
+                request.setAttribute("titre", "Sélectionnez votre cadeau");
+                
+            }
+
         }
         return url;
     }

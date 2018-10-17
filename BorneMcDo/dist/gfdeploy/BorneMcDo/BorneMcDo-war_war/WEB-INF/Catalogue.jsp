@@ -43,13 +43,8 @@
                                 <div class="cat-article">
                                     <img class="cat-article" src="${a.image}"/>
                                     <p class="text-center">${a.nom}</p>
-                                    <c:if test="${!suppArt}">
-                                        <a class="btn-plein" href="#" onclick="go(${a.id});
-                                                return false">${a.prix} €</a>
-                                    </c:if>
-                                    <c:if test="${suppArt}">
-                                        <a class="btn-plein" href="Controller?section=ScPanier&article=${a.id}">${a.prix} €</a>
-                                    </c:if>
+                                    <a class="btn-plein" href="#" onclick="go(${a.id});
+                                            return false">${a.prix} €</a>  
                                 </div>
                             </div>
                         </c:forEach>

@@ -6,6 +6,7 @@
 package ejb;
 
 import entites.Choix;
+import entites.Menu;
 import java.util.ArrayList;
 import javax.ejb.Local;
 
@@ -23,5 +24,7 @@ public interface GestionPanierLocal {
     public float getPrixTotal();
 
     public Choix addSuppArt(String idArticle);
+
+    public Choix addMenu(Menu m);
     
 }
