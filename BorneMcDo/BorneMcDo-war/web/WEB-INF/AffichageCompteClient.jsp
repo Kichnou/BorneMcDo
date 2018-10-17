@@ -18,12 +18,12 @@
         <c:url value="Controller?section=ScMenu" var="menu" />
         <c:import url="${menu}"/>
         ${message}
-        <h1>Bonjour ${prenomClient} ${nomClient},</h1>
+        <h1>Bonjour ${client.prenom} ${client.nom},</h1>
         <p>${infoEnseigne} ${infoNom} est heureux de vous accueillir.</p>
         <h2>Voici les informations contenues dans votre compte client :</h2>
-        <p>Vous vous appelez ${prenomClient} ${nomClient}.</p>
-        <p>Vous êtes notre membre numéro ${numeroMembre}.</p>
-        <p>Actuellement, vous avez ${pointsFidelite} points de fidélité sur votre compte.</p>
+        <p>Vous vous appelez ${client.prenom} ${client.nom}.</p>
+        <p>Vous êtes notre membre numéro ${client.numeroMembre}.</p>
+        <p>Actuellement, vous avez ${client.pointsFidelite} points de fidélité sur votre compte.</p>
         <h2>Que souhaitez-vous faire ?</h2>
         <div class="container">
             <div class="row justify-content-center">
