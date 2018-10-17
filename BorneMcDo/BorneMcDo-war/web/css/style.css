@@ -11,20 +11,20 @@
     width: 100px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
-    background-color: #004812;
+    border-color: #004812; /* Vert foncé */
+    background-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 0.8em;
     font-weight: 900;
     text-transform: uppercase;
-    color : #ffffff;
+    color : white; /* #ffffff : Blanc */
     text-decoration: none;
 }
 
 .btn-plein:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    color : #cccccc;
+    color : #cccccc; /* Grisé ("Gray80") */
     text-decoration: none;
 }
 
@@ -32,16 +32,42 @@
     text-decoration: none;
 }
 
-.btn-evide{
+/* Ajout Florent */
+.btn-pleinlarge{
     width: 400px;
+    margin-bottom: 20px;
+    margin-top: 50px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
+    background-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1.6em;
     font-weight: 900;
     text-transform: uppercase;
-    color : #004812;
+    color : white; /* #ffffff : Blanc */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-pleinlarge:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+    text-decoration: none;
+}
+
+.btn-evide{
+    width: 400px;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.6em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
 }
 
 .btn-evide:hover{
@@ -56,11 +82,11 @@
     height: 200px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 4em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,24 +94,129 @@
     text-transform: uppercase;
 }
 
-.ouinon{
-    text-decoration: none;
-    font-family: 'museo';
-    font-size: 1em;
-    color : #004812;
-}
-.ouinon:hover{
-    text-decoration: none;
-    font-family: 'museo';
-    font-size: 1em;
-    color : #00280a;
-}
-
 .btn-choix-evide:hover{
     font-family: 'museo';
     text-transform: uppercase;
     color : #00280a;
     text-decoration: none;
+}
+
+/*
+	Ajout par Florent : bouton btn-modeconsommation-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-modeconsommation-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-modeconsommation-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/*
+	Ajout par Florent : bouton btn-promotion-evide, inspiré de ce qui
+	a été fait pour btn-choix-evide.
+*/
+.btn-promotion-evide{
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+	/*
+		NOTA :
+		Il faut forcer l'affichage en un mode qui ne soit pas "inline-*", car
+		une balise inline ne peut pas avoir de "height".
+	*/
+	display: flex;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color : #004812; /* Vert foncé */
+    margin: auto;
+	word-wrap: break-word; /* Aller à la ligne en coupant entre les mots. */
+	text-align: center; /* Centrer horizontalement. Mais, si un mot trop
+						   "Supercalifragilisticexpialidocious" long ne rentre
+						   pas dans la width il faudra réduire la font-size
+						   pour avoir un texte de nouveau centré, car le fait
+						   d'avoir un mot trop long fait que le texte se
+						   retrouve aligné à gauche au lieu d'être centré.*/
+	/*
+		NOTA :
+		align-items et justify-content : que pour un display de type flex.
+    */
+	align-items: center; /* Centrer verticalement. */
+	/*
+		NOTA : centrer horizontalement avec un justify-content valant "center"
+		ne fonctionne que si l'on n'a qu'une seule ligne de texte.
+	*/
+}
+
+.btn-promotion-evide:hover{
+    font-family: 'museo';
+    text-transform: uppercase;
+    color : #cccccc; /* Grisé ("Gray80") */
+}
+
+/* Ajout par Florent : erreur : texte en rouge pour les éléments utilisant
+   cette classe. */
+.erreur {
+    color: red; /* Rouge */
+}
+
+/* Ajout par Florent : indentation : 30 pixels de marge extérieure (margin)
+   à gauche des éléments utilisant cette classe. */
+.indentation {
+    margin-left: 30px;
+}
+
+.ouinon{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #004812; /* Vert foncé */
+}
+
+.ouinon:hover{
+    text-decoration: none;
+    font-family: 'museo';
+    font-size: 1em;
+    color : #00280a;
 }
 
 .cat{
@@ -101,7 +232,7 @@
     text-decoration: none;
     font-size: 0.8em;
     font-family: 'museo';
-    color: #004812;
+    color: #004812; /* Vert foncé */
 }
 
 .cat p{
@@ -113,7 +244,7 @@
 }
 
 .cat:hover{
-    background-color: #cccccc;
+    background-color: #cccccc; /* Grisé ("Gray80") */
 }
 
 .cat img{
@@ -137,7 +268,7 @@
     text-decoration: none;
     font-size: 1em;
     font-family: 'museo';
-    color: #004812;
+    color: #004812; /* Vert foncé */
 }
 
 .cat-centre p{
@@ -149,7 +280,7 @@
 }
 
 .cat-centre:hover{
-    background-color: #cccccc;
+    background-color: #cccccc; /* Grisé ("Gray80") */
 }
 
 .cat-centre img{
@@ -180,7 +311,16 @@ h1{
     margin-top: 100px;
     font-family: 'museo';
     font-size: 2em;
-    color : #004812;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : h2. */
+h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
 }
 
 h4{
@@ -188,7 +328,7 @@ h4{
     margin-bottom: 20px;
     font-family: 'museo';
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     font-weight: 900;
 }
 
@@ -197,15 +337,34 @@ h6{
     margin-bottom: 20px;
     font-family: 'museo';
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     font-weight: 900;
+}
+
+/* Ajout par Florent : zone de saisie de texte. */
+input[type=text] {
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812; /* Vert foncé */
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */
+}
+
+/* Ajout par Florent : label. */
+label{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'museo';
+    font-size: 1.5em;
+    color : #004812; /* Vert foncé */ 
 }
 
 p{
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'museo';
-    color : #004812; 
+    color : #004812; /* Vert foncé */ 
     font-weight: 900;
 }
 
@@ -215,11 +374,11 @@ p{
     height: 150px;
     border: solid 3px;
     border-radius: 5px;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     font-family: 'museo';
     font-size: 1em;
     text-transform: uppercase;
-    color : #004812;
+    color : #004812; /* Vert foncé */
     display: flex;
     margin-bottom: 2%;
 }
@@ -231,7 +390,7 @@ p{
     
 }
 .btn-confirm{
-    background-color: #004812;
+    background-color: #004812; /* Vert foncé */
     color: white;
     float: right;
 }
@@ -240,7 +399,7 @@ p{
     color: white;
 }
 .btn-paiement{
-    background-color: #004812;
+    background-color: #004812; /* Vert foncé */
     color: white;
     margin-top: 150%;
     
@@ -250,17 +409,17 @@ p{
     color: white;
 }
 .sandwich{
-    background-color: #004812;
+    background-color: #004812; /* Vert foncé */
     color: white;
     top: -15%;
     text-transform: uppercase;
     font-family: 'museo';
 }
 .control{
-    color: #004812;
+    color: #004812; /* Vert foncé */
     border: 3px;
     border-style: solid;
-    border-color: #004812;
+    border-color: #004812; /* Vert foncé */
     border-radius: 5px;
     font-family: 'museo';
     height: 260px;
@@ -268,7 +427,7 @@ p{
 }
 .titre{
     position: absolute;
-    background-color: #004812;
+    background-color: #004812; /* Vert foncé */
     color: white;
     top: -10%;
     text-transform: uppercase;
@@ -315,7 +474,7 @@ p{
     text-decoration: none;
     font-size: 1em;
     font-family: 'museo';
-    color: #004812;
+    color: #004812; /* Vert foncé */
 }
 
 .choix-boisson p{
@@ -327,7 +486,7 @@ p{
 }
 
 .choix-boisson:hover{
-    background-color: #cccccc;
+    background-color: #cccccc; /* Grisé ("Gray80") */
 }
 
 .choix-boisson img{

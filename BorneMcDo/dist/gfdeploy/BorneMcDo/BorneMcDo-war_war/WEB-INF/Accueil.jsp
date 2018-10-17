@@ -7,25 +7,28 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css" />
         <title>Accueil</title>
+        <!-- FLC : D'après IMG_1283.jpg -->
     </head>
     <body>
         <c:url value="Controller?section=ScMenu" var="menu" />
         <c:import url="${menu}"/>
         ${message}
         <div class="container">
-            <h1 class="text-center">Souhaitez-vous accéder à vos avantanges avec votre carte client ?</h1>
+            <!-- FLC -->
+            <h1 class="text-center">Souhaitez-vous accéder à vos avantages<br />avec votre identifiant client ?</h1>
             <div class="row justify-content-center">
                 <div class="col">
-                    <div class="btn btn-choix-evide mx-auto">
-                        <a class="ouinon" href='Controller?section=ScCatalogue'>oui</a>
-                    </div>
+                    <!-- FLC -->
+                    <c:url value="Controller?section=ScChoixConnexion&choix=Oui" var="urlchoixOui" />
+                    <a class="btn btn-choix-evide mx-auto" href="${urlchoixOui}" name="choixOui">oui</a>
                     <h4 class="text-center">Je m'identifie</h4>
-                    <p class="text-center">Mon prénom sera affiché sur<br>les écrans suivants</p>
+                    <!-- FLC -->
+                    <p class="text-center">Mon prénom sera affiché sur<br />les écrans suivants</p>
                 </div>
                 <div class="col">
-                    <div class="btn btn-choix-evide mx-auto">
-                        <a class="ouinon" href='Controller?section=ScCatalogue'>non</a>
-                    </div>
+                    <!-- FLC -->
+                    <c:url value="Controller?section=ScChoixConnexion&choix=Non" var="urlchoixNon" />
+                    <a class="btn btn-choix-evide mx-auto" href="${urlchoixNon}" name="choixNon">non</a>
                     <h4 class="text-center">Je ne m'identifie pas</h4>
                 </div>
             </div>

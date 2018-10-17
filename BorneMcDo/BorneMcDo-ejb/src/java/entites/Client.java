@@ -113,6 +113,21 @@ public class Client implements Serializable {
         return "Client n°" + numeroMembre + " : " + prenom + " " + nom + " pointsFidelite=" + pointsFidelite;
     }
 
+    //Méthodes publiques pour pouvoir ajouter ou soustraire des points de
+    //fidélité :
     
+    public void AjouterPointsFidelite(int nombrePoints) {
+        this.pointsFidelite += nombrePoints;
+    }
+    
+    public void SoustrairePointsFidelite(int nombrePoints) throws Exception {
+        if (nombrePoints > this.pointsFidelite) {
+            throw new Exception("Il vous est impossible de consommer plus " +
+                    "de points de fidélité que ceux dont vous disposez " +
+                    "actuellement, à savoir " + this.pointsFidelite + ".");
+        } else {
+            this.pointsFidelite -= nombrePoints;
+        }
+    }
 
 }
