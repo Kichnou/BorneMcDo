@@ -991,16 +991,6 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         em.persist(infoTVA);
         em.persist(infoNumero);
         em.persist(infoVille);
-<<<<<<< HEAD
-        em.persist(petiteFaim);
-        /*em.persist(suppKetchup);
-        em.persist(suppMoutarde);
-        em.persist(suppSauceBbq);
-        em.persist(suppSauceCurry);
-        em.persist(suppSauceFrite);*/
-=======
-        
->>>>>>> d94b9972d3b654f381ec98b8b3f2fff790082c1f
     }
     
     @Override
