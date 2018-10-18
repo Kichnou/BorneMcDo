@@ -26,5 +26,9 @@ public interface GestionPanierLocal {
     public Choix addSuppArt(String idArticle);
 
     public Choix addMenu(Menu m);
+
+    public Choix addArticleMenu(String idArticle);
+
+    public void linkMenuArticle(Choix menu, Choix article);
     
 }

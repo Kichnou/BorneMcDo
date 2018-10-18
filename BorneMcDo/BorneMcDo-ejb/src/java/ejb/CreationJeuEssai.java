@@ -909,6 +909,10 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         livre.setLaTva(tva20);
         ptitePomme.setLaTva(tva5);
         moyenJusOrange.setLaTva(tva10);
+        bestOfBurger.setUneTva(tva10);
+        maxiBestOfBurger.setUneTva(tva10);
+        menuHappyMeal.setUneTva(tva10);
+        menuSalade.setUneTva(tva10);
 
         em.persist(cheeseBurger);
         em.persist(bigMac);

@@ -96,10 +96,41 @@ public class GestionPanier implements GestionPanierLocal {
     
     @Override
     public Choix addMenu(Menu m){
-        Choix choixMenu = new Choix();
+        Choix choixMenu = new Choix();      
+        
+        choixMenu.setTauxTva(m.getUneTva().getTaux());
+        choixMenu.setPrix(m.getPrix());
         
         choixMenu.setUnMenu(m);
         
         return choixMenu;
+    }
+    
+    @Override
+    public Choix addArticleMenu(String idArticle) {
+        Long id = Long.valueOf(idArticle);
+        Query tq = em.createQuery("select a from Article a where a.id = :paramId");
+        tq.setParameter("paramId", id);
+        List<Article> la = tq.getResultList();
+        Article a = null;
+        for (Article art : la) {
+            a = art;
+        }
+        
+        Choix c = new Choix();
+        
+        c.setPrix(0f);
+        c.setUnArticle(a);
+
+        if (c.getUnArticle().getLesSupArt().isEmpty()) {
+            this.getMonPanier().add(c);
+        }
+        
+        return c;
+    }
+    
+    @Override
+    public void linkMenuArticle (Choix menu, Choix article) {
+        article.setLeChoix(menu);
     }
 }
