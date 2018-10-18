@@ -5,9 +5,14 @@
  */
 package sousControllers;
 
+import ejb.GestionClientLocal;
 import entites.Client;
 import entites.Information;
-import java.time.Instant;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -20,6 +25,7 @@ import javax.servlet.http.HttpSession;
  * @author cdi315
  */
 public class ScSaisieNumeroMembre implements SousController {
+    GestionClientLocal gestionClient = lookupGestionClientLocal();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -75,7 +81,7 @@ public class ScSaisieNumeroMembre implements SousController {
             EntityManager em = emf.createEntityManager();
 
             //Le client est recherché dans la table Client par son numéro de membre :
-            Client clientQuiCommande = em.find(Client.class, numeroMembreLong);
+            Client clientQuiCommande = gestionClient.getClient(numeroMembreLong);
             
             //Si le client a bien été trouvé dans la table Client :
             if (clientQuiCommande != null) {
@@ -87,21 +93,19 @@ public class ScSaisieNumeroMembre implements SousController {
                 Information infoNom = em.find(Information.class, "Nom");
                 
                 /*
-                    Affecter le numéro de membre et quelques autres
-                    informations en tant qu'attributs de la session :
+                    Affecter le Client en tant qu'attributs de la session :
                 */
-                session.setAttribute("prenomClient",clientQuiCommande.getPrenom());
-                session.setAttribute("nomClient",clientQuiCommande.getNom());
+                session.setAttribute("client",clientQuiCommande);
+                
+                /*
+                    Informations concernant le restaurant :
+                */
                 if (infoEnseigne != null) {
                     session.setAttribute("infoEnseigne",infoEnseigne.getDescription());
                 }
                 if (infoNom != null) {
                     session.setAttribute("infoNom",infoNom.getDescription());
                 }
-                session.setAttribute("numeroMembre",
-                        clientQuiCommande.getNumeroMembre());
-                session.setAttribute("pointsFidelite",
-                        clientQuiCommande.getPointsFidelite());
                 //Passer à la page d'affichage du compte client :
                 url = "/WEB-INF/AffichageCompteClient.jsp";
             } else {
@@ -128,5 +132,16 @@ public class ScSaisieNumeroMembre implements SousController {
         //DBG System.out.println("DBG À l'issue de l'exécution de ScSaisieNumeroMembre.execute, nous essayâmes de lancer ensuite url = <<" + url + ">>.");   
         return url;
     }
+
+    private GestionClientLocal lookupGestionClientLocal() {
+        try {
+            Context c = new InitialContext();
+            return (GestionClientLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/GestionClient!ejb.GestionClientLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+    
     
 }
